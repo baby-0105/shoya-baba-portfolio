@@ -1,0 +1,123 @@
+@media(max-width:1200px){
+	.skills-img1::before{
+		left:32px;
+	}
+
+	.skills-img2::before{
+		left:35px;
+	}
+
+	.skills-img3::before{
+		left:35px;
+	}
+
+	.skills-img4::before{
+		left:35px;
+	}
+
+	.skills-img5::before{
+		left:35px;
+	}
+}
+
+@media(max-width:992px){
+	.main{
+		background-position:bottom;
+	}
+
+	.inner{
+		font-size:130%;
+	}
+
+	.skills-img1::before{
+		width:40px;
+		height:40px;
+		left:23px;
+	}
+
+	.skills-img2::before{
+		width:40px;
+		height:40px;
+		left:26px;
+	}
+
+	.skills-img3::before{
+		width:40px;
+		height:40px;
+		left:26px;
+	}
+
+	.skills-img4::before{
+		width:80px;
+		height:40px;
+	}
+
+	.skills-img5::before{
+		width:40px;
+		height:40px;
+		left:26px;
+	}
+
+	.contact input,
+	.contact textarea{
+		width:102%;
+	}
+
+	#form-btn{
+		width:100%;
+	}
+}
+
+@media(max-width:768px){
+	.main{
+		background-position:right;
+	}	
+
+	.skills-img1::before{
+		left:6px;
+	}
+
+	.skills-img2::before{
+		left:9px;
+	}
+
+	.skills-img3::before{
+		left:15px;
+	}
+
+	.skills-img4::before{
+		left:15px;
+	}
+
+	.skills-img5::before{
+		left:15px;
+	}
+
+	.about img{
+		width:50%;
+	}
+
+	.text-size{
+		line-height:40px;
+	}
+
+	.contact-form{
+		background-position:right;
+		background-size: cover;
+	}
+
+	.contact input,
+	.contact textarea{
+		width:101%;
+	}
+
+	.footer-icon{
+		width:50px;
+		height:50px;
+	}
+
+	.footer-icon i{
+		color:white;
+		font-size:20px;
+	}
+}
