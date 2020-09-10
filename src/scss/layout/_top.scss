@@ -1,0 +1,49 @@
+/* -------------------------------------------------
+  .l-top
+---------------------------------------------------- */
+
+.l-top-siteImage {
+  font-family: 'Homemade Apple', cursive;
+  background-image: url('#{$bgPath}hitch_hiking.jpg');
+  background-size: cover;
+  background-position: 100% 100%;
+  height: 100vh;
+}
+
+/* .l-top-intro */
+.l-top-intro__container {
+  @include container(50px, $widthMainContainer);
+}
+
+/* .l-top-skills */
+.l-top-skills {
+  background-color: $colorBgGray;
+}
+
+.l-top-skills__container {
+  @include container(50px, $widthMainContainer);
+}
+
+/* .l-top-production */
+.l-top-production__container {
+  @include container(50px, $widthMainContainer);
+}
+
+/* .l-top-canDo */
+.l-top-canDo {
+  background-color: $colorBgGray;
+}
+
+.l-top-canDo__container {
+  @include container(50px, $widthMainContainer);
+}
+
+/* .l-top-contact */
+.l-top-contact {
+  background-image: url("#{bgPath}bg_ukulele.jpg");
+  background-size: cover;
+}
+
+.l-top-contact__container {
+  @include container(50px, $widthMainContainer);
+}

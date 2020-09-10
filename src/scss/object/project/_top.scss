@@ -1,0 +1,336 @@
+/* -------------------------------------------------
+  .p-top
+---------------------------------------------------- */
+
+/*
+  @mixin section
+---------------------------------------------------- */
+
+@mixin section_title {
+  font-family: 'Homemade Apple', cursive;
+  font-size: $fontSectionTitle;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding: 10px 0;
+  text-align: center;
+  border-top: solid 1px $colorTitleBorderGreen;
+  border-bottom: solid 1px $colorTitleBorderGreen;
+
+  @include mq(u-sp) {
+    font-size: $fontSemiTitle;
+  }
+}
+
+@mixin section_text {
+  text-align: center;
+  font-size: $fontLetterMiddle;
+  margin-bottom: 30px;
+}
+
+/*
+  .p-top-siteImage
+---------------------------------------------------- */
+
+.p-top-siteImage__textArea {
+  @include center_of_vertically_and_horizontally;
+
+  text-align: center;
+  color: $colorWhite;
+}
+
+.p-top-siteImage__title {
+  @extend .p-top-siteImage__name;
+
+  transform: rotate(-5deg);
+}
+
+.p-top-siteImage__name {
+  font-size: $fontTitleLarge;
+
+  @include mq(u-sp) {
+    font-size: $fontSectionTitle;
+  }
+}
+
+/*
+  .p-top-intro
+---------------------------------------------------- */
+
+.p-top-intro__title {
+  @include section_title;
+}
+
+.p-top-intro__info {
+  display: flex;
+  justify-content: space-between;
+
+  @include mq(u-sp) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.p-top-intro__infoImg {
+  width: 35%;
+  height: 35%;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px $colorTitleBorderGreen;
+  margin-right: 30px;
+
+  @include mq(u-sp) {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+}
+
+.p-top-intro__infoDetail {
+  text-align: center;
+}
+
+.p-top-intro__infoName {
+  font-size: $fontSemiTitle;
+  margin-bottom: 20px;
+
+  @include mq(u-sp) {
+    font-size: $fontLetterMiddle;
+  }
+}
+
+.p-top-intro__infoText {
+  font-size: $fontLetterMiddle;
+
+  @include mq(u-sp) {
+    font-size: $fontLetterSmall;
+  }
+}
+
+/*
+  .p-top-skills
+---------------------------------------------------- */
+
+.p-top-skills__title {
+  @include section_title;
+}
+
+.p-top-skills__text {
+  @include section_text;
+}
+
+.p-top-skills__detail {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.p-top-skills__detail__list {
+  text-align: center;
+  width: 100px;
+  height: 100px;
+}
+
+.p-top-skills__detail__iconImg {
+  width: 50px;
+  height: 50px;
+  object-fit: contain; // 画像比率保つ
+}
+
+.p-top-skills__detail__text {
+  font-size: $fontLetterSmall;
+  margin-top: 10px;
+}
+
+/*
+  p-top-production
+---------------------------------------------------- */
+
+.p-top-production__title {
+  @include section_title;
+}
+
+.p-top-production__text {
+  @include section_text;
+}
+
+.p-top-production__item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  @include mq(u-sp) {
+    flex-wrap: wrap;
+  }
+}
+
+.p-top-production__itemList {
+  margin-right: 20px;
+  border: $colorBdGray;
+  position:relative;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include mq(u-sp) {
+    margin-bottom: 30px;
+    margin-right: 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* __hover */
+.p-top-production__hover {
+  width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0%;
+	bottom: 0%;
+	opacity: 0;
+	background-color: rgba(0,0,0,0.7);
+	-webkit-transform: rotateY(-180deg);
+	transform: rotateY(-180deg);
+	-webkit-transition: all 0.6s ease; /*all と　easeは初期値*/
+  transition: 0.6s;
+
+  &:hover {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+.p-top-production__hover__container {
+  @include center_of_vertically_and_horizontally;
+
+  color: $colorWhite;
+  font-size: $fontLetterMiddle;
+}
+
+/*
+  p-top-canDo
+---------------------------------------------------- */
+
+.p-top-canDo__title {
+  @include section_title;
+}
+
+.p-top-canDo__text {
+  @include section_text;
+}
+
+.p-top-canDo__works {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @include mq(u-pc) {
+    flex-direction: column;
+  }
+}
+
+.p-top-canDo__work {
+  display: flex;
+  flex-direction: column; //縦に並べる
+  align-items: center;
+  width: 48%;
+  border: solid 2px $colorBlack;
+  padding: 50px;
+  background-color: $colorWhite;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include mq(u-pc) {
+    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.p-top-canDo__workIcon {
+  width: 100px;
+  object-fit: contain; // 画像比率保つ
+  margin-bottom: 20px;
+}
+
+.p-top-canDo__workTitle {
+  font-size: $fontSemiTitle;
+  margin-bottom: 30px;
+
+  @include mq(u-pc) {
+    font-size: $fontLetterMiddle;
+  }
+}
+
+.p-top-canDo__workText {
+  font-size: $fontLetterMiddle;
+  margin-bottom: auto; // display: flex;との組み合わせで、boxの高さ揃える
+
+  @include mq(u-pc) {
+    font-size: $fontLetterSmall;
+  }
+}
+
+/*
+  p-top-contact
+---------------------------------------------------- */
+
+.p-top-contact__title {
+  @include section_title;
+}
+
+.p-top-contact__text {
+  @include section_text;
+}
+
+.p-top-contact__block {
+  display: flex;
+  flex-direction: column;
+}
+
+// @mixin contact_form
+@mixin contact_form($bd_radi, $height, $width, $fs) {
+  border-radius: $bd_radi;
+  border: solid 1px $colorBlack;
+  height: $height;
+  width: $width;
+	padding: 10px;
+  margin: 0 auto;
+  font-size: $fs;
+}
+
+.p-top-contact__form {
+  @include contact_form($bd_radi: 5px, $height: 50px, $width: 80%, $fs: $fontLetterSmall);
+
+  margin-bottom: 20px;
+}
+
+.p-top-contact__inquiry {
+  @include contact_form($bd_radi: 5px, $height: 150px, $width: 80%, $fs: $fontLetterSmall);
+
+  margin-bottom: 20px;
+}
+
+.p-top-contact__btn {
+  @include contact_form($bd_radi: 30px, $height: 50px, $width: 30%, $fs: $fontLetterMiddle);
+
+  background-color: $colorFooterIconBg;
+  color: $colorWhite;
+  text-align: center;
+
+  &:hover {
+    background-color: $colorIconHover;
+    transform:scale(1.02);
+    transition:0.7s;
+  }
+}

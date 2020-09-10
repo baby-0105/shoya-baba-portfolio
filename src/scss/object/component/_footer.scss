@@ -1,0 +1,45 @@
+.c-footer__copyright {
+  display: block;
+  margin-bottom: 10px;
+  padding-top: 30px;
+  font-size: $fontLetterSmall;
+  white-space: nowrap; // 文字おりかえさない
+}
+
+.c-footer__contact {
+  display: flex;
+  justify-content: center;
+
+}
+
+.c-footer__contactList {
+  &:first-child {
+    margin-right: 10px;
+  }
+}
+
+.c-footer__contactList i {
+  @include center_of_vertically_and_horizontally;
+
+  color: $colorWhite;
+  font-size: 30px;
+}
+
+.c-footer__contactLink {
+  width: 70px;
+	height: 70px;
+	border-radius: 50%;
+  background-color: $colorFooterIconBg;
+  position: relative;
+
+  &:hover {
+    background-color: $colorIconHover;
+    transform: scale(1.1);
+    transition: 0.7s;
+    color: $colorFooterIconBg;
+
+    i {
+      color: $colorFooterIconBg;
+    }
+  }
+}

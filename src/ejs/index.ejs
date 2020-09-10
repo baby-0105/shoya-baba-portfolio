@@ -1,0 +1,108 @@
+<% var title = "shoya_baba_portfolio_TOP"; var description = "トップのshoya_baba_portfolio"; %> <% include
+src/ejs/template/_head %>
+<% include src/ejs/template/_header %>
+<% var img_path='/assets/images/'; %>
+
+<main class="l-top">
+  <div class="l-top-siteImage">
+    <div class="p-top-siteImage__textArea">
+      <h2 class="p-top-siteImage__title">PortFolio<h2>
+      <h2 class="p-top-siteImage__name">Shoya Baba<h2>
+    </div>
+  </div>
+
+  <div class="l-top-intro">
+    <div class="l-top-intro__container">
+      <h1 class="p-top-intro__title">About</h1>
+      <div class="p-top-intro__info">
+        <img class="p-top-intro__infoImg" src="<%= img_path %>face_icon.jpeg" alt="人物のアイコン">
+        <div class="p-top-intro__infoDetail">
+          <h3 class="p-top-intro__infoName">馬場　翔矢（Shoya Baba）</h3>
+          <p class="p-top-intro__infoText">
+            近畿大学 農学部卒業後（2019/3）→機械部品の中小企業へ就職。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="l-top-skills">
+    <div class="l-top-skills__container">
+      <h1 class="p-top-skills__title">Skills</h1>
+      <p class="p-top-skills__text">扱うことの出来るスキルの一覧です。</p>
+      <ul class="p-top-skills__detail">
+        <% var skills=["HTML", "CSS", "Ruby", "Bootstrap", "JavaScript", "jQuery"]; %>
+        <% for (var i=0; i < skills.length; i++) { %>
+          <li class="p-top-skills__detail__list">
+            <img class="p-top-skills__detail__iconImg" src="<%= img_path %>skills/<%= skills[i] %>.png" alt="<%= skills[i] %>のアイコン">
+            <p class="p-top-skills__detail__text"><%= skills[i] %></p>
+          </li>
+        <% } %>
+      </ul>
+      <p class="p-top-skills__expla"></p>
+    </div>
+  </div>
+
+  <div class="l-top-production">
+    <div class="l-top-production__container">
+      <h1 class="p-top-production__title">Production</h1>
+      <p class="p-top-production__text">これまでに制作した、模写・LPなどの制作物の一覧です。</p>
+      <ul class="p-top-production__item">
+        <% var products=["1", "2", "3"]; %>
+        <% for (var i=0; i < products.length; i++) { %>
+          <li class="p-top-production__itemList">
+            <a href="#">
+              <img src="<%= img_path %>screen.piano.png" alt="作品の画像">
+              <div class="p-top-production__hover">
+                <div class="p-top-production__hover__container">
+                  <h3 class="p-top-production__hover__title">【】</h3>
+                  <p class="p-top-production__hover__period">〜週間</p>
+                  <p class="p-top-production__hover__langu">HTML、CSS</p>
+                </div>
+              </div>
+            </a>
+          </li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="l-top-canDo">
+    <div class="l-top-canDo__container">
+      <h1 class="p-top-canDo__title">Can do.</h1>
+      <p class="p-top-canDo__text">現在、お受けする事のできる案件についてご紹介させていただきます。</p>
+      <ul class="p-top-canDo__works">
+        <% var works=["1", "2", "3"]; %>
+        <% var work_title=["Webページ・LP制作", "2", "3"]; %>
+        <% var work_text=
+          ["LP作成・コーディングなどのWebサイト制作をお受けします。",
+          "スマホ・タブレット・パソコン、などマルチデバイスにも対応いたします。どのデバイスであっても見やすい表示へと切り替えさせます。",
+          ""];
+        %>
+        <% for (var i=0; i < works.length; i++) { %>
+          <li class="p-top-canDo__work">
+            <img class="p-top-canDo__workIcon" src="<%= img_path %>skills/<%= skills[i] %>.png" alt="案件イメージアイコン">
+            <h3 class="p-top-canDo__workTitle"><%= work_title[i] %></h3>
+            <p class="p-top-canDo__workText"><%= work_text[i] %></p>
+          </li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="l-top-cantact">
+    <div class="l-top-contact__container">
+      <h1 class="p-top-contact__title">Contact</h1>
+      <p class="p-top-contact__text">お問い合わせはこちら（もしくは、フッターのTwitterアイコンからダイレクトメッセージお願いします。）</p>
+      <div class="p-top-contact__block">
+        <input class="p-top-contact__form" type="text" placeholder="姓" name="name">
+        <input class="p-top-contact__form" type="text" placeholder="名" name="name">
+        <input class="p-top-contact__form" type="text" placeholder="メールアドレス　" name="mail">
+        <textarea class="p-top-contact__inquiry" name="comment" placeholder="お問い合わせ内容を記載ください。"></textarea>
+        <a class="p-top-contact__btn" href="#">送信</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<% include src/ejs/template/_footer %>

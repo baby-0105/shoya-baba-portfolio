@@ -1,0 +1,8 @@
+.l-footer {
+  background-color: $colorBgGray;
+  text-align: center;
+}
+
+.l-footer__container {
+  @include container(0 0 30px, 30%);
+}

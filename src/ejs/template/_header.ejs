@@ -1,0 +1,13 @@
+<% var img_path='/assets/images/'; %>
+
+<header class="l-header">
+  <a class="c-header__titleLink"><h3 class="c-header__title">Portfolio</h3></a>
+  <ul class="c-header__nav">
+    <% var header_nav=["About", "Skills", "Can do.", "Contact"]; %>
+    <% for (var i=0; i < header_nav.length; i++) { %>
+      <a class="c-header__link" href="#">
+        <li class="c-header__list"><%= header_nav[i] %></li>
+      </a>
+    <% } %>
+  </ul>
+</header>

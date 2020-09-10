@@ -1,0 +1,33 @@
+/* -------------------------------------------------
+  .c-header
+---------------------------------------------------- */
+
+.c-header__title {
+  transform: rotate(-10deg);
+
+  &:hover {
+    transform: rotate(0deg);
+    transition: transform 1s;
+  }
+}
+
+.c-header__nav {
+  display: flex;
+
+  @include mq(u-sp) {
+    display: none;
+  }
+}
+
+.c-header__link {
+  margin-left: 20px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    transition: transform 1s;
+  }
+}

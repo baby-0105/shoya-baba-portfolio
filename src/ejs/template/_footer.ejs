@@ -1,0 +1,21 @@
+<% var img_path='/assets/images/'; %>
+
+<footer class="l-footer">
+  <small class="c-footer__copyright">&copy;Shoya Baba.All Rights Reserved 2020.</small>
+  <div class="l-footer__container">
+    <ul class="c-footer__contact">
+      <% var footer_contact=["fab fa-twitter", "far fa-envelope"]; %>
+      <% for (var i=0; i < footer_contact.length; i++) { %>
+        <li class="c-footer__contactList">
+          <a class="c-footer__contactLink" href="#">
+            <i class="<%= footer_contact[i] %>"></i>
+          </a>
+        </li>
+      <% } %>
+    </ul>
+  </div>
+</footer>
+
+</div><!-- l-wrap -->
+</body>
+</html>

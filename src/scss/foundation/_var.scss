@@ -1,0 +1,92 @@
+// breakpoint
+$breakSP: 768;
+$breakPC: 950;
+$breakpoints: (
+  'u-sp': 'print, screen and (max-width: #{$breakSP}px)',
+  'o-sp': 'print, screen and (min-width: #{$breakSP + 1}px)',
+  'u-pc': 'print, screen and (max-width: #{$breakPC}px)',
+  'sp-pc':
+    'print, screen and (max-width: #{$breakPC}px) and (min-width: #{$breakSP + 1}px)',
+  'o-pc': 'print, screen and (min-width: #{$breakPC + 1}px)',
+) !default;
+@mixin mq($breakpoint) {
+  @media #{inspect(map-get($breakpoints, $breakpoint))} {
+    @content;
+  }
+}
+
+// ie用
+@mixin ie {
+  @media all and (-ms-high-contrast: none) {
+    @content;
+  }
+}
+
+/*
+  @mixin
+---------------------------------------------------- */
+
+// Font Awesome（疑似要素）
+@mixin font_awesome_pseudo_ele($number) {
+  content: $number;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+// 親要素に対して上下左右中央よせ
+@mixin center_of_vertically_and_horizontally {
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// 上下中央よせ
+@mixin centered_vertically {
+  transform: translateY(-50%);
+  top: 50%;
+}
+
+// containerクラス
+@mixin container($pd, $width) {
+  padding: $pd 0;
+  width: $width;
+  margin: 0 auto;
+}
+
+/*
+  変数定義
+---------------------------------------------------- */
+
+// PATH
+$bgPath: '/assets/images/';
+
+// COLOR
+$colorWhite: #fff;
+$colorHeaderBg: rgba(0,0,0,0.6);
+$colorFooterIconBg: #222222;
+$colorTitleBorderGreen: #8cd790;
+$colorBlack: #5b5b5b;
+$colorBgGray: #ececec;
+$colorBdGray: solid 3px #dddddd;
+$colorIconHover: #77F9C3;
+
+// FONT
+$fontLetterSmall: 1.5rem;
+$fontLetterSmall: 15px;
+
+$fontLetterMiddle: 2rem;
+$fontLetterMiddle: 20px;
+
+$fontSemiTitle: 3rem;
+$fontSemiTitle: 30px;
+
+$fontSectionTitle: 5rem;
+$fontSectionTitle: 50px;
+
+$fontTitleLarge: 10rem;
+$fontTitleLarge: 100px;
+
+
+// WIDTH
+$widthMainContainer: 80%;
