@@ -4,10 +4,13 @@
   <small class="c-footer__copyright">&copy;Shoya Baba.All Rights Reserved 2020.</small>
   <div class="l-footer__container">
     <ul class="c-footer__contact">
-      <% var footer_contact=["fab fa-twitter", "far fa-envelope"]; %>
+      <% var footer_hover_text=['Twitter', 'GitHub']; %>
+      <% var footer_link=["https://twitter.com/babi_0105", "https://github.com/baby-0105"] %>
+      <% var footer_contact=["fab fa-twitter", "fab fa-github-alt"]; %> <!-- "far fa-envelope": メールアイコン -->
       <% for (var i=0; i < footer_contact.length; i++) { %>
         <li class="c-footer__contactList">
-          <a class="c-footer__contactLink" href="#">
+          <a class="c-footer__contactLink" href="<%= footer_link[i] %>" target="_blank">
+            <p class="c-footer__contact__hoverText"><%= footer_hover_text[i] %></p>
             <i class="<%= footer_contact[i] %>"></i>
           </a>
         </li>

@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" href="./assets/images/fav.png" />
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 <!--facebook用-->
 <meta property="og:title" content="shoya_baba_portfolio_TOP" />
 <meta property="og:description" content="トップのshoya_baba_portfolio" />
@@ -24,30 +25,36 @@
 <meta name="twitter:image" content="" /><!--絶対パスで記述-->
 
 <title>shoya_baba_portfolio_TOP</title>
-<link href="assets/stylesheets/bundle88ce9feef6791e708c85.css" rel="stylesheet"></head>
+<link href="assets/stylesheets/bundle495deb08a33ce0e16c01.css" rel="stylesheet"></head>
 <body>
 <div class="l-wrap">
 
 
 
-<header class="l-header">
-  <a class="c-header__titleLink"><h3 class="c-header__title">Portfolio</h3></a>
+<header class="l-header" id="header">
+  <a class="c-header__titleLink" id="to_top" href="#"><h3 class="c-header__title">Portfolio</h3></a>
+  <i class="fas fa-bars" id="hamburger"></i>
   <ul class="c-header__nav">
     
     
-      <a class="c-header__link" href="#">
+    
+      <a class="c-header__link--intro">
         <li class="c-header__list">About</li>
       </a>
     
-      <a class="c-header__link" href="#">
+      <a class="c-header__link--skills">
         <li class="c-header__list">Skills</li>
       </a>
     
-      <a class="c-header__link" href="#">
+      <a class="c-header__link--production">
+        <li class="c-header__list">Production</li>
+      </a>
+    
+      <a class="c-header__link--canDo">
         <li class="c-header__list">Can do.</li>
       </a>
     
-      <a class="c-header__link" href="#">
+      <a class="c-header__link--contact">
         <li class="c-header__list">Contact</li>
       </a>
     
@@ -65,14 +72,58 @@
 
   <div class="l-top-intro">
     <div class="l-top-intro__container">
-      <h1 class="p-top-intro__title">About</h1>
+      <h1 class="p-top-intro__title" id="appear_intro">About</h1>
       <div class="p-top-intro__info">
         <img class="p-top-intro__infoImg" src="/assets/images/face_icon.jpeg" alt="人物のアイコン">
         <div class="p-top-intro__infoDetail">
           <h3 class="p-top-intro__infoName">馬場　翔矢（Shoya Baba）</h3>
-          <p class="p-top-intro__infoText">
-            近畿大学 農学部卒業後（2019/3）→機械部品の中小企業へ就職。
-          </p>
+
+          
+          
+
+          
+            <div class="p-top-intro__infoTextBlock">
+              <p class="p-top-intro__infoText__peroid">1997/01/05</p>
+              <p class="p-top-intro__infoText__main">birthday</p>
+            </div>
+            <span class="p-top-intro__infoText__arrow">⇩</span>
+          
+            <div class="p-top-intro__infoTextBlock">
+              <p class="p-top-intro__infoText__peroid">2019/3</p>
+              <p class="p-top-intro__infoText__main">近畿大学 農学部卒業</p>
+            </div>
+            <span class="p-top-intro__infoText__arrow">⇩</span>
+          
+            <div class="p-top-intro__infoTextBlock">
+              <p class="p-top-intro__infoText__peroid">2019/4 ~ 2019/6</p>
+              <p class="p-top-intro__infoText__main">機械部品製造業、従事</p>
+            </div>
+            <span class="p-top-intro__infoText__arrow">⇩</span>
+          
+            <div class="p-top-intro__infoTextBlock">
+              <p class="p-top-intro__infoText__peroid">2019/6~</p>
+              <p class="p-top-intro__infoText__main">ゲストハウススタッフ、youtube投稿、ライティング、ヒッチハイクを経て、自分の就きたい仕事を模索</p>
+            </div>
+            <span class="p-top-intro__infoText__arrow">⇩</span>
+          
+            <div class="p-top-intro__infoTextBlock">
+              <p class="p-top-intro__infoText__peroid">2019/9</p>
+              <p class="p-top-intro__infoText__main">プログラミングを知って、webエンジニアへ向けての学習開始</p>
+            </div>
+            <span class="p-top-intro__infoText__arrow">⇩</span>
+          
+            <div class="p-top-intro__infoTextBlock">
+              <p class="p-top-intro__infoText__peroid">2020/4</p>
+              <p class="p-top-intro__infoText__main">東京でSES事業を行っているベンチャー企業に入社</p>
+            </div>
+            <span class="p-top-intro__infoText__arrow">⇩</span>
+          
+            <div class="p-top-intro__infoTextBlock">
+              <p class="p-top-intro__infoText__peroid">now</p>
+              <p class="p-top-intro__infoText__main">フロントエンドエンジニアを目指し日々、学習中</p>
+            </div>
+            <span class="p-top-intro__infoText__arrow">⇩</span>
+          
         </div>
       </div>
     </div>
@@ -80,7 +131,7 @@
 
   <div class="l-top-skills">
     <div class="l-top-skills__container">
-      <h1 class="p-top-skills__title">Skills</h1>
+      <h1 class="p-top-skills__title" id="appear_skills">Skills</h1>
       <p class="p-top-skills__text">扱うことの出来るスキルの一覧です。</p>
       <ul class="p-top-skills__detail">
         
@@ -88,31 +139,50 @@
           <li class="p-top-skills__detail__list">
             <img class="p-top-skills__detail__iconImg" src="/assets/images/skills/HTML.png" alt="HTMLのアイコン">
             <p class="p-top-skills__detail__text">HTML</p>
+            
+            
           </li>
         
           <li class="p-top-skills__detail__list">
             <img class="p-top-skills__detail__iconImg" src="/assets/images/skills/CSS.png" alt="CSSのアイコン">
             <p class="p-top-skills__detail__text">CSS</p>
+            
+              <div class="p-top-skills__hover">
+                <img src="/assets/images/skills/sass.png" class="p-top-skills__hoverImg">
+                <img src="/assets/images/skills/Bootstrap.png" class="p-top-skills__hoverImg">
+              </div>
+            
           </li>
         
           <li class="p-top-skills__detail__list">
             <img class="p-top-skills__detail__iconImg" src="/assets/images/skills/Ruby.png" alt="Rubyのアイコン">
             <p class="p-top-skills__detail__text">Ruby</p>
-          </li>
-        
-          <li class="p-top-skills__detail__list">
-            <img class="p-top-skills__detail__iconImg" src="/assets/images/skills/Bootstrap.png" alt="Bootstrapのアイコン">
-            <p class="p-top-skills__detail__text">Bootstrap</p>
+            
+              <div class="p-top-skills__hover">
+                <img src="/assets/images/skills/Rails.png" class="p-top-skills__hoverImg">
+              </div>
+            
           </li>
         
           <li class="p-top-skills__detail__list">
             <img class="p-top-skills__detail__iconImg" src="/assets/images/skills/JavaScript.png" alt="JavaScriptのアイコン">
             <p class="p-top-skills__detail__text">JavaScript</p>
+            
+              <div class="p-top-skills__hover">
+                <img src="/assets/images/skills/jQuery.png" class="p-top-skills__hoverImg">
+              </div>
+            
           </li>
         
           <li class="p-top-skills__detail__list">
-            <img class="p-top-skills__detail__iconImg" src="/assets/images/skills/jQuery.png" alt="jQueryのアイコン">
-            <p class="p-top-skills__detail__text">jQuery</p>
+            <img class="p-top-skills__detail__iconImg" src="/assets/images/skills/その他ツール.png" alt="その他ツールのアイコン">
+            <p class="p-top-skills__detail__text">その他ツール</p>
+            
+              <div class="p-top-skills__hover">
+                <img src="/assets/images/skills/npm.png" class="p-top-skills__hoverImg">
+                <img src="/assets/images/skills/webpack.png" class="p-top-skills__hoverImg">
+              </div>
+            
           </li>
         
       </ul>
@@ -122,45 +192,36 @@
 
   <div class="l-top-production">
     <div class="l-top-production__container">
-      <h1 class="p-top-production__title">Production</h1>
+      <h1 class="p-top-production__title" id="appear_production">Production</h1>
       <p class="p-top-production__text">これまでに制作した、模写・LPなどの制作物の一覧です。</p>
       <ul class="p-top-production__item">
         
         
+        
+        
+        
+        
           <li class="p-top-production__itemList">
-            <a href="#">
-              <img src="/assets/images/screen.piano.png" alt="作品の画像">
+            <a href="https://ukulele-match-0105.herokuapp.com/" target="_blank">
+              <img src="/assets/images/ukulele_match.png" alt="作品の画像">
               <div class="p-top-production__hover">
                 <div class="p-top-production__hover__container">
-                  <h3 class="p-top-production__hover__title">【】</h3>
-                  <p class="p-top-production__hover__period">〜週間</p>
-                  <p class="p-top-production__hover__langu">HTML、CSS</p>
+                  <h3>【マッチングアプリ】</h3>
+                  <p>・作成期間：1ヶ月</p>
+                  <p>・使用言語：HTML、CSS（Bootstrap）、Ruby、Rails</p>
                 </div>
               </div>
             </a>
           </li>
         
           <li class="p-top-production__itemList">
-            <a href="#">
-              <img src="/assets/images/screen.piano.png" alt="作品の画像">
+            <a href="https://piano" target="_blank">
+              <img src="/assets/images/piano.png" alt="作品の画像">
               <div class="p-top-production__hover">
                 <div class="p-top-production__hover__container">
-                  <h3 class="p-top-production__hover__title">【】</h3>
-                  <p class="p-top-production__hover__period">〜週間</p>
-                  <p class="p-top-production__hover__langu">HTML、CSS</p>
-                </div>
-              </div>
-            </a>
-          </li>
-        
-          <li class="p-top-production__itemList">
-            <a href="#">
-              <img src="/assets/images/screen.piano.png" alt="作品の画像">
-              <div class="p-top-production__hover">
-                <div class="p-top-production__hover__container">
-                  <h3 class="p-top-production__hover__title">【】</h3>
-                  <p class="p-top-production__hover__period">〜週間</p>
-                  <p class="p-top-production__hover__langu">HTML、CSS</p>
+                  <h3>【piano】</h3>
+                  <p>・作成期間：piano</p>
+                  <p>・使用言語：piano</p>
                 </div>
               </div>
             </a>
@@ -172,7 +233,7 @@
 
   <div class="l-top-canDo">
     <div class="l-top-canDo__container">
-      <h1 class="p-top-canDo__title">Can do.</h1>
+      <h1 class="p-top-canDo__title" id="appear_canDo">Can do.</h1>
       <p class="p-top-canDo__text">現在、お受けする事のできる案件についてご紹介させていただきます。</p>
       <ul class="p-top-canDo__works">
         
@@ -201,14 +262,14 @@
     </div>
   </div>
 
-  <div class="l-top-cantact">
+  <div class="l-top-contact">
     <div class="l-top-contact__container">
-      <h1 class="p-top-contact__title">Contact</h1>
+      <h1 class="p-top-contact__title" id="appear_contact">Contact</h1>
       <p class="p-top-contact__text">お問い合わせはこちら（もしくは、フッターのTwitterアイコンからダイレクトメッセージお願いします。）</p>
       <div class="p-top-contact__block">
-        <input class="p-top-contact__form" type="text" placeholder="姓" name="name">
-        <input class="p-top-contact__form" type="text" placeholder="名" name="name">
-        <input class="p-top-contact__form" type="text" placeholder="メールアドレス　" name="mail">
+        <input class="p-top-contact__form" type="text" placeholder="姓">
+        <input class="p-top-contact__form" type="text" placeholder="名">
+        <input class="p-top-contact__form" type="text" placeholder="メールアドレス">
         <textarea class="p-top-contact__inquiry" name="comment" placeholder="お問い合わせ内容を記載ください。"></textarea>
         <a class="p-top-contact__btn" href="#">送信</a>
       </div>
@@ -224,15 +285,19 @@
     <ul class="c-footer__contact">
       
       
+       <!-- "far fa-envelope": メールアイコン -->
+      
         <li class="c-footer__contactList">
-          <a class="c-footer__contactLink" href="#">
+          <a class="c-footer__contactLink" href="https://twitter.com/babi_0105" target="_blank">
+            <p class="c-footer__contact__hoverText">Twitter</p>
             <i class="fab fa-twitter"></i>
           </a>
         </li>
       
         <li class="c-footer__contactList">
-          <a class="c-footer__contactLink" href="#">
-            <i class="far fa-envelope"></i>
+          <a class="c-footer__contactLink" href="https://github.com/baby-0105" target="_blank">
+            <p class="c-footer__contact__hoverText">GitHub</p>
+            <i class="fab fa-github-alt"></i>
           </a>
         </li>
       
@@ -241,5 +306,77 @@
 </footer>
 
 </div><!-- l-wrap -->
-<script type="text/javascript" src="assets/javascripts/bundle88ce9feef6791e708c85.js"></script></body>
+<script type="text/javascript" src="assets/javascripts/bundle495deb08a33ce0e16c01.js"></script></body>
 </html>
+
+<script>
+  $(function() {
+    $("#to_top").click(function() { // ページの一番上までスクロールさせます。
+      $('body, html').animate({scrollTop: 0}, 300, 'linear');
+    });
+
+    // SP用：ハンバーガーのトグルアクション
+    $(document).on('click', function(e) {
+      if($(e.target).is('#hamburger')) {
+        $('.c-header__nav').toggleClass('c-header__is-active');
+      } else if($(e.target).is('*')) {
+        $('.c-header__nav').removeClass('c-header__is-active');
+      }
+    });
+
+    // ボタンを押したら、指定の位置までスクロール
+    var header_height = $('.l-header').innerHeight(); //innerHeight()は、paddingも含めた高さ
+    $(`.c-header__link--intro`).click(function(){
+      $("html,body").animate({scrollTop: $(`.l-top-intro`).offset().top - header_height});
+    });
+
+    $(`.c-header__link--skills`).click(function(){
+      $("html,body").animate({scrollTop: $(`.l-top-skills`).offset().top - header_height});
+    });
+
+    $(`.c-header__link--production`).click(function(){
+      $("html,body").animate({scrollTop: $(`.l-top-production`).offset().top - header_height});
+    });
+
+    $(`.c-header__link--canDo`).click(function(){
+      $("html,body").animate({scrollTop: $(`.l-top-canDo`).offset().top - header_height});
+    });
+
+    $(`.c-header__link--contact`).click(function(){
+      $("html,body").animate({scrollTop: $(`.l-top-contact`).offset().top - header_height});
+    });
+
+    var title=['intro', 'skills', 'production', 'canDo', 'contact'];
+    for (var i=0; i < title.length; i++) {
+
+      // $(`.c-header__link--${title[i]}`).click(function(){
+      //   $("html,body").animate({scrollTop: $(`.l-top-${title[i]}`).offset().top - header_height});
+      // });
+
+      // // windowスクロールで、タイトルテキスト出現
+      // $(window).scroll(function() {
+      //   $(`#appear_${title[i]}`).each(function(){
+      //     var textPosition = $(this).offset().top;
+      //     var scroll = $(window).scrollTop();
+      //     var windowHeight = $(window).height();
+      //     if (scroll > textPosition - windowHeight + 100){
+      //       $(`.p-top-${title[i]}__title`).css('color', 'red'); // 要素が見えたときの動き
+      //       $(`.p-top-${title[i]}__title`).css('color', 'red'); // 要素が見えたときの動き
+      //     }
+      //   });
+      // });
+
+      // $(window).scroll(function(){
+      //   var top = $(`#appear_${title[i]}`).offset().top; // ターゲットの位置取得
+      //   var position = top - $(window).height();  // 発火させたい位置
+      //   if($(window).scrollTop() > position){
+      //     $(`.p-top-${title[i]}__title:before`).css('width', '50%'); // 要素が見えたときの動き
+      //     $(`.p-top-${title[i]}__title:after`).css('width', '50%'); // 要素が見えたときの動き
+      //   }else{
+      //     $(`.p-top-${title[i]}__title:after`).css('width', '0'); // それ以外の動き
+      //     $(`.p-top-${title[i]}__title:after`).css('width', '0'); // それ以外の動き
+      //   }
+      // })
+    }
+  });
+</script>

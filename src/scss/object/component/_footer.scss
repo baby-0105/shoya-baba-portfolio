@@ -13,9 +13,16 @@
 }
 
 .c-footer__contactList {
-  &:first-child {
+  &:not(:last-child){
     margin-right: 10px;
   }
+}
+
+// hover テキスト
+.c-footer__contact__hoverText {
+  position: relative;
+  top: 7px;
+  display: none;
 }
 
 .c-footer__contactList i {
@@ -40,6 +47,10 @@
 
     i {
       color: $colorFooterIconBg;
+    }
+
+    .c-footer__contact__hoverText {
+      display: block;
     }
   }
 }

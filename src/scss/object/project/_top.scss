@@ -6,6 +6,17 @@
   @mixin section
 ---------------------------------------------------- */
 
+@mixin section_title_pseudo_ele {
+  content: '';
+  height: 100%;
+  width: 0;
+  bottom: 0;
+  transition: all 0.5s ease;
+  border-top: solid 2px $colorLightGreen;
+  border-bottom: solid 2px $colorLightGreen;
+  position: absolute;
+}
+
 @mixin section_title {
   font-family: 'Homemade Apple', cursive;
   font-size: $fontSectionTitle;
@@ -13,8 +24,24 @@
   margin-bottom: 50px;
   padding: 10px 0;
   text-align: center;
-  border-top: solid 1px $colorTitleBorderGreen;
-  border-bottom: solid 1px $colorTitleBorderGreen;
+  position: relative;
+
+  &:before {
+    @include section_title_pseudo_ele;
+    left: 50%;
+  }
+
+  &:after {
+    @include section_title_pseudo_ele;
+    right: 50%;
+  }
+
+  // &:hover {
+  //   &:before,
+  //   &:after {
+  //     width: 50%;
+  //   }
+  // }
 
   @include mq(u-sp) {
     font-size: $fontSemiTitle;
@@ -74,17 +101,20 @@
   width: 35%;
   height: 35%;
   border-radius: 50%;
-  box-shadow: 0 0 0 10px $colorTitleBorderGreen;
-  margin-right: 30px;
+  box-shadow: 0 0 0 10px $colorLightGreen;
 
   @include mq(u-sp) {
-    margin-right: 0;
     margin-bottom: 30px;
   }
 }
 
 .p-top-intro__infoDetail {
   text-align: center;
+  width: 50%;
+
+  @include mq(u-sp) {
+    width: 100%;
+  }
 }
 
 .p-top-intro__infoName {
@@ -96,8 +126,26 @@
   }
 }
 
-.p-top-intro__infoText {
+.p-top-intro__infoTextBlock {
   font-size: $fontLetterMiddle;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+
+  @include mq(u-sp) {
+    font-size: $fontLetterSmall;
+  }
+}
+
+.p-top-intro__infoText__peroid {
+  margin-right: 30px;
+}
+
+.p-top-intro__infoText__arrow {
+  font-size: $fontLetterMiddle;
+  margin-bottom: 10px;
+  display: block;
 
   @include mq(u-sp) {
     font-size: $fontLetterSmall;
@@ -122,12 +170,24 @@
   justify-content: space-around;
   margin: 0 auto;
   width: 90%;
+  height: 100%;
 }
 
 .p-top-skills__detail__list {
   text-align: center;
   width: 100px;
-  height: 100px;
+  height: 200px;
+
+  &:hover {
+    transform: scale(1.2);
+    transition: transform 1.5s;
+    border-radius: 50%;
+
+    .p-top-skills__hover {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
 }
 
 .p-top-skills__detail__iconImg {
@@ -139,6 +199,35 @@
 .p-top-skills__detail__text {
   font-size: $fontLetterSmall;
   margin-top: 10px;
+}
+
+.p-top-skills__hover {
+  display: none;
+
+  background-color: $colorSuperLightBlack;
+  border-radius: 10px;
+  width: 150px;
+  padding: 10px;
+  position: absolute;
+  bottom: 30px;
+  left: -25%;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 15px 10px;
+    top: -15px;
+    border-color: transparent transparent $colorSuperLightBlack transparent;
+  }
+}
+
+.p-top-skills__hoverImg {
+  width: 50px;
+  height: 50px;
+  object-fit: contain; // 画像比率保つ
 }
 
 /*
@@ -307,6 +396,12 @@
 	padding: 10px;
   margin: 0 auto;
   font-size: $fs;
+  background-color: $colorLightBlack;
+  color: $colorWhite;
+
+  &::placeholder {
+    color: $colorWhite;
+  }
 }
 
 .p-top-contact__form {

@@ -15,19 +15,60 @@
   display: flex;
 
   @include mq(u-sp) {
-    display: none;
+    transform: translateX(100vw);
+    transition: all .3s linear;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $colorSuperLightGreen;
+    color: $colorFooterIconBg;
+    width: 50%;
+    height: 100vh;
+    font-size: $fontSemiTitle;
   }
 }
 
-.c-header__link {
-  margin-left: 20px;
+.fa-bars {
+  display: none;
 
-  &:first-child {
-    margin-left: 0;
+  @include mq(u-sp) {
+    display: block;
+    font-size: 35px;
+    z-index: 2;
   }
+}
 
-  &:hover {
+// ハンバーガーメニュー：トグル用クラス
+.c-header__is-active {
+  @include mq(u-sp) {
+    transform: translateX(0);
+  }
+}
+
+.c-header__link--intro,
+.c-header__link--skills,
+.c-header__link--production,
+.c-header__link--canDo {
+  margin-right: 20px;
+
+  @include mq(u-sp) {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.c-header__link--intro,
+.c-header__link--skills,
+.c-header__link--production,
+.c-header__link--canDo,
+.c-header__link--contact {
+   &:hover {
     transform: scale(1.2);
     transition: transform 1s;
+    color: $colorLightGreen;
   }
 }

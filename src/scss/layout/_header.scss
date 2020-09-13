@@ -4,7 +4,7 @@
 
 .l-header {
   font-family: 'Homemade Apple', cursive;
-  background-color: $colorHeaderBg;
+  background-color: $colorLightBlack;
   color: $colorWhite;
   font-size: $fontLetterMiddle;
   padding: 20px;
@@ -13,12 +13,4 @@
   position: fixed;
   z-index: 2;
   width: 100%;
-
-  @include mq(u-sp) {
-    &:after {
-      @include font_awesome_pseudo_ele('\f0c9');
-
-      font-size: 35px;
-    }
-  }
 }

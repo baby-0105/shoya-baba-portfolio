@@ -1,11 +1,13 @@
 <% var img_path='/assets/images/'; %>
 
-<header class="l-header">
-  <a class="c-header__titleLink"><h3 class="c-header__title">Portfolio</h3></a>
+<header class="l-header" id="header">
+  <a class="c-header__titleLink" id="to_top" href="#"><h3 class="c-header__title">Portfolio</h3></a>
+  <i class="fas fa-bars" id="hamburger"></i>
   <ul class="c-header__nav">
-    <% var header_nav=["About", "Skills", "Can do.", "Contact"]; %>
+    <% var header_nav=["About", "Skills","Production" ,"Can do.", "Contact"]; %>
+    <% var link_title=['intro', 'skills', 'production', 'canDo', 'contact']; %>
     <% for (var i=0; i < header_nav.length; i++) { %>
-      <a class="c-header__link" href="#">
+      <a class="c-header__link--<%= link_title[i] %>">
         <li class="c-header__list"><%= header_nav[i] %></li>
       </a>
     <% } %>
