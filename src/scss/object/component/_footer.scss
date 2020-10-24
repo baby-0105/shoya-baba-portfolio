@@ -32,6 +32,13 @@
   font-size: 30px;
 }
 
+.c-footer__contact__hoverIcon {
+  @include center_of_vertically_and_horizontally;
+
+  font-size: 20px;
+  color: $colorWhite;
+}
+
 .c-footer__contactLink {
   width: 70px;
 	height: 70px;

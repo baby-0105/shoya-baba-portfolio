@@ -42,7 +42,7 @@ src/ejs/template/_head %>
       <h1 class="p-top-skills__title" id="appear_skills">Skills</h1>
       <p class="p-top-skills__text">扱うことの出来るスキルの一覧です。</p>
       <ul class="p-top-skills__detail">
-        <% var skills=["HTML", "CSS", "Ruby", "JavaScript", "その他ツール"]; %>
+        <% var skills=["HTML", "CSS", "Ruby", "JavaScript", "tool"]; %>
         <% for (var i=0; i < skills.length; i++) { %>
           <li class="p-top-skills__detail__list">
             <img class="p-top-skills__detail__iconImg" src="<%= img_path %>skills/<%= skills[i] %>.png" alt="<%= skills[i] %>のアイコン">
@@ -63,7 +63,7 @@ src/ejs/template/_head %>
               </div>
             <% } else { %>
               <div class="p-top-skills__hover">
-                <img src="<%= img_path %>skills/npm.png" class="p-top-skills__hoverImg">
+                <!--<img src="<%= img_path %>skills/npm.png" class="p-top-skills__hoverImg">-->
                 <img src="<%= img_path %>skills/webpack.png" class="p-top-skills__hoverImg">
               </div>
             <% } %>
@@ -77,22 +77,36 @@ src/ejs/template/_head %>
   <div class="l-top-production">
     <div class="l-top-production__container">
       <h1 class="p-top-production__title" id="appear_production">Production</h1>
-      <p class="p-top-production__text">これまでに制作した、模写・LPなどの制作物の一覧です。</p>
+      <p class="p-top-production__text">
+        これまでに制作した、模写・LP・などの制作物の一覧です。<br>
+        ソースコードについては、
+      <a class="p-top-production__text__link" href="https://github.com/baby-0105" target="_blank">「GitHub」</a>
+        から確認できる様になっております。
+      </p>
       <ul class="p-top-production__item">
-        <% var production_url=["ukulele-match-0105.herokuapp.com/", "piano"]; %>
-        <% var production=["ukulele_match", "piano"]; %>
-        <% var production_title=["マッチングアプリ", "piano"]; %>
-        <% var production_period=["1ヶ月", "piano"]; %>
-        <% var production_language=["HTML、CSS（Bootstrap）、Ruby、Rails", "piano"]; %>
+        <% var production_url=
+          ["ukulele-match-0105.herokuapp.com/", "sample-birthday.shoyababa.vercel.app",
+          "baby-0105.github.io/JS_numeron/html/home.html",
+          "baby-0105.github.io/JS_numeron/html/home.html"]
+        ; %>
+        <% var production=["ukulele_match", "sample-birthday", "numeron", "portfolio"]; %>
+        <% var production_title=["マッチングアプリ", "webレター", "JSで作るNumerOn", "ポートフォリオサイト"]; %>
+        <% var production_language=
+          ["HTML、Bootstrap、Ruby、Rails",
+           "HTML、Sass、jQuery、その他（webpack、yarn）",
+           "HTML、CSS、JavaScript",
+           "HTML、Sass、jQuery、その他（webpack、yarn）"];
+        %>
+        <% var production_period=["1ヶ月", "1ヶ月", "2週間", "1ヶ月"]; %>
         <% for (var i=0; i < production.length; i++) { %>
           <li class="p-top-production__itemList">
             <a href="https://<%= production_url[i] %>" target="_blank">
               <img src="<%= img_path %><%= production[i] %>.png" alt="作品の画像">
               <div class="p-top-production__hover">
                 <div class="p-top-production__hover__container">
-                  <h3>【<%= production_title[i] %>】</h3>
-                  <p>・作成期間：<%= production_period[i] %></p>
-                  <p>・使用言語：<%= production_language[i] %></p>
+                  <h3 class="p-top-production__hoverTitle">【<%= production_title[i] %>】</h3>
+                  <p>＜使用言語＞：<%= production_language[i] %></p>
+                  <p>＜作成期間＞：<%= production_period[i] %></p>
                 </div>
               </div>
             </a>
@@ -108,7 +122,7 @@ src/ejs/template/_head %>
       <p class="p-top-canDo__text">現在、お受けする事のできる案件についてご紹介させていただきます。</p>
       <ul class="p-top-canDo__works">
         <% var works=["1", "2", "3"]; %>
-        <% var work_title=["Webページ・LP制作", "2", "3"]; %>
+        <% var work_title=["Webページ・LP制作", "レスポンシブ対応", "3"]; %>
         <% var work_text=
           ["LP作成・コーディングなどのWebサイト制作をお受けします。",
           "スマホ・タブレット・パソコン、などマルチデバイスにも対応いたします。どのデバイスであっても見やすい表示へと切り替えさせます。",
@@ -181,35 +195,6 @@ src/ejs/template/_head %>
 
     var title=['intro', 'skills', 'production', 'canDo', 'contact'];
     for (var i=0; i < title.length; i++) {
-
-      // $(`.c-header__link--${title[i]}`).click(function(){
-      //   $("html,body").animate({scrollTop: $(`.l-top-${title[i]}`).offset().top - header_height});
-      // });
-
-      // // windowスクロールで、タイトルテキスト出現
-      // $(window).scroll(function() {
-      //   $(`#appear_${title[i]}`).each(function(){
-      //     var textPosition = $(this).offset().top;
-      //     var scroll = $(window).scrollTop();
-      //     var windowHeight = $(window).height();
-      //     if (scroll > textPosition - windowHeight + 100){
-      //       $(`.p-top-${title[i]}__title`).css('color', 'red'); // 要素が見えたときの動き
-      //       $(`.p-top-${title[i]}__title`).css('color', 'red'); // 要素が見えたときの動き
-      //     }
-      //   });
-      // });
-
-      // $(window).scroll(function(){
-      //   var top = $(`#appear_${title[i]}`).offset().top; // ターゲットの位置取得
-      //   var position = top - $(window).height();  // 発火させたい位置
-      //   if($(window).scrollTop() > position){
-      //     $(`.p-top-${title[i]}__title:before`).css('width', '50%'); // 要素が見えたときの動き
-      //     $(`.p-top-${title[i]}__title:after`).css('width', '50%'); // 要素が見えたときの動き
-      //   }else{
-      //     $(`.p-top-${title[i]}__title:after`).css('width', '0'); // それ以外の動き
-      //     $(`.p-top-${title[i]}__title:after`).css('width', '0'); // それ以外の動き
-      //   }
-      // })
     }
   });
 </script>
