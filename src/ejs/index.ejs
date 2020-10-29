@@ -6,23 +6,33 @@ src/ejs/template/_head %>
 <main class="l-top">
   <div class="l-top-siteImage">
     <div class="p-top-siteImage__textArea">
-      <h2 class="p-top-siteImage__title">PortFolio<h2>
-      <h2 class="p-top-siteImage__name">Shoya Baba<h2>
+      <h2 class="p-top-siteImage__title">
+        <span class="p-top-siteImage__titleWord">PortFolio</span>
+      </h2>
+      <h2 class="p-top-siteImage__name">
+        <% myName=['S', 'h', 'o', 'y', 'a', 'B', 'a', 'b', 'a'] %>
+        <% for (var i=0; i < myName.length; i++) { %>
+          <span class="p-top-siteImage__nameWord"><%= myName[i] %></span>
+        <% } %>
+      </h2>
     </div>
   </div>
 
   <div class="l-top-intro">
     <div class="l-top-intro__container">
-      <h1 class="p-top-intro__title" id="appear_intro">About</h1>
+      <h1 class="p-top-intro__title" id="appear_intro">
+        <span class="p-top-intro__titleWord">About</span>
+      </h1>
       <div class="p-top-intro__info">
         <img class="p-top-intro__infoImg" src="<%= img_path %>face_icon.jpeg" alt="人物のアイコン">
         <div class="p-top-intro__infoDetail">
           <h3 class="p-top-intro__infoName">馬場　翔矢（Shoya Baba）</h3>
 
-          <% var intro_period=['1997/01/05', '2019/3', '2019/4 ~ 2019/6', '2019/6~', '2019/9', '2020/4', 'now']; %>
+          <% var intro_period=['1997/01/05', '2019/3', '2019/4 ~ 2019/6', '2019/6~', '2019/9', '2020/4', '2020/4~9', 'now']; %>
           <% var intro_text=
-            ['birthday', '近畿大学 農学部卒業', '機械部品製造業、従事', 'ゲストハウススタッフ、youtube投稿、ライティング、ヒッチハイクを経て、自分の就きたい仕事を模索',
-             'プログラミングを知って、webエンジニアへ向けての学習開始', '東京でSES事業を行っているベンチャー企業に入社', 'フロントエンドエンジニアを目指し日々、学習中'];
+            ['生まれました。', '近畿大学 農学部卒業', '機械部品製造業、従事', 'ゲストハウススタッフ、youtube投稿、ライティング、ヒッチハイクを経て、自分の就きたい仕事を模索',
+             'プログラミングを知って、webエンジニアへ向けての学習開始', '東京でSES事業を行っているベンチャー企業に入社', 'コロナウイルスの関係で一時、同社で大阪のコールセンター業務に従事',
+             'フロントエンドエンジニアを目指し日々、学習中'];
            %>
 
           <% for (var i=0; i < intro_text.length; i++) { %>
@@ -39,7 +49,9 @@ src/ejs/template/_head %>
 
   <div class="l-top-skills">
     <div class="l-top-skills__container">
-      <h1 class="p-top-skills__title" id="appear_skills">Skills</h1>
+      <h1 class="p-top-skills__title" id="appear_skills">
+        <span class="p-top-skills__titleWord">Skills</span>
+      </h1>
       <p class="p-top-skills__text">扱うことの出来るスキルの一覧です。</p>
       <ul class="p-top-skills__detail">
         <% var skills=["HTML", "CSS", "Ruby", "JavaScript", "tool"]; %>
@@ -76,7 +88,9 @@ src/ejs/template/_head %>
 
   <div class="l-top-production">
     <div class="l-top-production__container">
-      <h1 class="p-top-production__title" id="appear_production">Production</h1>
+      <h1 class="p-top-production__title" id="appear_production">
+        <span class="p-top-production__titleWord">Production</span>
+      </h1>
       <p class="p-top-production__text">
         これまでに制作した、模写・LP・などの制作物の一覧です。<br>
         ソースコードについては、
@@ -87,7 +101,7 @@ src/ejs/template/_head %>
         <% var production_url=
           ["ukulele-match-0105.herokuapp.com/", "sample-birthday.shoyababa.vercel.app",
           "baby-0105.github.io/JS_numeron/html/home.html",
-          "baby-0105.github.io/JS_numeron/html/home.html"]
+          "portfolio.shoyababa.vercel.app/"]
         ; %>
         <% var production=["ukulele_match", "sample-birthday", "numeron", "portfolio"]; %>
         <% var production_title=["マッチングアプリ", "webレター", "JSで作るNumerOn", "ポートフォリオサイト"]; %>
@@ -118,7 +132,9 @@ src/ejs/template/_head %>
 
   <div class="l-top-canDo">
     <div class="l-top-canDo__container">
-      <h1 class="p-top-canDo__title" id="appear_canDo">Can do.</h1>
+      <h1 class="p-top-canDo__title" id="appear_canDo">
+        <span class="p-top-canDo__titleWord">Can do.</span>
+      </h1>
       <p class="p-top-canDo__text">現在、お受けする事のできる案件についてご紹介させていただきます。</p>
       <ul class="p-top-canDo__works">
         <% var works=["1", "2", "3"]; %>
@@ -141,7 +157,9 @@ src/ejs/template/_head %>
 
   <div class="l-top-contact">
     <div class="l-top-contact__container">
-      <h1 class="p-top-contact__title" id="appear_contact">Contact</h1>
+      <h1 class="p-top-contact__title" id="appear_contact">
+        <span class="p-top-contact__titleWord">Contact</span>
+      </h1>
       <p class="p-top-contact__text">お問い合わせはこちら（もしくは、フッターのTwitterアイコンからダイレクトメッセージお願いします。）</p>
       <div class="p-top-contact__block">
         <input class="p-top-contact__form" type="text" placeholder="姓">
@@ -158,7 +176,7 @@ src/ejs/template/_head %>
 
 <script>
   $(function() {
-    $("#to_top").click(function() { // ページの一番上までスクロールさせます。
+    $("#to_top").on('click', function() { // ページの一番上までスクロールさせます。
       $('body, html').animate({scrollTop: 0}, 300, 'linear');
     });
 
@@ -172,29 +190,50 @@ src/ejs/template/_head %>
     });
 
     // ボタンを押したら、指定の位置までスクロール
-    var header_height = $('.l-header').innerHeight(); //innerHeight()は、paddingも含めた高さ
-    $(`.c-header__link--intro`).click(function(){
-      $("html,body").animate({scrollTop: $(`.l-top-intro`).offset().top - header_height});
+    let headerHeight = $('.l-header').innerHeight(); //innerHeight()は、paddingも含めた高さ
+
+    $(`.c-header__link--intro`).on('click', function() {
+      $("html, body").animate({scrollTop: $(`.l-top-intro`).offset().top - headerHeight});
     });
 
-    $(`.c-header__link--skills`).click(function(){
-      $("html,body").animate({scrollTop: $(`.l-top-skills`).offset().top - header_height});
+    $(`.c-header__link--skills`).on('click', function() {
+      $("html, body").animate({scrollTop: $(`.l-top-skills`).offset().top - headerHeight});
     });
 
-    $(`.c-header__link--production`).click(function(){
-      $("html,body").animate({scrollTop: $(`.l-top-production`).offset().top - header_height});
+    $(`.c-header__link--production`).on('click', function() {
+      $("html, body").animate({scrollTop: $(`.l-top-production`).offset().top - headerHeight});
     });
 
-    $(`.c-header__link--canDo`).click(function(){
-      $("html,body").animate({scrollTop: $(`.l-top-canDo`).offset().top - header_height});
+    $(`.c-header__link--canDo`).on('click', function() {
+      $("html, body").animate({scrollTop: $(`.l-top-canDo`).offset().top - headerHeight});
     });
 
-    $(`.c-header__link--contact`).click(function(){
-      $("html,body").animate({scrollTop: $(`.l-top-contact`).offset().top - header_height});
+    $(`.c-header__link--contact`).on('click', function() {
+      $("html, body").animate({scrollTop: $(`.l-top-contact`).offset().top - headerHeight});
     });
 
-    var title=['intro', 'skills', 'production', 'canDo', 'contact'];
-    for (var i=0; i < title.length; i++) {
-    }
+    // なぜか、$(`.l-top-${title[i]}`).offset().topの部分でエラー
+    // let title=['intro', 'skills', 'production', 'canDo', 'contact'];
+    // for (var i=0; i < title.length; i++) {
+    //   $(`.c-header__link--${title[i]}`).on('click', function() {
+    //     $("html, body").animate({scrollTop: $(`.l-top-${title[i]}`).offset().top - headerHeight});
+    //   });
+    // }
+
+    // スクロール：テキスト出現
+    $(window).scroll(function() {
+      let title=['intro', 'skills', 'production', 'canDo', 'contact'];
+      for (var i=0; i < title.length; i++) {
+        $(`.p-top-${title[i]}__titleWord`).each(function() {
+          let scrollPosi = $(window).scrollTop(),
+              windowHeight = $(window).height(),
+              textPosi = $(this).offset().top;
+
+          if (scrollPosi > textPosi - windowHeight + 100){
+            $(this).css('animation', 'slideInToDown 1.5s forwards'); // 速度：addClass、removeClass > .css()
+          }
+        });
+      }
+    });
   });
 </script>

@@ -3,8 +3,18 @@
 ---------------------------------------------------- */
 
 /*
-  @mixin section
+  @mixin & @keyframes
 ---------------------------------------------------- */
+
+@mixin siteImageText($space) {
+  font-size: $fontTitleLarge;
+  letter-spacing: $space;
+  overflow: hidden;
+
+  @include mq(u-sp) {
+    font-size: $fontSectionTitle;
+  }
+}
 
 @mixin section_title_pseudo_ele {
   content: '';
@@ -17,6 +27,12 @@
   position: absolute;
 }
 
+@mixin section_title_word {
+  opacity: 0;
+  display: inline-block; // spanタグ(インライン要素)→移動できないため、ブロック要素に。
+  background: linear-gradient(transparent 60%, $colorLightGreen); // 線形グラデーション：上60%透明,その他緑
+}
+
 @mixin section_title {
   font-family: 'Homemade Apple', cursive;
   font-size: $fontSectionTitle;
@@ -25,6 +41,7 @@
   padding: 10px 0;
   text-align: center;
   position: relative;
+  overflow: hidden;
 
   &:before {
     @include section_title_pseudo_ele;
@@ -54,6 +71,61 @@
   margin-bottom: 30px;
 }
 
+@keyframes slideInToSide {
+  0% {
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@mixin siteImageNameAnim($time) {
+  animation: slideInToSide 0.5s forwards;
+  animation-delay: $time;
+}
+
+@keyframes slideInToDown {
+  0% {
+    transform: translateY(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes boundWord {
+  0%{
+    transform: translateY(-400px);
+  }
+
+  20% {
+    transform: rotate(0deg);
+  }
+
+  40%{
+    transform: rotate(-8deg);
+  }
+
+  60% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(-3deg);
+  }
+}
+
+@mixin boundWordAnim($time) {
+  animation: boundWord 1.5s forwards;
+  animation-delay: $time;
+}
+
 /*
   .p-top-siteImage
 ---------------------------------------------------- */
@@ -66,16 +138,30 @@
 }
 
 .p-top-siteImage__title {
-  @extend .p-top-siteImage__name;
+  @include siteImageText(0);
+}
 
-  transform: rotate(-5deg);
+.p-top-siteImage__titleWord {
+  @include boundWordAnim(1.0s);
+  opacity: 0;
+  display: inline-block; // spanタグ(インライン要素)→移動できないため、ブロック要素に。
+  transform-origin:left bottom; // 回転軸の場所
 }
 
 .p-top-siteImage__name {
-  font-size: $fontTitleLarge;
+  @include siteImageText(-5px);
+}
 
-  @include mq(u-sp) {
-    font-size: $fontSectionTitle;
+.p-top-siteImage__nameWord {
+  display: inline-block; // spanタグ(インライン要素)→移動できないため、ブロック要素に。
+  opacity: 0;
+
+  // 名前：テキストフェードイン
+  $times: 0.1s, 0.2s ,0.3s, 0.4s, 0.5s, 0.6s, 0.7s, 0.8s, 0.9s;
+  @each $time in $times {
+    $index: index($times, $time); // $timesのindex番号取得
+
+    &:nth-child(#{$index}) { @include siteImageNameAnim(#{$time}); }
   }
 }
 
@@ -85,6 +171,10 @@
 
 .p-top-intro__title {
   @include section_title;
+}
+
+.p-top-intro__titleWord {
+  @include section_title_word;
 }
 
 .p-top-intro__info {
@@ -164,6 +254,10 @@
   @include section_title;
 }
 
+.p-top-skills__titleWord {
+  @include section_title_word;
+}
+
 .p-top-skills__text {
   @include section_text;
 }
@@ -240,6 +334,10 @@
 
 .p-top-production__title {
   @include section_title;
+}
+
+.p-top-production__titleWord {
+  @include section_title_word;
 }
 
 .p-top-production__text {
@@ -328,6 +426,10 @@
   @include section_title;
 }
 
+.p-top-canDo__titleWord {
+  @include section_title_word;
+}
+
 .p-top-canDo__text {
   @include section_text;
 }
@@ -397,6 +499,10 @@
 
 .p-top-contact__title {
   @include section_title;
+}
+
+.p-top-contact__titleWord {
+  @include section_title_word;
 }
 
 .p-top-contact__text {
