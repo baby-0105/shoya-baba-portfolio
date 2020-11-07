@@ -198,19 +198,18 @@ src/ejs/template/_head %>
       <h1 class="p-top-canDo__title" id="appear_canDo">
         <span class="p-top-canDo__titleWord" id="canDoTitleWord">Can do.</span>
       </h1>
-      <p class="p-top-canDo__text">現在、お受けする事のできる案件についてご紹介させていただきます。</p>
+      <p class="p-top-canDo__text">現在、お受けする事のできる案件・仕事内容についてご紹介させていただきます。</p>
       <ul class="p-top-canDo__works">
         <% var works=['1', '2', '3']; %>
-        <% var skills=['HTML', 'CSS', 'Ruby', 'JavaScript', 'tool']; %>
-        <% var work_title=["Webページ・LP制作", "レスポンシブ対応", "3"]; %>
-        <% var work_text=
-          ["LP作成・コーディングなどのWebサイト制作をお受けします。",
-          "スマホ・タブレット・パソコン、などマルチデバイスにも対応いたします。どのデバイスであっても見やすい表示へと切り替えさせます。",
-          ""];
-        %>
+        <% var work_title=['Webページ・LP制作', 'レスポンシブ対応', 'WordPress案件']; %>
+        <% var work_text=[
+          'LP作成・コーディングなどのWebサイト制作をお受けします。',
+          'スマホ・タブレット・パソコン、などマルチデバイスにも対応いたします。どのデバイスであっても見やすい表示へと切り替えさせます。',
+          'WordPressのテーマを使用したWebサイト・Webページの作成'
+        ]; %>
         <% for (var i=0; i < works.length; i++) { %>
           <li class="p-top-canDo__work">
-            <img class="p-top-canDo__workIcon" src="<%= img_path %>skills/<%= skills[i] %>.png" alt="案件イメージアイコン">
+            <img class="p-top-canDo__workIcon" src="<%= img_path %>cando_img<%= works[i] %>.png" alt="案件イメージアイコン">
             <h3 class="p-top-canDo__workTitle"><%= work_title[i] %></h3>
             <p class="p-top-canDo__workText"><%= work_text[i] %></p>
           </li>
