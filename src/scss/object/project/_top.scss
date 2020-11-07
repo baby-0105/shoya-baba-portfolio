@@ -282,6 +282,34 @@
       margin-top: 100px;
     }
   }
+
+  @mixin fontAwesomeArrow($number, $color) {
+    @include font_awesome_pseudo_ele($number);
+    @include centered_vertically;
+
+    color: $color;
+    position: absolute;
+  }
+
+  // detailList__titleのnth-childまとめ
+  $colors: #6495ed, #eb8686, #8cd790;
+  @each $color in $colors {
+    $index: index($colors, $color);
+
+    &:nth-child(#{$index}) > .p-top-skills__detailList__title { // liの孫要素なのでこの記述
+      &:before {
+        @include fontAwesomeArrow('\f101', $color);
+
+        left: 50px;
+      }
+
+      &:after {
+        @include fontAwesomeArrow('\f100', $color);
+
+        right: 50px;
+      }
+    }
+  }
 }
 
 .p-top-skills__detailList__item {
@@ -299,6 +327,7 @@
   font-size: $fontSemiTitle;
   margin-bottom: 30px;
   text-align: center;
+  position: relative;
 }
 
 .p-top-skills__detailList__itemUnit {
@@ -538,6 +567,11 @@
   font-size: $fontLetterVerySmall;
 }
 
+.p-top-production__detailList__urlText {
+  &:nth-of-type(1) {
+    margin-bottom: 10px;
+  }
+}
 .p-top-production__detailList__urlLink {
   color: $colorLinkBlue;
   display: inline-block;
