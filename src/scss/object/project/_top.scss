@@ -11,7 +11,7 @@
   letter-spacing: $space;
   overflow: hidden;
 
-  @include mq(u-sp) {
+  @include mq(u-pc) {
     font-size: $fontSectionTitle;
   }
 }
@@ -53,16 +53,7 @@
     right: 50%;
   }
 
-  // &:hover {
-  //   &:before,
-  //   &:after {
-  //     width: 50%;
-  //   }
-  // }
-
-  @include mq(u-sp) {
-    font-size: $fontSemiTitle;
-  }
+  @include mq(u-sp) { font-size: $fontSemiTitle; }
 }
 
 @mixin section_text {
@@ -72,9 +63,7 @@
 }
 
 @keyframes slideInToSide {
-  0% {
-    transform: translateX(-100px);
-  }
+  0% { transform: translateX(-100px); }
 
   100% {
     opacity: 1;
@@ -87,10 +76,9 @@
   animation-delay: $time;
 }
 
+//　テキスト「下」へアニメーション
 @keyframes slideInToDown {
-  0% {
-    transform: translateY(-100px);
-  }
+  0% { transform: translateY(-100px); }
 
   100% {
     opacity: 1;
@@ -98,22 +86,33 @@
   }
 }
 
+.slideInToDown {
+  animation: slideInToDown 1.5s forwards;
+}
+
+//　テキスト「上」へアニメーション
+@keyframes slideInToUp {
+  0% { transform: translateY(100px); }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slideInToUp {
+  animation: slideInToUp 1.5s forwards;
+}
+
+// 跳ねるようなアクション
 @keyframes boundWord {
-  0%{
-    transform: translateY(-400px);
-  }
+  0%{ transform: translateY(-400px); }
 
-  20% {
-    transform: rotate(0deg);
-  }
+  20% { transform: rotate(0deg); }
 
-  40%{
-    transform: rotate(-8deg);
-  }
+  40%{ transform: rotate(-8deg); }
 
-  60% {
-    transform: rotate(0deg);
-  }
+  60% { transform: rotate(0deg); }
 
   100% {
     opacity: 1;
@@ -264,68 +263,127 @@
 
 .p-top-skills__detail {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 0 auto;
-  width: 90%;
-  height: 100%;
+  margin-top: 100px;
 }
 
-.p-top-skills__detail__list {
-  text-align: center;
-  width: 100px;
-  height: 200px;
+.p-top-skills__detailList {
+  margin: 0 auto; // レスポンシブ用
 
-  &:hover {
-    transform: scale(1.2);
-    transition: transform 1.5s;
-    border-radius: 50%;
+  &:last-child {
+    @include mq(skills-pc) {
+      margin-top: 100px;
+    }
+  }
 
-    .p-top-skills__hover {
-      display: flex;
-      justify-content: space-around;
+  &:nth-child(2) {
+    @include mq(skills-sp) {
+      margin-top: 100px;
     }
   }
 }
 
-.p-top-skills__detail__iconImg {
-  width: 50px;
-  height: 50px;
-  object-fit: contain; // 画像比率保つ
-}
+.p-top-skills__detailList__item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  overflow: hidden; // 下からスライドしてくる画像を隠す
 
-.p-top-skills__detail__text {
-  font-size: $fontLetterSmall;
-  margin-top: 10px;
-}
-
-.p-top-skills__hover {
-  display: none;
-
-  background-color: $colorSuperLightBlack;
-  border-radius: 10px;
-  width: 150px;
-  padding: 10px;
-  position: absolute;
-  bottom: 30px;
-  left: -25%;
-
-  &:before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 10px 15px 10px;
-    top: -15px;
-    border-color: transparent transparent $colorSuperLightBlack transparent;
+  &:last-child {
+    margin-bottom: 0;
   }
 }
 
-.p-top-skills__hoverImg {
+.p-top-skills__detailList__title {
+  font-size: $fontSemiTitle;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.p-top-skills__detailList__itemUnit {
+  width: 30%; // 言語タイトル中央揃えのためにwidthを与える
+  text-align: center;
+  margin-right: 20px;
+  opacity: 0;
+}
+
+.p-top-skills__detailList__itemImg {
   width: 50px;
   height: 50px;
   object-fit: contain; // 画像比率保つ
+  margin-bottom: 5px;
+}
+
+.p-top-skills__detailList__itemLang {
+  font-size: $fontLetterVerySmall;
+}
+
+.p-top-skills__detailList__itemGraph {
+  width: 250px;
+  height: 25px;
+  border-radius: 20px;
+  border: $colorBdBlack;
+}
+
+@mixin p-top-skills__detailList__itemGraph__extend {
+  height: 100%;
+  border-radius: 20px;
+  width: 0%;
+  transition: 1.5s ease;
+  position: relative;
+
+    &:after {
+    @include center_of_vertically_and_horizontally;
+
+    content: attr(data-extend); // 棒グラフに記載する、dataの所得
+    font-size: $fontLetterVerySmall;
+    color: $colorBlack;
+  }
+}
+
+// 棒グラフ
+@mixin extendItemGraph($deepColor, $lightColor) {
+  @include p-top-skills__detailList__itemGraph__extend;
+
+  background: linear-gradient(to bottom, $deepColor, $lightColor);
+}
+
+.p-top-skills__detailList__itemGraph__extend--front {
+  @include extendItemGraph(#6495ed, #abcae8);
+}
+
+.p-top-skills__detailList__itemGraph__extend--back {
+  @include extendItemGraph(#eb8686, #fc9d9d);
+}
+
+.p-top-skills__detailList__itemGraph__extend--tools {
+  @include extendItemGraph(#8cd790, #c5e99b);
+}
+
+.p-top-skills__explain {
+  font-size: $fontLetterSmall;
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 50px;
+
+  @include mq(skills-pc) {
+    width: 60%;
+  }
+
+  @include mq(skills-sp) {
+    width: 80%;
+  }
+}
+
+.p-top-skills__explain__title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.p-top-skills__explain__text {
+  text-align: left;
+  line-height: 30px;
 }
 
 /*
@@ -358,15 +416,9 @@
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
-
-  // @include mq(u-sp) {
-  //   flex-wrap: wrap;
-  // }
 }
 
 .p-top-production__itemList {
-  // margin-right: 20px;
-  border: $colorBdGray;
   position:relative;
   width: 30%;
 
@@ -386,36 +438,113 @@
   }
 }
 
-/* __hover */
-.p-top-production__hover {
-  width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0%;
-	bottom: 0%;
-	opacity: 0;
-	background-color: rgba(0,0,0,0.7);
-	-webkit-transition: all 0.6s ease; /* all と easeは初期値 */
-  transition: 0.6s;
+.p-top-production__itemList__img {
+  border: $colorBdGray;
 
   &:hover {
-    opacity: 1;
+    transform: scale(1.05);
+    transition: 0.5s;
+    border: $colorBdLightGreen;
   }
 }
 
-.p-top-production__hover__container {
-  @include center_of_vertically_and_horizontally;
-
-  color: $colorWhite;
+.p-top-production__itemList__text {
+  text-align: center;
   font-size: $fontLetterSmall;
-  width: 100%;
-  padding: 10px;
+  margin-top: 10px;
 }
 
-.p-top-production__hoverTitle {
-  margin-bottom: 20px;
+/* .p-top-production__detailList */
+
+.p-top-production__detailList {
+  width: 90%;
+  margin: 0 auto;
+  background-color: $colorWhite;
+  border: $colorBdLightGreen;
+  border-radius: 20px;
+  padding: 30px 50px;
+  position: fixed;
+  top: 105px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: none;
+}
+
+// ×アイコンブロック
+.p-top-production__detailList__crossIcon {
+  color: $colorWhite;
+  font-size: $fontSemiTitle;
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  height: 60px;
+  width: 60px;
+  background-color: $colorLightBlack;
+  border-radius: 50%;
+}
+
+.crossIcon {
+  @include center_of_vertically_and_horizontally;
+}
+
+.show {
+  display: block;
+}
+
+.p-top-production__detailList__title {
+  font-size: $fontSemiTitle;
   text-align: center;
-  font-size: $fontLetterMiddle;
+  margin-bottom: 30px;
+}
+
+.p-top-production__detailList__exp {
+  display: flex;
+}
+
+.p-top-production__detailList__expImg {
+  margin-bottom: 20px;
+}
+
+.p-top-production__detailList__infoTitle {
+  font-size: $fontLetterSmall;
+}
+
+.p-top-production__detailList__infoText {
+  font-size: $fontLetterVerySmall;
+
+  &:not(last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.p-top-production__detailList__expSentence {
+  width: 170%;
+  margin: 0 100px;
+}
+
+.p-top-production__detailList__expText {
+  display: block;
+  font-size: $fontLetterSmall;
+  line-height: 30px;
+  margin-bottom: 30px;
+}
+
+.p-top-production__detailList__Url {
+  align-items: flex-end;
+}
+
+.p-top-production__detailList__urlTitle {
+  font-size: $fontLetterVerySmall;
+}
+
+.p-top-production__detailList__urlLink {
+  color: $colorLinkBlue;
+  display: inline-block;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 /*
@@ -449,10 +578,10 @@
   flex-direction: column; //縦に並べる
   align-items: center;
   width: 48%;
-  border: solid 2px $colorBlack;
   padding: 50px;
   background-color: $colorWhite;
   margin-bottom: 20px;
+  border: $colorBdGray;
 
   &:last-child {
     margin-bottom: 0;
@@ -517,7 +646,6 @@
 // @mixin contact_form
 @mixin contact_form($bd_radi, $height, $width, $fs) {
   border-radius: $bd_radi;
-  border: solid 1px $colorBlack;
   height: $height;
   width: $width;
 	padding: 10px;
@@ -544,7 +672,7 @@
 }
 
 .p-top-contact__btn {
-  @include contact_form($bd_radi: 30px, $height: 50px, $width: 30%, $fs: $fontLetterMiddle);
+  @include contact_form($bd_radi: 30px, $height: 50px, $width: 40%, $fs: $fontLetterMiddle);
 
   background-color: $colorFooterIconBg;
   color: $colorWhite;
@@ -554,5 +682,9 @@
     background-color: $colorIconHover;
     transform:scale(1.02);
     transition:0.7s;
+  }
+
+  @include mq(u-pc) {
+    width: 80%;
   }
 }

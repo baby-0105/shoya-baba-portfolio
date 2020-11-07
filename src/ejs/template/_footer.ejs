@@ -26,5 +26,107 @@
 </footer>
 
 </div><!-- l-wrap -->
+
+<script>
+  {
+    const $bodyAndHtml = $('body, html'),
+          $body = $('body');
+
+    let scrollPosi;
+        lowerTitle=['intro', 'skills', 'production', 'canDo', 'contact'],
+        upperTitle=['Intro', 'Skills', 'Production', 'CanDo', 'Contact'];
+
+    // ページの一番上までスクロールさせます。
+    $("#to_top").on('click', function() {
+      $bodyAndHtml.animate({scrollTop: 0}, 300, 'linear');
+    });
+
+    // SP用：ハンバーガーのトグルアクション
+    $(document).on('click', function(e) {
+      const $headerNav = $('#headerNav')
+
+      if($(e.target).is('#hamburger')) {
+        $headerNav.toggleClass('c-header__is-active');
+      } else if($(e.target).is('*')) {
+        $headerNav.removeClass('c-header__is-active');
+      }
+    });
+
+    // headerボタンクリック：指定の位置までスクロール（クロージャー使用）
+    for (let i=0; i < upperTitle.length; i++) {
+      $(`#header${upperTitle[i]}`).on('click', (function() {
+        let x = i;
+
+        return function() {
+          let headerHeight = $('#header').innerHeight(); //innerHeight()は、paddingも含めた高さ
+
+          $bodyAndHtml.animate({scrollTop: $(`#${lowerTitle[x]}`).offset().top - headerHeight});
+        }
+      })());
+    }
+
+    // スクロール：テキスト出現
+    $(window).scroll(function() {
+      let windowHeight = $(window).height(),
+          skilldDetailPosi = $('#skillsDetail').offset().top;
+
+      scrollPosi = $(window).scrollTop();
+
+      (function appearTitleText() {
+        for (let i=0; i < lowerTitle.length; i++) {
+          $(`#${lowerTitle[i]}TitleWord`).each(function() {
+            let textPosi = $(this).offset().top;
+
+            if (scrollPosi > textPosi - windowHeight + 100){
+              $(this).addClass('slideInToDown'); // 速度：addClass、removeClass > .css()
+            }
+          });
+        }
+      })();
+
+      if (scrollPosi > skilldDetailPosi - windowHeight + 300){
+        // 言語画像のslideUp
+        (function appearLang() {
+          for (let i=0; i < 6; i++) {
+            $(`#frontItemUnit${i+1}`).addClass('slideInToUp');
+            $(`#backItemUnit${i+1}`).addClass('slideInToUp');
+            $(`#toolsItemUnit${i+1}`).addClass('slideInToUp');
+          }
+        })();
+
+        // skills:棒グラフ
+        (function extendGraph() {
+          for (let i=0; i < 7; i++) {
+            $(`#frontExtendGraph${i}`).each(function() {
+              extend = $(this).data('extend');
+              $(this).css('width', extend * 20 + '%');
+            });
+
+            $(`#backExtendGraph${i}`).each(function() {
+              extend = $(this).data('extend');
+              $(this).css('width', extend * 20 + '%');
+            });
+
+            $(`#toolsExtendGraph${i}`).each(function() {
+              extend = $(this).data('extend');
+              $(this).css('width', extend * 20 + '%');
+            });
+          }
+        })();
+      }
+    });
+
+    // production画像クリック→詳細表示
+    for (let i=0; i < lowerTitle.length; i++) {
+      $(`#productionItemList${i+1}`).on('click', function() {
+        $(`#productionDetail${i+1}`).addClass('show');
+      });
+
+      $(`#productionCrossIcon${i+1}`).on('click', function() {
+        $(`#productionDetail${i+1}`).removeClass('show');
+      });
+    }
+  }
+</script>
 </body>
 </html>

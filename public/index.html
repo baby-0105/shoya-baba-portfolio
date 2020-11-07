@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" href="./assets/images/fav.png" />
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 <!--facebook用-->
 <meta property="og:title" content="shoya_baba_portfolio_TOP" />
 <meta property="og:description" content="トップのshoya_baba_portfolio" />
@@ -25,36 +24,39 @@
 <meta name="twitter:image" content="" /><!--絶対パスで記述-->
 
 <title>shoya_baba_portfolio_TOP</title>
-<link href="assets/stylesheets/bundle61ed11c6c648a0de15cb.css" rel="stylesheet"></head>
+
+<!-- <script type="text/javascript" src="../src/js/pages/Home.js"></script> -->
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+<link href="assets/stylesheets/bundle118560bf0150717954c9.css" rel="stylesheet"></head>
 <body>
 <div class="l-wrap">
-
 
 
 <header class="l-header" id="header">
   <a class="c-header__titleLink" id="to_top" href="#"><h3 class="c-header__title">Portfolio</h3></a>
   <i class="fas fa-bars" id="hamburger"></i>
-  <ul class="c-header__nav">
+  <ul class="c-header__nav" id="headerNav">
     
     
     
-      <a class="c-header__link--intro">
+    
+      <a class="c-header__link--intro" id="headerIntro">
         <li class="c-header__list">About</li>
       </a>
     
-      <a class="c-header__link--skills">
+      <a class="c-header__link--skills" id="headerSkills">
         <li class="c-header__list">Skills</li>
       </a>
     
-      <a class="c-header__link--production">
+      <a class="c-header__link--production" id="headerProduction">
         <li class="c-header__list">Production</li>
       </a>
     
-      <a class="c-header__link--canDo">
+      <a class="c-header__link--canDo" id="headerCanDo">
         <li class="c-header__list">Can do.</li>
       </a>
     
-      <a class="c-header__link--contact">
+      <a class="c-header__link--contact" id="headerContact">
         <li class="c-header__list">Contact</li>
       </a>
     
@@ -93,10 +95,10 @@
     </div>
   </div>
 
-  <div class="l-top-intro">
+  <div class="l-top-intro" id="intro">
     <div class="l-top-intro__container">
       <h1 class="p-top-intro__title" id="appear_intro">
-        <span class="p-top-intro__titleWord">About</span>
+        <span class="p-top-intro__titleWord" id="introTitleWord">About</span>
       </h1>
       <div class="p-top-intro__info">
         <img class="p-top-intro__infoImg" src="/assets/images/face_icon.jpeg" alt="人物のアイコン">
@@ -160,76 +162,216 @@
     </div>
   </div>
 
-  <div class="l-top-skills">
+  <div class="l-top-skills" id="skills">
     <div class="l-top-skills__container">
       <h1 class="p-top-skills__title" id="appear_skills">
-        <span class="p-top-skills__titleWord">Skills</span>
+        <span class="p-top-skills__titleWord" id="skillsTitleWord">Skills</span>
       </h1>
-      <p class="p-top-skills__text">扱うことの出来るスキルの一覧です。</p>
-      <ul class="p-top-skills__detail">
-        
-        
-          <li class="p-top-skills__detail__list">
-            <img class="p-top-skills__detail__iconImg" src="/assets/images/skills/HTML.png" alt="HTMLのアイコン">
-            <p class="p-top-skills__detail__text">HTML</p>
+      <p class="p-top-skills__text">
+        今、習得中の言語も含め、扱うことの出来るスキルの一覧です。現在は、JavaScriptを使用したフロントエンドでの開発を主としています。
+        今後は、Vue.jsの習得やバックエンドの技術を使用した開発にも取り組んでいきたいと考えております。
+      </p>
+      <ul class="p-top-skills__detail" id="skillsDetail">
+        <li class="p-top-skills__detailList">
+          <h3 class="p-top-skills__detailList__title">Front end</h3>
             
             
-          </li>
-        
-          <li class="p-top-skills__detail__list">
-            <img class="p-top-skills__detail__iconImg" src="/assets/images/skills/CSS.png" alt="CSSのアイコン">
-            <p class="p-top-skills__detail__text">CSS</p>
             
-              <div class="p-top-skills__hover">
-                <img src="/assets/images/skills/sass.png" class="p-top-skills__hoverImg">
-                <img src="/assets/images/skills/Bootstrap.png" class="p-top-skills__hoverImg">
-              </div>
+              <dl class="p-top-skills__detailList__item">
+                <dt class="p-top-skills__detailList__itemUnit" id="frontItemUnit1">
+                  <img class="p-top-skills__detailList__itemImg" src="/assets/images/skills/HTML・CSS.png" alt="言語の画像">
+                  <p class="p-top-skills__detailList__itemLang">HTML・CSS</p>
+                </dt>
+                <dd class="p-top-skills__detailList__itemGraph">
+                  <div class="p-top-skills__detailList__itemGraph__extend--front" id="frontExtendGraph1" data-extend="3"></div>
+                </dd>
+              </dl>
             
-          </li>
-        
-          <li class="p-top-skills__detail__list">
-            <img class="p-top-skills__detail__iconImg" src="/assets/images/skills/Ruby.png" alt="Rubyのアイコン">
-            <p class="p-top-skills__detail__text">Ruby</p>
+              <dl class="p-top-skills__detailList__item">
+                <dt class="p-top-skills__detailList__itemUnit" id="frontItemUnit2">
+                  <img class="p-top-skills__detailList__itemImg" src="/assets/images/skills/JavaScript.png" alt="言語の画像">
+                  <p class="p-top-skills__detailList__itemLang">JavaScript</p>
+                </dt>
+                <dd class="p-top-skills__detailList__itemGraph">
+                  <div class="p-top-skills__detailList__itemGraph__extend--front" id="frontExtendGraph2" data-extend="3"></div>
+                </dd>
+              </dl>
             
-              <div class="p-top-skills__hover">
-                <img src="/assets/images/skills/Rails.png" class="p-top-skills__hoverImg">
-              </div>
+              <dl class="p-top-skills__detailList__item">
+                <dt class="p-top-skills__detailList__itemUnit" id="frontItemUnit3">
+                  <img class="p-top-skills__detailList__itemImg" src="/assets/images/skills/jQuery.png" alt="言語の画像">
+                  <p class="p-top-skills__detailList__itemLang">jQuery</p>
+                </dt>
+                <dd class="p-top-skills__detailList__itemGraph">
+                  <div class="p-top-skills__detailList__itemGraph__extend--front" id="frontExtendGraph3" data-extend="3"></div>
+                </dd>
+              </dl>
             
-          </li>
-        
-          <li class="p-top-skills__detail__list">
-            <img class="p-top-skills__detail__iconImg" src="/assets/images/skills/JavaScript.png" alt="JavaScriptのアイコン">
-            <p class="p-top-skills__detail__text">JavaScript</p>
+              <dl class="p-top-skills__detailList__item">
+                <dt class="p-top-skills__detailList__itemUnit" id="frontItemUnit4">
+                  <img class="p-top-skills__detailList__itemImg" src="/assets/images/skills/Sass.png" alt="言語の画像">
+                  <p class="p-top-skills__detailList__itemLang">Sass</p>
+                </dt>
+                <dd class="p-top-skills__detailList__itemGraph">
+                  <div class="p-top-skills__detailList__itemGraph__extend--front" id="frontExtendGraph4" data-extend="3"></div>
+                </dd>
+              </dl>
             
-              <div class="p-top-skills__hover">
-                <img src="/assets/images/skills/jQuery.png" class="p-top-skills__hoverImg">
-              </div>
+              <dl class="p-top-skills__detailList__item">
+                <dt class="p-top-skills__detailList__itemUnit" id="frontItemUnit5">
+                  <img class="p-top-skills__detailList__itemImg" src="/assets/images/skills/Bootstrap.png" alt="言語の画像">
+                  <p class="p-top-skills__detailList__itemLang">Bootstrap</p>
+                </dt>
+                <dd class="p-top-skills__detailList__itemGraph">
+                  <div class="p-top-skills__detailList__itemGraph__extend--front" id="frontExtendGraph5" data-extend="2"></div>
+                </dd>
+              </dl>
             
-          </li>
-        
-          <li class="p-top-skills__detail__list">
-            <img class="p-top-skills__detail__iconImg" src="/assets/images/skills/tool.png" alt="toolのアイコン">
-            <p class="p-top-skills__detail__text">tool</p>
+              <dl class="p-top-skills__detailList__item">
+                <dt class="p-top-skills__detailList__itemUnit" id="frontItemUnit6">
+                  <img class="p-top-skills__detailList__itemImg" src="/assets/images/skills/Vue.js.png" alt="言語の画像">
+                  <p class="p-top-skills__detailList__itemLang">Vue.js</p>
+                </dt>
+                <dd class="p-top-skills__detailList__itemGraph">
+                  <div class="p-top-skills__detailList__itemGraph__extend--front" id="frontExtendGraph6" data-extend="1"></div>
+                </dd>
+              </dl>
             
-              <div class="p-top-skills__hover">
-                <!--<img src="/assets/images/skills/npm.png" class="p-top-skills__hoverImg">-->
-                <img src="/assets/images/skills/webpack.png" class="p-top-skills__hoverImg">
-              </div>
-            
-          </li>
-        
+        </li>
+        <li class="p-top-skills__detailList">
+          <h3 class="p-top-skills__detailList__title">Back end</h3>
+          
+          
+          
+            <dl class="p-top-skills__detailList__item">
+              <dt class="p-top-skills__detailList__itemUnit" id="backItemUnit1">
+                <img class="p-top-skills__detailList__itemImg" src="/assets/images/skills/Ruby.png" alt="言語の画像">
+                <p class="p-top-skills__detailList__itemLang">Ruby</p>
+              </dt>
+              <dd class="p-top-skills__detailList__itemGraph">
+                <div class="p-top-skills__detailList__itemGraph__extend--back" id="backExtendGraph1" data-extend="2"></div>
+              </dd>
+            </dl>
+          
+            <dl class="p-top-skills__detailList__item">
+              <dt class="p-top-skills__detailList__itemUnit" id="backItemUnit2">
+                <img class="p-top-skills__detailList__itemImg" src="/assets/images/skills/Ruby on Rails.png" alt="言語の画像">
+                <p class="p-top-skills__detailList__itemLang">Ruby on Rails</p>
+              </dt>
+              <dd class="p-top-skills__detailList__itemGraph">
+                <div class="p-top-skills__detailList__itemGraph__extend--back" id="backExtendGraph2" data-extend="2"></div>
+              </dd>
+            </dl>
+          
+            <dl class="p-top-skills__detailList__item">
+              <dt class="p-top-skills__detailList__itemUnit" id="backItemUnit3">
+                <img class="p-top-skills__detailList__itemImg" src="/assets/images/skills/MySQL.png" alt="言語の画像">
+                <p class="p-top-skills__detailList__itemLang">MySQL</p>
+              </dt>
+              <dd class="p-top-skills__detailList__itemGraph">
+                <div class="p-top-skills__detailList__itemGraph__extend--back" id="backExtendGraph3" data-extend="2"></div>
+              </dd>
+            </dl>
+          
+            <dl class="p-top-skills__detailList__item">
+              <dt class="p-top-skills__detailList__itemUnit" id="backItemUnit4">
+                <img class="p-top-skills__detailList__itemImg" src="/assets/images/skills/PostgreSQL.png" alt="言語の画像">
+                <p class="p-top-skills__detailList__itemLang">PostgreSQL</p>
+              </dt>
+              <dd class="p-top-skills__detailList__itemGraph">
+                <div class="p-top-skills__detailList__itemGraph__extend--back" id="backExtendGraph4" data-extend="2"></div>
+              </dd>
+            </dl>
+          
+        </li>
+        <li class="p-top-skills__detailList">
+          <h3 class="p-top-skills__detailList__title">tools</h3>
+          
+          
+          
+            <dl class="p-top-skills__detailList__item">
+              <dt class="p-top-skills__detailList__itemUnit" id="toolsItemUnit1">
+                <img class="p-top-skills__detailList__itemImg" src="/assets/images/skills/webpack.png" alt="言語の画像">
+                <p class="p-top-skills__detailList__itemLang">webpack</p>
+              </dt>
+              <dd class="p-top-skills__detailList__itemGraph">
+                <div class="p-top-skills__detailList__itemGraph__extend--tools" id="toolsExtendGraph1" data-extend="2"></div>
+              </dd>
+            </dl>
+          
+            <dl class="p-top-skills__detailList__item">
+              <dt class="p-top-skills__detailList__itemUnit" id="toolsItemUnit2">
+                <img class="p-top-skills__detailList__itemImg" src="/assets/images/skills/npm・yarn.png" alt="言語の画像">
+                <p class="p-top-skills__detailList__itemLang">npm・yarn</p>
+              </dt>
+              <dd class="p-top-skills__detailList__itemGraph">
+                <div class="p-top-skills__detailList__itemGraph__extend--tools" id="toolsExtendGraph2" data-extend="2"></div>
+              </dd>
+            </dl>
+          
+            <dl class="p-top-skills__detailList__item">
+              <dt class="p-top-skills__detailList__itemUnit" id="toolsItemUnit3">
+                <img class="p-top-skills__detailList__itemImg" src="/assets/images/skills/Git・GitHub.png" alt="言語の画像">
+                <p class="p-top-skills__detailList__itemLang">Git・GitHub</p>
+              </dt>
+              <dd class="p-top-skills__detailList__itemGraph">
+                <div class="p-top-skills__detailList__itemGraph__extend--tools" id="toolsExtendGraph3" data-extend="3"></div>
+              </dd>
+            </dl>
+          
+            <dl class="p-top-skills__detailList__item">
+              <dt class="p-top-skills__detailList__itemUnit" id="toolsItemUnit4">
+                <img class="p-top-skills__detailList__itemImg" src="/assets/images/skills/AWS（Cloud9）.png" alt="言語の画像">
+                <p class="p-top-skills__detailList__itemLang">AWS（Cloud9）</p>
+              </dt>
+              <dd class="p-top-skills__detailList__itemGraph">
+                <div class="p-top-skills__detailList__itemGraph__extend--tools" id="toolsExtendGraph4" data-extend="2"></div>
+              </dd>
+            </dl>
+          
+            <dl class="p-top-skills__detailList__item">
+              <dt class="p-top-skills__detailList__itemUnit" id="toolsItemUnit5">
+                <img class="p-top-skills__detailList__itemImg" src="/assets/images/skills/Heroku.png" alt="言語の画像">
+                <p class="p-top-skills__detailList__itemLang">Heroku</p>
+              </dt>
+              <dd class="p-top-skills__detailList__itemGraph">
+                <div class="p-top-skills__detailList__itemGraph__extend--tools" id="toolsExtendGraph5" data-extend="2"></div>
+              </dd>
+            </dl>
+          
+            <dl class="p-top-skills__detailList__item">
+              <dt class="p-top-skills__detailList__itemUnit" id="toolsItemUnit6">
+                <img class="p-top-skills__detailList__itemImg" src="/assets/images/skills/Linuxコマンド.png" alt="言語の画像">
+                <p class="p-top-skills__detailList__itemLang">Linuxコマンド</p>
+              </dt>
+              <dd class="p-top-skills__detailList__itemGraph">
+                <div class="p-top-skills__detailList__itemGraph__extend--tools" id="toolsExtendGraph6" data-extend="1"></div>
+              </dd>
+            </dl>
+          
+        </li>
       </ul>
-      <p class="p-top-skills__expla"></p>
+      <div class="p-top-skills__explain">
+        <h3 class="p-top-skills__explain__title">ースキル感ー</h3>
+        <p class="p-top-skills__explain__text">
+          1.使ってみた事がある程度<br>
+          2.それを使って、何かを作った事がある程度<br>
+          3.実務で使用した経験がある程度<br>
+          4.実務で1年程度使って、人並みに使いこなせる程度<br>
+          5.何でも、お任せください！
+        </p>
+      </div>
     </div>
   </div>
 
-  <div class="l-top-production">
+  <div class="l-top-production" id="production">
     <div class="l-top-production__container">
       <h1 class="p-top-production__title" id="appear_production">
-        <span class="p-top-production__titleWord">Production</span>
+        <span class="p-top-production__titleWord" id="productionTitleWord">Production</span>
       </h1>
       <p class="p-top-production__text">
-        これまでに制作した、模写・LP・などの制作物の一覧です。<br>
+        これまでに制作した、模写・LPなどの制作物の一覧です。<br>
+        「使用言語・制作期間・苦労した事・こだわった事」など詳細に記載しております。<br>
         ソースコードについては、
       <a class="p-top-production__text__link" href="https://github.com/baby-0105" target="_blank">「GitHub」</a>
         から確認できる様になっております。
@@ -238,72 +380,169 @@
         
         
         
-        
-        
-        
           <li class="p-top-production__itemList">
-            <a href="https://ukulele-match-0105.herokuapp.com/" target="_blank">
-              <img src="/assets/images/ukulele_match.png" alt="作品の画像">
-              <div class="p-top-production__hover">
-                <div class="p-top-production__hover__container">
-                  <h3 class="p-top-production__hoverTitle">【マッチングアプリ】</h3>
-                  <p>＜使用言語＞：HTML、Bootstrap、Ruby、Rails</p>
-                  <p>＜作成期間＞：1ヶ月</p>
-                </div>
-              </div>
-            </a>
+            <img class="p-top-production__itemList__img"  id="productionItemList1" src="/assets/images/ukulele_match.png" alt="作品の画像">
+            <p class="p-top-production__itemList__text">ウクレレプレイヤーのマッチングアプリ</p>
           </li>
         
           <li class="p-top-production__itemList">
-            <a href="https://sample-birthday.shoyababa.vercel.app" target="_blank">
-              <img src="/assets/images/sample-birthday.png" alt="作品の画像">
-              <div class="p-top-production__hover">
-                <div class="p-top-production__hover__container">
-                  <h3 class="p-top-production__hoverTitle">【webレター】</h3>
-                  <p>＜使用言語＞：HTML、Sass、jQuery、その他（webpack、yarn）</p>
-                  <p>＜作成期間＞：1ヶ月</p>
-                </div>
-              </div>
-            </a>
+            <img class="p-top-production__itemList__img"  id="productionItemList2" src="/assets/images/numeron.png" alt="作品の画像">
+            <p class="p-top-production__itemList__text">JSで作るNumerOn</p>
           </li>
         
           <li class="p-top-production__itemList">
-            <a href="https://baby-0105.github.io/JS_numeron/html/home.html" target="_blank">
-              <img src="/assets/images/numeron.png" alt="作品の画像">
-              <div class="p-top-production__hover">
-                <div class="p-top-production__hover__container">
-                  <h3 class="p-top-production__hoverTitle">【JSで作るNumerOn】</h3>
-                  <p>＜使用言語＞：HTML、CSS、JavaScript</p>
-                  <p>＜作成期間＞：2週間</p>
-                </div>
-              </div>
-            </a>
+            <img class="p-top-production__itemList__img"  id="productionItemList3" src="/assets/images/portfolio.png" alt="作品の画像">
+            <p class="p-top-production__itemList__text">ポートフォリオサイト</p>
           </li>
         
           <li class="p-top-production__itemList">
-            <a href="https://portfolio.shoyababa.vercel.app/" target="_blank">
-              <img src="/assets/images/portfolio.png" alt="作品の画像">
-              <div class="p-top-production__hover">
-                <div class="p-top-production__hover__container">
-                  <h3 class="p-top-production__hoverTitle">【ポートフォリオサイト】</h3>
-                  <p>＜使用言語＞：HTML、Sass、jQuery、その他（webpack、yarn）</p>
-                  <p>＜作成期間＞：1ヶ月</p>
-                </div>
-              </div>
-            </a>
+            <img class="p-top-production__itemList__img"  id="productionItemList4" src="/assets/images/sample-birthday.png" alt="作品の画像">
+            <p class="p-top-production__itemList__text">webレター（sample）</p>
           </li>
         
       </ul>
     </div>
   </div>
 
-  <div class="l-top-canDo">
+  <ul class="l-top-production__detail">
+    
+    
+    
+    
+      <li class="p-top-production__detailList" id="productionDetail1">
+        <span class="p-top-production__detailList__crossIcon" id="productionCrossIcon1"><i class="fas fa-times crossIcon"></i></span>
+        <h2 class="p-top-production__detailList__title">ウクレレプレイヤーのマッチングアプリ</h2>
+        <div class="p-top-production__detailList__exp">
+          <div class="p-top-production__detailList__expHeading">
+            <img class="p-top-production__detailList__expImg" src="/assets/images/ukulele_match.png" alt="作品の画像">
+            <dl class="p-top-production__detailList__info">
+              <dt class="p-top-production__detailList__infoTitle">●＜使用言語＞</dt>
+              <dd class="p-top-production__detailList__infoText">HTML/CSS/Ruby</dd>
+              <dt class="p-top-production__detailList__infoTitle">●＜フレームワーク/ライブラリ/その他ツール＞</dt>
+              <dd class="p-top-production__detailList__infoText">Bootstrap/Rails</dd>
+              <dt class="p-top-production__detailList__infoTitle">●＜作成期間＞</dt>
+              <dd class="p-top-production__detailList__infoText">1ヶ月（2020/3〜2020/4）</dd>
+            </dl>
+          </div>
+          <div class="p-top-production__detailList__expSentence">
+            <p class="p-top-production__detailList__expText">Ruby on Railsを使用したマッチングサービスです。新規登録/ログイン/フォロー/投稿/ダイレクトメッセージなどの機能を付けました。作った目的は、ウクレレプレイヤー同士の交流を深めてもらうためです。私自身、ウクレレを弾いていましたが（今はしていません）独学での演奏は心細く、また、プレイヤー数も少ないため仲間を探すことは大変です。そこで、模擬サイトとして作成しました。</p>
+            <dl class="p-top-production__detailList__Url">
+              <dt class="p-top-production__detailList__urlTitle">●＜プロダクトURL＞</dt>
+              <dd class="p-top-production__detailList__urlText">
+                <a class="p-top-production__detailList__urlLink" href="https://ukulele-match-0105.herokuapp.com/" target='_blank'>https://ukulele-match-0105.herokuapp.com/</a>
+              </dd>
+              <dt class="p-top-production__detailList__urlTitle">●＜GitHub-ソースコードURL＞</dt>
+              <dd class="p-top-production__detailList__urlText">
+                <a class="p-top-production__detailList__urlLink" href="https://github.com/baby-0105/original_app-ukulele-match-" target='_blank'>https://github.com/baby-0105/original_app-ukulele-match-</a>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </li>
+    
+      <li class="p-top-production__detailList" id="productionDetail2">
+        <span class="p-top-production__detailList__crossIcon" id="productionCrossIcon2"><i class="fas fa-times crossIcon"></i></span>
+        <h2 class="p-top-production__detailList__title">JSで作るNumerOn</h2>
+        <div class="p-top-production__detailList__exp">
+          <div class="p-top-production__detailList__expHeading">
+            <img class="p-top-production__detailList__expImg" src="/assets/images/numeron.png" alt="作品の画像">
+            <dl class="p-top-production__detailList__info">
+              <dt class="p-top-production__detailList__infoTitle">●＜使用言語＞</dt>
+              <dd class="p-top-production__detailList__infoText">HTML/CSS/JavaScript</dd>
+              <dt class="p-top-production__detailList__infoTitle">●＜フレームワーク/ライブラリ/その他ツール＞</dt>
+              <dd class="p-top-production__detailList__infoText">なし</dd>
+              <dt class="p-top-production__detailList__infoTitle">●＜作成期間＞</dt>
+              <dd class="p-top-production__detailList__infoText">2週間（2020/10）</dd>
+            </dl>
+          </div>
+          <div class="p-top-production__detailList__expSentence">
+            <p class="p-top-production__detailList__expText">数字当てゲーム「NumerOn」を作成しました。純粋なJavaScriptとHTML/CSSのみで、ライブラリやフレームワークは使用していません。目的は、jQueryなどのライブラリに頼らない純粋なJavaScriptに慣れるためです。（JavaScriptを使うことが目的でしたのでUIはかなりチープなものになっています）。なぜ、このゲームを作成しようと思ったか？ですが、、、高校の時に毎日友達としていた思い出のゲームだからです（笑）。自分で作ってみたいと思いました。</p>
+            <dl class="p-top-production__detailList__Url">
+              <dt class="p-top-production__detailList__urlTitle">●＜プロダクトURL＞</dt>
+              <dd class="p-top-production__detailList__urlText">
+                <a class="p-top-production__detailList__urlLink" href="https://baby-0105.github.io/JS_numeron/html/home.html" target='_blank'>https://baby-0105.github.io/JS_numeron/html/home.html</a>
+              </dd>
+              <dt class="p-top-production__detailList__urlTitle">●＜GitHub-ソースコードURL＞</dt>
+              <dd class="p-top-production__detailList__urlText">
+                <a class="p-top-production__detailList__urlLink" href="https://github.com/baby-0105/JS_numeron" target='_blank'>https://github.com/baby-0105/JS_numeron</a>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </li>
+    
+      <li class="p-top-production__detailList" id="productionDetail3">
+        <span class="p-top-production__detailList__crossIcon" id="productionCrossIcon3"><i class="fas fa-times crossIcon"></i></span>
+        <h2 class="p-top-production__detailList__title">ポートフォリオサイト</h2>
+        <div class="p-top-production__detailList__exp">
+          <div class="p-top-production__detailList__expHeading">
+            <img class="p-top-production__detailList__expImg" src="/assets/images/portfolio.png" alt="作品の画像">
+            <dl class="p-top-production__detailList__info">
+              <dt class="p-top-production__detailList__infoTitle">●＜使用言語＞</dt>
+              <dd class="p-top-production__detailList__infoText">HTML/CSS/JavaScript</dd>
+              <dt class="p-top-production__detailList__infoTitle">●＜フレームワーク/ライブラリ/その他ツール＞</dt>
+              <dd class="p-top-production__detailList__infoText">Sass/jQuery/webpack/npm</dd>
+              <dt class="p-top-production__detailList__infoTitle">●＜作成期間＞</dt>
+              <dd class="p-top-production__detailList__infoText">1ヶ月（2020/10）</dd>
+            </dl>
+          </div>
+          <div class="p-top-production__detailList__expSentence">
+            <p class="p-top-production__detailList__expText">私のポートフォリオサイトです。シンプルかつ、一目で分かるようなUIにする事を意識しました。Productの部分のclickアクションなどは毒に時間をかけて工夫いたしました。Sass/jQueryの他、npm/webpackなどのツールも使用しています。今後は、現在勉強しているVue.jsも当サイトへ取り入れてコードの改善を行っていきたいと思います。</p>
+            <dl class="p-top-production__detailList__Url">
+              <dt class="p-top-production__detailList__urlTitle">●＜プロダクトURL＞</dt>
+              <dd class="p-top-production__detailList__urlText">
+                <a class="p-top-production__detailList__urlLink" href="https://portfolio.shoyababa.vercel.app/" target='_blank'>https://portfolio.shoyababa.vercel.app/</a>
+              </dd>
+              <dt class="p-top-production__detailList__urlTitle">●＜GitHub-ソースコードURL＞</dt>
+              <dd class="p-top-production__detailList__urlText">
+                <a class="p-top-production__detailList__urlLink" href="https://github.com/baby-0105/shoya_baba_portfolio" target='_blank'>https://github.com/baby-0105/shoya_baba_portfolio</a>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </li>
+    
+      <li class="p-top-production__detailList" id="productionDetail4">
+        <span class="p-top-production__detailList__crossIcon" id="productionCrossIcon4"><i class="fas fa-times crossIcon"></i></span>
+        <h2 class="p-top-production__detailList__title">webレター（sample）</h2>
+        <div class="p-top-production__detailList__exp">
+          <div class="p-top-production__detailList__expHeading">
+            <img class="p-top-production__detailList__expImg" src="/assets/images/sample-birthday.png" alt="作品の画像">
+            <dl class="p-top-production__detailList__info">
+              <dt class="p-top-production__detailList__infoTitle">●＜使用言語＞</dt>
+              <dd class="p-top-production__detailList__infoText">HTML/CSS/JavaScript</dd>
+              <dt class="p-top-production__detailList__infoTitle">●＜フレームワーク/ライブラリ/その他ツール＞</dt>
+              <dd class="p-top-production__detailList__infoText">Sass/jQuery/webpack/npm</dd>
+              <dt class="p-top-production__detailList__infoTitle">●＜作成期間＞</dt>
+              <dd class="p-top-production__detailList__infoText">1ヶ月（2020/6〜2020/7）</dd>
+            </dl>
+          </div>
+          <div class="p-top-production__detailList__expSentence">
+            <p class="p-top-production__detailList__expText">個人的に作ったwebレターです。実際には他の人へ渡した為、写真や手紙の内容も添えて作ったのですが、こちらはsampleになります。仕様自体は本物とほぼ同等のものです。シンプルで分かりやすいと言うよりも、お祝いと言う意味で、CSSやjQueryなどのアニメーションに凝った仕様にしています。</p>
+            <dl class="p-top-production__detailList__Url">
+              <dt class="p-top-production__detailList__urlTitle">●＜プロダクトURL＞</dt>
+              <dd class="p-top-production__detailList__urlText">
+                <a class="p-top-production__detailList__urlLink" href="https://sample-birthday.shoyababa.vercel.app" target='_blank'>https://sample-birthday.shoyababa.vercel.app</a>
+              </dd>
+              <dt class="p-top-production__detailList__urlTitle">●＜GitHub-ソースコードURL＞</dt>
+              <dd class="p-top-production__detailList__urlText">
+                <a class="p-top-production__detailList__urlLink" href="https://github.com/baby-0105/sample-birthday" target='_blank'>https://github.com/baby-0105/sample-birthday</a>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </li>
+    
+  </ul>
+
+  <div class="l-top-canDo"  id="canDo">
     <div class="l-top-canDo__container">
       <h1 class="p-top-canDo__title" id="appear_canDo">
-        <span class="p-top-canDo__titleWord">Can do.</span>
+        <span class="p-top-canDo__titleWord" id="canDoTitleWord">Can do.</span>
       </h1>
       <p class="p-top-canDo__text">現在、お受けする事のできる案件についてご紹介させていただきます。</p>
       <ul class="p-top-canDo__works">
+        
         
         
         
@@ -330,10 +569,10 @@
     </div>
   </div>
 
-  <div class="l-top-contact">
+  <div class="l-top-contact"  id="contact">
     <div class="l-top-contact__container">
       <h1 class="p-top-contact__title" id="appear_contact">
-        <span class="p-top-contact__titleWord">Contact</span>
+        <span class="p-top-contact__titleWord" id="contactTitleWord">Contact</span>
       </h1>
       <p class="p-top-contact__text">お問い合わせはこちら（もしくは、フッターのTwitterアイコンからダイレクトメッセージお願いします。）</p>
       <div class="p-top-contact__block">
@@ -382,69 +621,107 @@
 </footer>
 
 </div><!-- l-wrap -->
-<script type="text/javascript" src="assets/javascripts/bundle61ed11c6c648a0de15cb.js"></script></body>
-</html>
 
 <script>
-  $(function() {
-    $("#to_top").on('click', function() { // ページの一番上までスクロールさせます。
-      $('body, html').animate({scrollTop: 0}, 300, 'linear');
+  {
+    const $bodyAndHtml = $('body, html'),
+          $body = $('body');
+
+    let scrollPosi;
+        lowerTitle=['intro', 'skills', 'production', 'canDo', 'contact'],
+        upperTitle=['Intro', 'Skills', 'Production', 'CanDo', 'Contact'];
+
+    // ページの一番上までスクロールさせます。
+    $("#to_top").on('click', function() {
+      $bodyAndHtml.animate({scrollTop: 0}, 300, 'linear');
     });
 
     // SP用：ハンバーガーのトグルアクション
     $(document).on('click', function(e) {
+      const $headerNav = $('#headerNav')
+
       if($(e.target).is('#hamburger')) {
-        $('.c-header__nav').toggleClass('c-header__is-active');
+        $headerNav.toggleClass('c-header__is-active');
       } else if($(e.target).is('*')) {
-        $('.c-header__nav').removeClass('c-header__is-active');
+        $headerNav.removeClass('c-header__is-active');
       }
     });
 
-    // ボタンを押したら、指定の位置までスクロール
-    let headerHeight = $('.l-header').innerHeight(); //innerHeight()は、paddingも含めた高さ
+    // headerボタンクリック：指定の位置までスクロール（クロージャー使用）
+    for (let i=0; i < upperTitle.length; i++) {
+      $(`#header${upperTitle[i]}`).on('click', (function() {
+        let x = i;
 
-    $(`.c-header__link--intro`).on('click', function() {
-      $("html, body").animate({scrollTop: $(`.l-top-intro`).offset().top - headerHeight});
-    });
+        return function() {
+          let headerHeight = $('#header').innerHeight(); //innerHeight()は、paddingも含めた高さ
 
-    $(`.c-header__link--skills`).on('click', function() {
-      $("html, body").animate({scrollTop: $(`.l-top-skills`).offset().top - headerHeight});
-    });
-
-    $(`.c-header__link--production`).on('click', function() {
-      $("html, body").animate({scrollTop: $(`.l-top-production`).offset().top - headerHeight});
-    });
-
-    $(`.c-header__link--canDo`).on('click', function() {
-      $("html, body").animate({scrollTop: $(`.l-top-canDo`).offset().top - headerHeight});
-    });
-
-    $(`.c-header__link--contact`).on('click', function() {
-      $("html, body").animate({scrollTop: $(`.l-top-contact`).offset().top - headerHeight});
-    });
-
-    // なぜか、$(`.l-top-${title[i]}`).offset().topの部分でエラー
-    // let title=['intro', 'skills', 'production', 'canDo', 'contact'];
-    // for (var i=0; i < title.length; i++) {
-    //   $(`.c-header__link--${title[i]}`).on('click', function() {
-    //     $("html, body").animate({scrollTop: $(`.l-top-${title[i]}`).offset().top - headerHeight});
-    //   });
-    // }
+          $bodyAndHtml.animate({scrollTop: $(`#${lowerTitle[x]}`).offset().top - headerHeight});
+        }
+      })());
+    }
 
     // スクロール：テキスト出現
     $(window).scroll(function() {
-      let title=['intro', 'skills', 'production', 'canDo', 'contact'];
-      for (var i=0; i < title.length; i++) {
-        $(`.p-top-${title[i]}__titleWord`).each(function() {
-          let scrollPosi = $(window).scrollTop(),
-              windowHeight = $(window).height(),
-              textPosi = $(this).offset().top;
+      let windowHeight = $(window).height(),
+          skilldDetailPosi = $('#skillsDetail').offset().top;
 
-          if (scrollPosi > textPosi - windowHeight + 100){
-            $(this).css('animation', 'slideInToDown 1.5s forwards'); // 速度：addClass、removeClass > .css()
+      scrollPosi = $(window).scrollTop();
+
+      (function appearTitleText() {
+        for (let i=0; i < lowerTitle.length; i++) {
+          $(`#${lowerTitle[i]}TitleWord`).each(function() {
+            let textPosi = $(this).offset().top;
+
+            if (scrollPosi > textPosi - windowHeight + 100){
+              $(this).addClass('slideInToDown'); // 速度：addClass、removeClass > .css()
+            }
+          });
+        }
+      })();
+
+      if (scrollPosi > skilldDetailPosi - windowHeight + 300){
+        // 言語画像のslideUp
+        (function appearLang() {
+          for (let i=0; i < 6; i++) {
+            $(`#frontItemUnit${i+1}`).addClass('slideInToUp');
+            $(`#backItemUnit${i+1}`).addClass('slideInToUp');
+            $(`#toolsItemUnit${i+1}`).addClass('slideInToUp');
           }
-        });
+        })();
+
+        // skills:棒グラフ
+        (function extendGraph() {
+          for (let i=0; i < 7; i++) {
+            $(`#frontExtendGraph${i}`).each(function() {
+              extend = $(this).data('extend');
+              $(this).css('width', extend * 20 + '%');
+            });
+
+            $(`#backExtendGraph${i}`).each(function() {
+              extend = $(this).data('extend');
+              $(this).css('width', extend * 20 + '%');
+            });
+
+            $(`#toolsExtendGraph${i}`).each(function() {
+              extend = $(this).data('extend');
+              $(this).css('width', extend * 20 + '%');
+            });
+          }
+        })();
       }
     });
-  });
+
+    // production画像クリック→詳細表示
+    for (let i=0; i < lowerTitle.length; i++) {
+      $(`#productionItemList${i+1}`).on('click', function() {
+        $(`#productionDetail${i+1}`).addClass('show');
+      });
+
+      $(`#productionCrossIcon${i+1}`).on('click', function() {
+        $(`#productionDetail${i+1}`).removeClass('show');
+      });
+    }
+  }
 </script>
+<script type="text/javascript" src="assets/javascripts/bundle118560bf0150717954c9.js"></script></body>
+</html>

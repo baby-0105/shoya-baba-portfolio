@@ -3,11 +3,12 @@
 <header class="l-header" id="header">
   <a class="c-header__titleLink" id="to_top" href="#"><h3 class="c-header__title">Portfolio</h3></a>
   <i class="fas fa-bars" id="hamburger"></i>
-  <ul class="c-header__nav">
+  <ul class="c-header__nav" id="headerNav">
     <% var header_nav=["About", "Skills","Production" ,"Can do.", "Contact"]; %>
+    <% var header_nav_id=["Intro", "Skills", "Production" ,"CanDo", "Contact"]; %>
     <% var link_title=['intro', 'skills', 'production', 'canDo', 'contact']; %>
     <% for (var i=0; i < header_nav.length; i++) { %>
-      <a class="c-header__link--<%= link_title[i] %>">
+      <a class="c-header__link--<%= link_title[i] %>" id="header<%= header_nav_id[i] %>">
         <li class="c-header__list"><%= header_nav[i] %></li>
       </a>
     <% } %>

@@ -1,6 +1,8 @@
 // breakpoint
 $breakSP: 768;
 $breakPC: 950;
+$breakSkillsWrapPC: 1323;
+$breakSkillsWrapSP: 867;
 $breakpoints: (
   'u-sp': 'print, screen and (max-width: #{$breakSP}px)',
   'o-sp': 'print, screen and (min-width: #{$breakSP + 1}px)',
@@ -8,6 +10,8 @@ $breakpoints: (
   'sp-pc':
     'print, screen and (max-width: #{$breakPC}px) and (min-width: #{$breakSP + 1}px)',
   'o-pc': 'print, screen and (min-width: #{$breakPC + 1}px)',
+  'skills-pc':  'print, screen and (max-width: #{$breakSkillsWrapPC}px)',
+  'skills-sp':  'print, screen and (max-width: #{$breakSkillsWrapSP}px)'
 ) !default;
 @mixin mq($breakpoint) {
   @media #{inspect(map-get($breakpoints, $breakpoint))} {
@@ -63,18 +67,24 @@ $bgPath: '/assets/images/';
 
 // COLOR
 $colorWhite: #fff;
+$coloSuperWhite: rgba(255,255,255,0.5);
 $colorLightBlack: rgba(0,0,0,0.5);
 $colorSuperLightBlack: rgba(0,0,0,0.4);
 $colorFooterIconBg: #222222;
 $colorLightGreen: #8cd790;
-$colorSuperLightGreen: rgba(0,255,0,0.3);
+$colorSuperLightGreen: rgba(0,255,0,0.2);
 $colorBlack: #5b5b5b;
 $colorBgGray: #ececec;
 $colorBdGray: solid 3px #dddddd;
+$colorBdBlack: solid 2px #888897;
+$colorBdLightGreen: solid 5px #8cd790;
 $colorIconHover: #77F9C3;
 $colorLinkBlue: #4072b3;
 
 // FONT
+$fontLetterVerySmall: 1.2rem;
+$fontLetterVerySmall: 12px;
+
 $fontLetterSmall: 1.5rem;
 $fontLetterSmall: 15px;
 
@@ -87,8 +97,8 @@ $fontSemiTitle: 30px;
 $fontSectionTitle: 5rem;
 $fontSectionTitle: 50px;
 
-$fontTitleLarge: 10rem;
-$fontTitleLarge: 100px;
+$fontTitleLarge: 8rem;
+$fontTitleLarge: 80px;
 
 
 // WIDTH
