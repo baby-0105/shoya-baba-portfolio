@@ -28,11 +28,11 @@ src/ejs/template/_head %>
         <div class="p-top-intro__infoDetail">
           <h3 class="p-top-intro__infoName">馬場　翔矢（Shoya Baba）</h3>
 
-          <% var intro_period=['1997/01/05', '2019/3', '2019/4 ~ 2019/6', '2019/6~', '2019/9', '2020/4', '2020/4~9', 'now']; %>
+          <% var intro_period=['1997/01/05', '2019/3', '2019/4 ~ 2019/6', '2019/6~', '2019/9', '2020/4', '2020/4~9', 'now', 'feature']; %>
           <% var intro_text=
             ['生まれました。', '近畿大学 農学部卒業', '機械部品製造業、従事', 'ゲストハウススタッフ、youtube投稿、ライティング、ヒッチハイクを経て、自分の就きたい仕事を模索',
              'プログラミングを知って、webエンジニアへ向けての学習開始', '東京でSES事業を行っているベンチャー企業に入社', 'コロナウイルスの関係で一時、同社で大阪のコールセンター業務に従事',
-             'フロントエンドエンジニアを目指し日々、学習中'];
+             '1年の時を経て、現在自社で初めてのLP作成の稼働がスタート！！', '今後は、現在学習中のVue.jsを用いたアジャイル開発に取り組みたいです。'];
            %>
 
           <% for (var i=0; i < intro_text.length; i++) { %>
@@ -62,7 +62,7 @@ src/ejs/template/_head %>
             <% var frontSkills=['HTML・CSS', 'JavaScript', 'jQuery', 'Sass', 'Bootstrap', 'Vue.js']; %>
             <% var frontExtendNum=['3', '3', '3', '3', '2', '1']; %>
             <% for (var i=0; i < frontSkills.length; i++) { %>
-              <dl class="p-top-skills__detailList__item">
+              <dl class="p-top-skills__detailList__item" id="frontDetailList">
                 <dt class="p-top-skills__detailList__itemUnit" id="frontItemUnit<%= i+1 %>">
                   <img class="p-top-skills__detailList__itemImg" src="<%= img_path %>skills/<%= frontSkills[i] %>.png" alt="言語の画像">
                   <p class="p-top-skills__detailList__itemLang"><%= frontSkills[i] %></p>
@@ -78,7 +78,7 @@ src/ejs/template/_head %>
           <% var backSkills=['Ruby', 'Ruby on Rails', 'MySQL', 'PostgreSQL']; %>
           <% var backExtendNum=['2', '2', '2', '2']; %>
           <% for (var i=0; i < backSkills.length; i++) { %>
-            <dl class="p-top-skills__detailList__item">
+            <dl class="p-top-skills__detailList__item" id="backDetailList">
               <dt class="p-top-skills__detailList__itemUnit" id="backItemUnit<%= i+1 %>">
                 <img class="p-top-skills__detailList__itemImg" src="<%= img_path %>skills/<%= backSkills[i] %>.png" alt="言語の画像">
                 <p class="p-top-skills__detailList__itemLang"><%= backSkills[i] %></p>
@@ -94,7 +94,7 @@ src/ejs/template/_head %>
           <% var tools=['webpack', 'npm・yarn', 'Git・GitHub', 'AWS（Cloud9）', 'Heroku', 'Linuxコマンド']; %>
           <% var toolsExtendNum=['2', '2', '3', '2', '2', '1']; %>
           <% for (var i=0; i < tools.length; i++) { %>
-            <dl class="p-top-skills__detailList__item">
+            <dl class="p-top-skills__detailList__item" id="toolsDetailList">
               <dt class="p-top-skills__detailList__itemUnit" id="toolsItemUnit<%= i+1 %>">
                 <img class="p-top-skills__detailList__itemImg" src="<%= img_path %>skills/<%= tools[i] %>.png" alt="言語の画像">
                 <p class="p-top-skills__detailList__itemLang"><%= tools[i] %></p>

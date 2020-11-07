@@ -14,6 +14,10 @@
   @include mq(u-pc) {
     font-size: $fontSectionTitle;
   }
+
+  @include mq(u-sp) {
+    font-size: $fontMiddleTitle;
+  }
 }
 
 @mixin section_title_pseudo_ele {
@@ -277,8 +281,10 @@
     }
   }
 
-  &:nth-child(2) {
-    @include mq(skills-sp) {
+  @include mq(skills-sp) {
+    width: 100%; // 中央揃えにするため
+
+    &:nth-child(2) {
       margin-top: 100px;
     }
   }
@@ -498,6 +504,10 @@
   transform: translateX(-50%);
   z-index: 2;
   display: none;
+
+  @include mq(u-sp) {
+    padding: 20px;
+  }
 }
 
 // ×アイコンブロック
@@ -511,10 +521,18 @@
   width: 60px;
   background-color: $colorLightBlack;
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+
+  &:hover > .crossIcon {
+    transform: rotateZ(180deg) ;
+  }
 }
 
 .crossIcon {
-  @include center_of_vertically_and_horizontally;
+  transition: .5s;
+  transform: rotateZ(0deg);
+  margin: 0 auto;
 }
 
 .show {
@@ -525,18 +543,47 @@
   font-size: $fontSemiTitle;
   text-align: center;
   margin-bottom: 30px;
+
+  @include mq(u-pc) {
+    font-size: $fontLetterMiddle;
+  }
 }
 
 .p-top-production__detailList__exp {
   display: flex;
+
+  @include mq(u-sp) {
+    flex-direction: column;
+  }
+}
+
+.p-top-production__detailList__expHeading {
+  width: 80%;
+
+  @include mq(u-sp) {
+    display: flex;
+    width: 100%;
+  }
 }
 
 .p-top-production__detailList__expImg {
   margin-bottom: 20px;
+
+  @include mq(u-sp) {
+    width: 30%;
+    height: 35%;
+    margin-right: 20px;
+  }
+}
+
+.p-top-production__detailList__info {
+  width: 100%;
 }
 
 .p-top-production__detailList__infoTitle {
   font-size: $fontLetterSmall;
+
+
 }
 
 .p-top-production__detailList__infoText {
@@ -544,12 +591,24 @@
 
   &:not(last-child) {
     margin-bottom: 20px;
+
+    @include mq(u-sp) {
+      margin-bottom: 5px;
+    }
   }
 }
 
 .p-top-production__detailList__expSentence {
-  width: 170%;
+  width: 100%;
   margin: 0 100px;
+
+  @include mq(u-pc) {
+    margin: 0 50px;
+  }
+
+  @include mq(u-sp) {
+    margin: 20px 0 0;
+  }
 }
 
 .p-top-production__detailList__expText {
@@ -557,6 +616,13 @@
   font-size: $fontLetterSmall;
   line-height: 30px;
   margin-bottom: 30px;
+
+  @include mq(u-sp) {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    line-height: normal;
+  }
 }
 
 .p-top-production__detailList__Url {
@@ -637,6 +703,11 @@
   height: 100px;
   object-fit: contain; // 画像比率保つ
   margin-bottom: 20px;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+  }
 }
 
 .p-top-canDo__workTitle {

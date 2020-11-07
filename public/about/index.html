@@ -27,7 +27,7 @@
 
 <!-- <script type="text/javascript" src="../src/js/pages/Home.js"></script> -->
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-<link href="../assets/stylesheets/bundle0c79b05bc807305be453.css" rel="stylesheet"></head>
+<link href="../assets/stylesheets/bundle95ffe33abf7024c458bc.css" rel="stylesheet"></head>
 <body>
 <div class="l-wrap">
 
@@ -130,36 +130,66 @@
         }
       })();
 
-      if (scrollPosi > skilldDetailPosi - windowHeight + 300){
-        // 言語画像のslideUp
-        (function appearLang() {
+      (function appearLang() {
+        let langArea = ['front', 'back', 'tools'];
+        let frontDetailsPosi = $('#frontDetailList').offset().top,
+            backDetailsPosi = $('#backDetailList').offset().top,
+            toolsDetailsPosi = $('#toolsDetailList').offset().top;
+
+        if (scrollPosi > frontDetailsPosi - windowHeight + 300){
           for (let i=0; i < 6; i++) {
             $(`#frontItemUnit${i+1}`).addClass('slideInToUp');
-            $(`#backItemUnit${i+1}`).addClass('slideInToUp');
-            $(`#toolsItemUnit${i+1}`).addClass('slideInToUp');
           }
-        })();
-
-        // skills:棒グラフ
-        (function extendGraph() {
           for (let i=0; i < 7; i++) {
             $(`#frontExtendGraph${i}`).each(function() {
               extend = $(this).data('extend');
               $(this).css('width', extend * 20 + '%');
             });
+          }
+        }
 
+        if (scrollPosi > backDetailsPosi - windowHeight + 300){
+          for (let i=0; i < 6; i++) {
+            $(`#backItemUnit${i+1}`).addClass('slideInToUp');
+          }
+          for (let i=0; i < 7; i++) {
             $(`#backExtendGraph${i}`).each(function() {
               extend = $(this).data('extend');
               $(this).css('width', extend * 20 + '%');
             });
+          }
+        }
 
+        if (scrollPosi > toolsDetailsPosi - windowHeight + 300){
+          for (let i=0; i < 6; i++) {
+            $(`#toolsItemUnit${i+1}`).addClass('slideInToUp');
+          }
+          for (let i=0; i < 7; i++) {
             $(`#toolsExtendGraph${i}`).each(function() {
               extend = $(this).data('extend');
               $(this).css('width', extend * 20 + '%');
             });
           }
-        })();
-      }
+        }
+
+        // for (let i=0; i < langArea.length; i++) {
+        //   let x = i;
+
+        //   if (scrollPosi > `${langArea[x]}`DetailsPosi - windowHeight + 300){
+        //     return function() {
+        //       for (let j=0; j < 6; j++) {
+        //         $(`#${langArea[x]}ItemUnit${j+1}`).addClass('slideInToUp');
+        //       }
+        //       for (let k=0; k < 7; k++) {
+        //         $(`#${langArea[x]}ExtendGraph${i}`).each(function() {
+        //           extend = $(this).data('extend');
+        //           $(this).css('width', extend * 20 + '%');
+        //         });
+        //       }
+        //     }
+        //   }
+        // }
+      })();
     });
 
     // production画像クリック→詳細表示
@@ -174,5 +204,5 @@
     }
   }
 </script>
-<script type="text/javascript" src="../assets/javascripts/bundle0c79b05bc807305be453.js"></script></body>
+<script type="text/javascript" src="../assets/javascripts/bundle95ffe33abf7024c458bc.js"></script></body>
 </html>
