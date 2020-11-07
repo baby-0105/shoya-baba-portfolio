@@ -138,6 +138,7 @@
 
   text-align: center;
   color: $colorWhite;
+  white-space: nowrap;
 }
 
 .p-top-siteImage__title {
@@ -527,6 +528,13 @@
   &:hover > .crossIcon {
     transform: rotateZ(180deg) ;
   }
+
+  @include mq(u-sp) {
+    height: 40px;
+    width: 40px;
+    top: -20px;
+    right: -20px;
+  }
 }
 
 .crossIcon {
@@ -546,6 +554,7 @@
 
   @include mq(u-pc) {
     font-size: $fontLetterMiddle;
+    margin-bottom: 10px;
   }
 }
 
@@ -607,7 +616,7 @@
   }
 
   @include mq(u-sp) {
-    margin: 20px 0 0;
+    margin: 10px 0 0;
   }
 }
 
@@ -618,9 +627,10 @@
   margin-bottom: 30px;
 
   @include mq(u-sp) {
+    font-size: $fontLetterVerySmall;
     width: 100%;
     margin: 0 auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     line-height: normal;
   }
 }
