@@ -65,7 +65,7 @@
       })());
     }
 
-    // スクロール：テキスト出現
+    // スクロールイベント
     $(window).scroll(function() {
       let windowHeight = $(window).height(),
           skilldDetailPosi = $('#skillsDetail').offset().top;
@@ -75,13 +75,23 @@
       (function appearTitleText() {
         for (let i=0; i < lowerTitle.length; i++) {
           $(`#${lowerTitle[i]}TitleWord`).each(function() {
-            let textPosi = $(this).offset().top;
+            let titleTextPosi = $(this).offset().top;
 
-            if (scrollPosi > textPosi - windowHeight + 100){
+            if (scrollPosi > titleTextPosi - windowHeight + 100){
               $(this).addClass('slideInToDown'); // 速度：addClass、removeClass > .css()
             }
           });
         }
+      })();
+
+      (function apperAboutText() {
+        $('.p-top-intro__infoTextBlock').each(function() {
+          let aboutTextPosi = $(this).offset().top;
+
+          if (scrollPosi > aboutTextPosi - windowHeight + 150){
+            $(this).addClass('slideInToUp');
+          }
+        })
       })();
 
       (function appearLang() {
@@ -97,7 +107,7 @@
           for (let i=0; i < 7; i++) {
             $(`#frontExtendGraph${i}`).each(function() {
               extend = $(this).data('extend');
-              $(this).css('width', extend * 20 + '%');
+              $(this).css({'width': extend * 20 + '%', 'opacity': '1'});
             });
           }
         }
@@ -109,7 +119,7 @@
           for (let i=0; i < 7; i++) {
             $(`#backExtendGraph${i}`).each(function() {
               extend = $(this).data('extend');
-              $(this).css('width', extend * 20 + '%');
+              $(this).css({'width': extend * 20 + '%', 'opacity': '1'});
             });
           }
         }
@@ -121,7 +131,7 @@
           for (let i=0; i < 7; i++) {
             $(`#toolsExtendGraph${i}`).each(function() {
               extend = $(this).data('extend');
-              $(this).css('width', extend * 20 + '%');
+              $(this).css({'width': extend * 20 + '%', 'opacity': '1'});
             });
           }
         }
@@ -137,12 +147,23 @@
         //       for (let k=0; k < 7; k++) {
         //         $(`#${langArea[x]}ExtendGraph${i}`).each(function() {
         //           extend = $(this).data('extend');
-        //           $(this).css('width', extend * 20 + '%');
+        //           $(this).css({'width': extend * 20 + '%', 'opacity': '1'});
         //         });
         //       }
         //     }
         //   }
         // }
+
+        (function productionAddShadow() {
+          $('.p-top-production__itemList__img').each(function() {
+            let productsPosi = $(this).offset().top;
+
+            if (scrollPosi > productsPosi - windowHeight + 200){
+              $(this).addClass('productionAnim');
+              $(this).addClass('productionSlideInToUp');
+            }
+          });
+        })();
       })();
     });
 

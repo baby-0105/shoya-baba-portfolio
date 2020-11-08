@@ -29,18 +29,20 @@ src/ejs/template/_head %>
           <h3 class="p-top-intro__infoName">馬場　翔矢（Shoya Baba）</h3>
 
           <% var intro_period=['1997/01/05', '2019/3', '2019/4 ~ 2019/6', '2019/6~', '2019/9', '2020/4', '2020/4~9', 'now', 'feature']; %>
-          <% var intro_text=
-            ['生まれました。', '近畿大学 農学部卒業', '機械部品製造業、従事', 'ゲストハウススタッフ、youtube投稿、ライティング、ヒッチハイクを経て、自分の就きたい仕事を模索',
-             'プログラミングを知って、webエンジニアへ向けての学習開始', '東京でSES事業を行っているベンチャー企業に入社', 'コロナウイルスの関係で一時、同社で大阪のコールセンター業務に従事',
-             '1年の時を経て、現在自社で初めてのLP作成の稼働がスタート！！', '今後は、現在学習中のVue.jsを用いたアジャイル開発に取り組みたいです。'];
-           %>
+          <% var intro_text=[
+            '生まれました。', '近畿大学 農学部卒業', '機械部品製造業、従事', 'ゲストハウススタッフ、youtube投稿、ライティング、ヒッチハイクを経て、色々模索',
+            'プログラミングを知って、webエンジニアになる事を目指す', '東京でSES事業を行っているベンチャー企業に入社', '諸事情で一時、同社で大阪のコールセンター業務に従事',
+            '学習開始から1年の時を経て、現在自社で初めてのLP作成の稼働がスタート', '今後は、現在学習中のVue.jsを用いたアジャイル開発に取り組みたいです。'
+          ]; %>
 
           <% for (var i=0; i < intro_text.length; i++) { %>
-            <div class="p-top-intro__infoTextBlock">
-              <p class="p-top-intro__infoText__peroid"><%= intro_period[i] %></p>
-              <p class="p-top-intro__infoText__main"><%= intro_text[i] %></p>
+            <div class="p-top-intro__infoText">
+              <div class="p-top-intro__infoTextBlock">
+                <p class="p-top-intro__infoText__peroid"><%= intro_period[i] %></p>
+                <p class="p-top-intro__infoText__main"><%= intro_text[i] %></p>
+              </div>
             </div>
-            <span class="p-top-intro__infoText__arrow">⇩</span>
+            <span class="p-top-intro__infoText__arrow" id="introArrow<%= [i+1] %>">⇩</span>
           <% } %>
         </div>
       </div>
@@ -148,15 +150,15 @@ src/ejs/template/_head %>
     <% var production_title=['ウクレレプレイヤーのマッチングアプリ', 'JSで作るNumerOn', 'ポートフォリオサイト', 'webレター（sample）']; %>
     <% var detail_info_text=[
       ['HTML/CSS/Ruby', 'HTML/CSS/JavaScript', 'HTML/CSS/JavaScript', 'HTML/CSS/JavaScript'],
-      ['Bootstrap/Rails', 'なし', 'Sass/jQuery/webpack/npm', 'Sass/jQuery/webpack/npm'],
+      ['Bootstrap/Rails/MySQL/Cloud9', 'なし', 'Sass/jQuery/webpack/npm', 'Sass/jQuery/webpack/npm'],
       ['1ヶ月（2020/3〜2020/4）', '2週間（2020/10）', '1ヶ月（2020/10）', '1ヶ月（2020/6〜2020/7）'],
       ['ukulele-match-0105.herokuapp.com/', 'baby-0105.github.io/JS_numeron/html/home.html', 'portfolio.shoyababa.vercel.app/', 'sample-birthday.shoyababa.vercel.app'],
       ['original_app-ukulele-match-', 'JS_numeron', 'shoya_baba_portfolio', 'sample-birthday']
     ];%>
     <% var detail_expText=[
-      'Ruby on Railsを使用したマッチングサービスです。新規登録/ログイン/フォロー/投稿/ダイレクトメッセージなどの機能を付けました。作った目的は、ウクレレプレイヤー同士の交流を深めてもらうためです。私自身、ウクレレを弾いていましたが（今はしていません）独学での演奏は挫折しやすく、また、プレイヤー数も少ないため仲間を探すことは大変です。そこで、模擬サイトとして作成しました。',
+      'Ruby on Railsを使用したマッチングサービスです。新規登録/ログイン/フォロー/投稿/ダイレクトメッセージなどの機能を付けました。どちらか言うとバックエンドよりの技術を主に使用する事に注力したため、フロント部分はBootStrapを使用しています。作った目的は、ウクレレプレイヤー同士の交流を深めてもらうためです。私自身、ウクレレを弾いていましたが（今はしていません）独学での演奏は挫折しやすく、また、プレイヤー数も少ないため仲間を探すことは大変です。そこで、模擬サイトとして作成しました。',
       '数字当てゲーム「NumerOn」を作成しました。純粋なJavaScriptとHTML/CSSのみで、ライブラリやフレームワークは使用していません。目的は、jQueryなどのライブラリに頼らない純粋なJavaScriptに慣れるためです。（JavaScriptを使うことが目的でしたのでUIはかなりチープなものになっています）。なぜ、このゲームを作成しようと思ったか？ですが、、、高校の時に毎日友達としていた思い出のゲームだからです（笑）。作ってみたかったものが実現しました。',
-      '私のポートフォリオサイトです。シンプルかつ、一目で分かるようなUIにする事を意識しました。Skillsの棒グラフの作成にはUXにもこだわり工夫いたしました。Sass/jQueryの他、npm/webpackなどのツールも使用しています。npmを使用している事もあってnowを使って、Vercelへデプロイしました。今後は、現在勉強しているVue.jsも当サイトへ取り入れてコードの改善を行っていきたいと思います。',
+      '私のポートフォリオサイトです。シンプルかつ、一目で分かるようなUIにする事を意識しました。Skillsの棒グラフの作成にはjQueryを使用し、UXにもこだわり工夫いたしました。Sass/jQueryの他、npm/webpackなどのツールも使用しています。npmを使用している事もあってnowを使って、Vercelへデプロイしました。今後は、現在勉強しているVue.jsも当サイトへ取り入れてモダンなコードへと改善を行っていきたいと思います。',
       '個人的に作ったwebレターです。実際には、写真や手紙の内容も添えて作ったのですが、こちらはsampleになります。仕様自体は本物とほぼ同等のものです。シンプルで分かりやすいと言うよりも、CSSやjQueryなどでアニメーションを複数使用する事で凝った仕様にしています。'
     ]; %>
     <% for (var i=0; i < production_title.length; i++) { %>

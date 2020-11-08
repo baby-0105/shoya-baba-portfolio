@@ -27,7 +27,7 @@
 
 <!-- <script type="text/javascript" src="../src/js/pages/Home.js"></script> -->
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-<link href="../assets/stylesheets/bundle0c0ef1b6070c3674e5cb.css" rel="stylesheet"></head>
+<link href="../assets/stylesheets/bundle570ec96ef69410c09779.css" rel="stylesheet"></head>
 <body>
 <div class="l-wrap">
 
@@ -111,7 +111,7 @@
       })());
     }
 
-    // スクロール：テキスト出現
+    // スクロールイベント
     $(window).scroll(function() {
       let windowHeight = $(window).height(),
           skilldDetailPosi = $('#skillsDetail').offset().top;
@@ -121,13 +121,23 @@
       (function appearTitleText() {
         for (let i=0; i < lowerTitle.length; i++) {
           $(`#${lowerTitle[i]}TitleWord`).each(function() {
-            let textPosi = $(this).offset().top;
+            let titleTextPosi = $(this).offset().top;
 
-            if (scrollPosi > textPosi - windowHeight + 100){
+            if (scrollPosi > titleTextPosi - windowHeight + 100){
               $(this).addClass('slideInToDown'); // 速度：addClass、removeClass > .css()
             }
           });
         }
+      })();
+
+      (function apperAboutText() {
+        $('.p-top-intro__infoTextBlock').each(function() {
+          let aboutTextPosi = $(this).offset().top;
+
+          if (scrollPosi > aboutTextPosi - windowHeight + 150){
+            $(this).addClass('slideInToUp');
+          }
+        })
       })();
 
       (function appearLang() {
@@ -143,7 +153,7 @@
           for (let i=0; i < 7; i++) {
             $(`#frontExtendGraph${i}`).each(function() {
               extend = $(this).data('extend');
-              $(this).css('width', extend * 20 + '%');
+              $(this).css({'width': extend * 20 + '%', 'opacity': '1'});
             });
           }
         }
@@ -155,7 +165,7 @@
           for (let i=0; i < 7; i++) {
             $(`#backExtendGraph${i}`).each(function() {
               extend = $(this).data('extend');
-              $(this).css('width', extend * 20 + '%');
+              $(this).css({'width': extend * 20 + '%', 'opacity': '1'});
             });
           }
         }
@@ -167,7 +177,7 @@
           for (let i=0; i < 7; i++) {
             $(`#toolsExtendGraph${i}`).each(function() {
               extend = $(this).data('extend');
-              $(this).css('width', extend * 20 + '%');
+              $(this).css({'width': extend * 20 + '%', 'opacity': '1'});
             });
           }
         }
@@ -183,12 +193,23 @@
         //       for (let k=0; k < 7; k++) {
         //         $(`#${langArea[x]}ExtendGraph${i}`).each(function() {
         //           extend = $(this).data('extend');
-        //           $(this).css('width', extend * 20 + '%');
+        //           $(this).css({'width': extend * 20 + '%', 'opacity': '1'});
         //         });
         //       }
         //     }
         //   }
         // }
+
+        (function productionAddShadow() {
+          $('.p-top-production__itemList__img').each(function() {
+            let productsPosi = $(this).offset().top;
+
+            if (scrollPosi > productsPosi - windowHeight + 200){
+              $(this).addClass('productionAnim');
+              $(this).addClass('productionSlideInToUp');
+            }
+          });
+        })();
       })();
     });
 
@@ -204,5 +225,5 @@
     }
   }
 </script>
-<script type="text/javascript" src="../assets/javascripts/bundle0c0ef1b6070c3674e5cb.js"></script></body>
+<script type="text/javascript" src="../assets/javascripts/bundle570ec96ef69410c09779.js"></script></body>
 </html>

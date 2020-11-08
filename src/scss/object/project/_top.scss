@@ -104,8 +104,21 @@
   }
 }
 
+@keyframes productionSlideInToUp {
+  0% { transform: translateY(300px); }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .slideInToUp {
   animation: slideInToUp 1.5s forwards;
+}
+
+.productionSlideInToUp {
+  animation: productionSlideInToUp 1.5s forwards;
 }
 
 // 跳ねるようなアクション
@@ -220,12 +233,16 @@
   }
 }
 
+.p-top-intro__infoText {
+  overflow: hidden; // intro text出現用
+}
+
 .p-top-intro__infoTextBlock {
   font-size: $fontLetterMiddle;
-  margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
   text-align: left;
+  opacity: 0;
 
   @include mq(u-sp) {
     font-size: $fontLetterSmall;
@@ -238,7 +255,7 @@
 
 .p-top-intro__infoText__arrow {
   font-size: $fontLetterMiddle;
-  margin-bottom: 10px;
+  margin: 30px 0;
   display: block;
 
   @include mq(u-sp) {
@@ -368,6 +385,7 @@
   width: 0%;
   transition: 1.5s ease;
   position: relative;
+  opacity: 0;
 
     &:after {
     @include center_of_vertically_and_horizontally;
@@ -457,6 +475,7 @@
 .p-top-production__itemList {
   position:relative;
   width: 30%;
+  overflow: hidden;
 
   &:last-child {
     margin-right: 0;
@@ -476,12 +495,18 @@
 
 .p-top-production__itemList__img {
   border: $colorBdGray;
+  opacity: 0;
 
   &:hover {
     transform: scale(1.05);
     transition: 0.5s;
     border: $colorBdLightGreen;
   }
+}
+
+.productionAnim {
+  box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 1);
+  transition: 2s;
 }
 
 .p-top-production__itemList__text {
