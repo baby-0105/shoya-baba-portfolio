@@ -24,8 +24,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: $colorSuperLightGreen;
-    color: $colorFooterIconBg;
+    background: radial-gradient($colorWhite, $colorLightGreen);
+    color: $colorDarkBlack;
     width: 50%;
     height: 100vh;
     font-size: $fontSemiTitle;

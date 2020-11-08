@@ -43,17 +43,17 @@
   width: 70px;
 	height: 70px;
 	border-radius: 50%;
-  background-color: $colorFooterIconBg;
+  background-color: $colorDarkBlack;
   position: relative;
 
   &:hover {
     background-color: $colorIconHover;
     transform: scale(1.1);
     transition: 0.7s;
-    color: $colorFooterIconBg;
+    color: $colorDarkBlack;
 
     i {
-      color: $colorFooterIconBg;
+      color: $colorDarkBlack;
     }
 
     .c-footer__contact__hoverText {

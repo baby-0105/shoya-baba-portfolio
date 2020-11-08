@@ -205,8 +205,8 @@
 }
 
 .p-top-intro__infoImg {
-  width: 35%;
-  height: 35%;
+  width: 25%;
+  height: 25%;
   border-radius: 50%;
   box-shadow: 0 0 0 10px $colorLightGreen;
 
@@ -217,7 +217,7 @@
 
 .p-top-intro__infoDetail {
   text-align: center;
-  width: 50%;
+  width: 60%;
 
   @include mq(u-sp) {
     width: 100%;
@@ -250,7 +250,11 @@
 }
 
 .p-top-intro__infoText__peroid {
-  margin-right: 30px;
+  width: 30%;
+}
+
+.p-top-intro__infoText__main {
+  width: 60%;
 }
 
 .p-top-intro__infoText__arrow {
@@ -473,18 +477,17 @@
 }
 
 .p-top-production__itemList {
-  position:relative;
+  position: relative;
   width: 30%;
   overflow: hidden;
 
-  &:last-child {
-    margin-right: 0;
+  &:nth-child(4) {
     margin-top: 30px;
   }
 
   @include mq(u-sp) {
-    margin-bottom: 30px;
     margin-right: 0;
+    margin-bottom: 30px;
     width: 100%;
 
     &:last-child {
@@ -525,9 +528,9 @@
   border-radius: 20px;
   padding: 30px 50px;
   position: fixed;
-  top: 105px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   z-index: 2;
   display: none;
 
@@ -675,7 +678,7 @@
 }
 
 .p-top-production__detailList__urlText {
-  &:nth-of-type(1) {
+  &:first-child {
     margin-bottom: 10px;
 
     @include mq(u-sp) {
@@ -713,7 +716,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
 
-  @include mq(u-pc) {
+  @include mq(u-sp) {
     flex-direction: column;
   }
 }
@@ -732,7 +735,7 @@
     margin-bottom: 0;
   }
 
-  @include mq(u-pc) {
+  @include mq(u-sp) {
     margin: 0 auto;
     width: 100%;
     margin-bottom: 20px;
@@ -825,7 +828,7 @@
 .p-top-contact__btn {
   @include contact_form($bd_radi: 30px, $height: 50px, $width: 40%, $fs: $fontLetterMiddle);
 
-  background-color: $colorFooterIconBg;
+  background-color: $colorDarkBlack;
   color: $colorWhite;
   text-align: center;
 
