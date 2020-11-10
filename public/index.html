@@ -27,7 +27,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
-<link href="assets/stylesheets/bundlefe6d4f374ad40b827b61.css" rel="stylesheet"></head>
+<link href="assets/stylesheets/bundle31f6400c80911a710743.css" rel="stylesheet"></head>
 <body>
 <div class="l-wrap">
 
@@ -663,7 +663,7 @@
 
     // SP用：ハンバーガーのトグルアクション
     $(document).on('click', function(e) {
-      const $headerNav = $('#headerNav')
+      const $headerNav = $('#headerNav');
 
       if($(e.target).is('#hamburger')) {
         $headerNav.toggleClass('c-header__is-active');
@@ -789,18 +789,15 @@
 
     // production画像クリック→詳細表示
     for (let i=0; i < lowerTitle.length; i++) {
-      $(`#productionItemList${i+1}`).on('click', function() {
-        $(`#productionDetail${i+1}`).addClass('show');
+      //
+      $(document).on('click', function(e) {
+        let $productionDetail = $(`#productionDetail${i+1}`);
 
-        // if($(`#productionDetail${i+1}`).hasClass('show')) {
-        //   $body.on('click', function() {
-        //     $(`#productionDetail${i+1}`).removeClass('show');
-        //   })
-        // }
-      });
-
-      $(`#productionCrossIcon${i+1}`).on('click', function() {
-        $(`#productionDetail${i+1}`).removeClass('show');
+        if($(e.target).is(`#productionItemList${i+1}`)) {
+          $productionDetail.toggleClass('show');
+        } else if($(e.target).is('*')) {
+          $productionDetail.removeClass('show');
+        }
       });
     }
 
@@ -841,5 +838,5 @@
     });
   }
 </script>
-<script type="text/javascript" src="assets/javascripts/bundlefe6d4f374ad40b827b61.js"></script></body>
+<script type="text/javascript" src="assets/javascripts/bundle31f6400c80911a710743.js"></script></body>
 </html>

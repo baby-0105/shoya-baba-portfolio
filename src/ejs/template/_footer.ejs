@@ -42,7 +42,7 @@
 
     // SP用：ハンバーガーのトグルアクション
     $(document).on('click', function(e) {
-      const $headerNav = $('#headerNav')
+      const $headerNav = $('#headerNav');
 
       if($(e.target).is('#hamburger')) {
         $headerNav.toggleClass('c-header__is-active');
@@ -168,18 +168,15 @@
 
     // production画像クリック→詳細表示
     for (let i=0; i < lowerTitle.length; i++) {
-      $(`#productionItemList${i+1}`).on('click', function() {
-        $(`#productionDetail${i+1}`).addClass('show');
+      //
+      $(document).on('click', function(e) {
+        let $productionDetail = $(`#productionDetail${i+1}`);
 
-        // if($(`#productionDetail${i+1}`).hasClass('show')) {
-        //   $body.on('click', function() {
-        //     $(`#productionDetail${i+1}`).removeClass('show');
-        //   })
-        // }
-      });
-
-      $(`#productionCrossIcon${i+1}`).on('click', function() {
-        $(`#productionDetail${i+1}`).removeClass('show');
+        if($(e.target).is(`#productionItemList${i+1}`)) {
+          $productionDetail.toggleClass('show');
+        } else if($(e.target).is('*')) {
+          $productionDetail.removeClass('show');
+        }
       });
     }
 
