@@ -135,24 +135,6 @@
           }
         }
 
-        // for (let i=0; i < langArea.length; i++) {
-        //   let x = i;
-
-        //   if (scrollPosi > `${langArea[x]}`DetailsPosi - windowHeight + 300){
-        //     return function() {
-        //       for (let j=0; j < 6; j++) {
-        //         $(`#${langArea[x]}ItemUnit${j+1}`).addClass('slideInToUp');
-        //       }
-        //       for (let k=0; k < 7; k++) {
-        //         $(`#${langArea[x]}ExtendGraph${i}`).each(function() {
-        //           extend = $(this).data('extend');
-        //           $(this).css({'width': extend * 20 + '%', 'opacity': '1'});
-        //         });
-        //       }
-        //     }
-        //   }
-        // }
-
         (function productionAddShadow() {
           $('.p-top-production__itemList__img').each(function() {
             let productsPosi = $(this).offset().top;
@@ -166,9 +148,8 @@
       })();
     });
 
-    // production画像クリック→詳細表示
+    // production画像クリック→詳細表示/非表示
     for (let i=0; i < lowerTitle.length; i++) {
-      //
       $(document).on('click', function(e) {
         let $productionDetail = $(`#productionDetail${i+1}`);
 

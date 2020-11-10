@@ -28,11 +28,11 @@ src/ejs/template/_head %>
         <div class="p-top-intro__infoDetail">
           <h3 class="p-top-intro__infoName">馬場　翔矢（Shoya Baba）</h3>
 
-          <% var intro_period=['1997/01/05', '2019/3', '2019/4 ~ 2019/6', '2019/6~', '2019/9', '2020/4', '2020/4~9', 'now', 'feature']; %>
+          <% var intro_period=['1997/01/05', '2019/3', '2019/4 ~ 2019/6', '2019/6~', '2019/9', '2020/4', '2020/4~', 'now', 'feature']; %>
           <% var intro_text=[
-            '生まれました。', '近畿大学 農学部卒業', '機械部品製造業、従事', 'ゲストハウススタッフ、youtube投稿、ライティング、ヒッチハイクを経て、色々模索',
-            'プログラミングを知って、webエンジニアになる事を目指す', '東京でSES事業を行っているベンチャー企業に入社', '諸事情で一時、同社で大阪のコールセンター業務に従事',
-            '学習開始から1年の時を経て、現在自社で初めてのLP作成の稼働がスタート', '今後は、現在学習中のVue.jsを用いたアジャイル開発に取り組みたいです。'
+            '生まれました。', '近畿大学 農学部卒業', '機械部品製造業、従事', 'ゲストハウススタッフ、youtube投稿、Writing、ヒッチハイクなど色々模索',
+            'プログラミングを知って、webサイトを作る事の楽しさを知って、webエンジニアになる事を目指す', '東京でSES事業を行っているベンチャー企業に入社', '諸事情で一時、同社で大阪のコールセンター業務に従事',
+            '学習開始から1年。現在自社で初めてのLP作成の稼働がスタート', '今後は、現在学習中のVue.jsを用いたアジャイル開発に取り組みたいです。'
           ]; %>
 
           <% for (var i=0; i < intro_text.length; i++) { %>
@@ -55,8 +55,8 @@ src/ejs/template/_head %>
         <span class="p-top-skills__titleWord" id="skillsTitleWord">Skills</span>
       </h1>
       <p class="p-top-skills__text">
-        今、習得中の言語も含め、扱うことの出来るスキルの一覧です。現在は、JavaScriptを使用したフロントエンドでの開発を主としています。
-        今後は、Vue.jsの習得やバックエンドの技術を使用した開発にも取り組んでいきたいと考えております。
+        習得中の言語も含め、現在扱うことの出来るスキルの一覧です。現在は、JavaScriptを使用したフロントエンドでの開発を主としています。
+        今後は、Vue.jsの習得やバックエンドの技術を使用したWebアプリケーションの開発にも取り組んでいきたいと考えております。
       </p>
       <ul class="p-top-skills__detail" id="skillsDetail">
         <li class="p-top-skills__detailList">
@@ -93,7 +93,7 @@ src/ejs/template/_head %>
         </li>
         <li class="p-top-skills__detailList">
           <h3 class="p-top-skills__detailList__title">tools</h3>
-          <% var tools=['webpack', 'npm・yarn', 'Git・GitHub', 'AWS（Cloud9）', 'Heroku', 'Linuxコマンド']; %>
+          <% var tools=['webpack', 'npm・yarn', 'Git・GitHub', 'AWS（Cloud9）', 'Heroku', 'Linux']; %>
           <% var toolsExtendNum=['2', '2', '3', '2', '2', '2']; %>
           <% for (var i=0; i < tools.length; i++) { %>
             <dl class="p-top-skills__detailList__item" id="toolsDetailList">
@@ -111,10 +111,10 @@ src/ejs/template/_head %>
       <div class="p-top-skills__explain">
         <h3 class="p-top-skills__explain__title">ースキルレベルー</h3>
         <p class="p-top-skills__explain__text">
-          1.使ってみた事がある程度<br>
-          2.それを使用し、プロダクトを作った事がある程度<br>
-          3.実務で使用した経験がある程度<br>
-          4.実務で1年程度使用、もしくは、人並みに使いこなせる程度<br>
+          1.使ってみた事がある<br>
+          2.それを使用し、プロダクトを作った事がある<br>
+          3.実務で使用した経験がある<br>
+          4.実務で1年程度使用、もしくは、人並みに使いこなせる<br>
           5.何なりと、お任せください！
         </p>
       </div>
@@ -127,8 +127,8 @@ src/ejs/template/_head %>
         <span class="p-top-production__titleWord" id="productionTitleWord">Production</span>
       </h1>
       <p class="p-top-production__text">
-        これまでに制作した、webアプリ・LP・ゲームなどの制作物の一覧です。<br>
-        「使用言語・制作期間・苦労した事・こだわった事」など詳細に記載しております。<br>
+        これまでに制作した、Webアプリ・LP・ゲームなどの制作物の一覧です。<br>
+        「使用言語・制作期間・苦労した事・こだわった事」など、<span class="p-top-production__underline">プロダクトクリック後</span>の詳細に記載しております。<br>
         ソースコードについては、
       <a class="p-top-production__text__link" href="https://github.com/baby-0105" target="_blank">「GitHub」</a>
         から確認できる様になっております。

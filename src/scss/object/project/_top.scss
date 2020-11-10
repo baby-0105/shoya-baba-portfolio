@@ -460,6 +460,12 @@
   @include section_text;
 }
 
+.p-top-production__underline {
+  background: linear-gradient(rgba(0,0,0,0) 60%, #EA6264);
+  position: relative;
+  top: -50%;
+}
+
 .p-top-production__text__link {
   color: $colorLinkBlue;
   display: inline-block;
@@ -524,6 +530,7 @@
   margin: 0 auto;
   background-color: $colorWhite;
   border: $colorBdLightGreen;
+  box-shadow: 8px 6px 12px 3px rgba(0, 0, 0, 1);
   border-radius: 20px;
   padding: 30px 50px;
   position: fixed;
