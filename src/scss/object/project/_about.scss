@@ -1,3 +1,56 @@
-.p-about {
-	color: #fff;
+.p-about-message__title {
+  font-size: $fontSemiTitle;
+  margin-bottom: 30px;
+
+  &:after {
+    content: '';
+    width: 25%;
+    height: 5px;
+    display: block;
+    background-color: $colorLightGreen;
+    margin: 0 auto;
+  }
+
+  @include mq(u-pc) {
+    font-size: $fontLetterMiddle;
+  }
+}
+
+.p-about-message__text {
+  font-size: $fontLetterSmall;
+  margin-bottom: 20px;
+
+  @include mq(u-pc) {
+    font-size: $fontLetterVerySmall;
+  }
+}
+
+.p-about-message__thinText {
+  font-size: $fontLetterVerySmall;
+  opacity: 0.7;
+  margin-bottom: 20px;
+}
+
+.p-about-message__link {
+  border-radius: 30px;
+  padding: 10px 0;
+  border: solid 2px $colorLightGreen;
+  font-size: $fontLetterVerySmall;
+  width: 30%;
+  margin: 0 auto;
+  white-space: nowrap;
+
+  &:hover {
+    transition: .2s;
+    background-color: $colorLightGreen;
+    color: $colorWhite;
+  }
+
+  @include mq(u-pc) {
+    font-size: $fontLetterVerySmall;
+  }
+
+  @include mq(u-sp) {
+    width: 80%;
+  }
 }

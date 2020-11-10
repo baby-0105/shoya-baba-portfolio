@@ -26,7 +26,6 @@
 </footer>
 
 </div><!-- l-wrap -->
-
 <script>
   {
     const $bodyAndHtml = $('body, html'),
@@ -171,12 +170,54 @@
     for (let i=0; i < lowerTitle.length; i++) {
       $(`#productionItemList${i+1}`).on('click', function() {
         $(`#productionDetail${i+1}`).addClass('show');
+
+        // if($(`#productionDetail${i+1}`).hasClass('show')) {
+        //   $body.on('click', function() {
+        //     $(`#productionDetail${i+1}`).removeClass('show');
+        //   })
+        // }
       });
 
       $(`#productionCrossIcon${i+1}`).on('click', function() {
         $(`#productionDetail${i+1}`).removeClass('show');
       });
     }
+
+    // 問い合わせフォーム：バリデーション
+    $("#contactForm").validate({
+      rules: {
+        lastName: {
+          required: true, // 入力必須チェック
+          rangelength: [1, 25],
+        },
+        firstName: {
+          required: true, // 入力必須チェック
+          rangelength: [1, 25],
+        },
+        email: {
+          required: true, // 入力必須チェック
+          email: true, // 形式チェック
+        },
+        message: {
+          required: true // 入力必須チェック
+        }
+      },
+      messages: {
+        lastName: {
+          required: "*苗字を入力してください",
+        },
+        firstName: {
+          required: "*名前を入力してください",
+        },
+        email: {
+          required: "*メールアドレスを入力してください",
+          email: "*正しいメールアドレス形式で入力してください",
+        },
+        message: {
+          required: "*メッセージを入力してください"
+        }
+      }
+    });
   }
 </script>
 </body>

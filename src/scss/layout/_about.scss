@@ -1,0 +1,41 @@
+.l-about-message {
+  @include center_of_vertically_and_horizontally;
+
+  width: 60%;
+  border: $colorBdBlack;
+  border-radius: 30px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px;
+
+  @mixin thumbIcon {
+    @include font_awesome_pseudo_ele('\f164');
+
+    font-size: $fontTitleLarge;
+    color: $colorLightGreen;
+    position: absolute;
+    top: -25px;
+  }
+
+  &:before {
+    @include thumbIcon;
+
+    left: -25px;
+    transform: scale(-1, 1);
+  }
+
+  &:after {
+    @include thumbIcon;
+
+    right: -25px;
+  }
+
+  @include mq(u-sp) {
+    width: 80%;
+
+    &:before,
+    &:after {
+      font-size: $fontSectionTitle;
+    }
+  }
+}

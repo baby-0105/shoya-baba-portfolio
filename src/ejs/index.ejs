@@ -94,7 +94,7 @@ src/ejs/template/_head %>
         <li class="p-top-skills__detailList">
           <h3 class="p-top-skills__detailList__title">tools</h3>
           <% var tools=['webpack', 'npm・yarn', 'Git・GitHub', 'AWS（Cloud9）', 'Heroku', 'Linuxコマンド']; %>
-          <% var toolsExtendNum=['2', '2', '3', '2', '2', '1']; %>
+          <% var toolsExtendNum=['2', '2', '3', '2', '2', '2']; %>
           <% for (var i=0; i < tools.length; i++) { %>
             <dl class="p-top-skills__detailList__item" id="toolsDetailList">
               <dt class="p-top-skills__detailList__itemUnit" id="toolsItemUnit<%= i+1 %>">
@@ -127,7 +127,7 @@ src/ejs/template/_head %>
         <span class="p-top-production__titleWord" id="productionTitleWord">Production</span>
       </h1>
       <p class="p-top-production__text">
-        これまでに制作した、模写・LPなどの制作物の一覧です。<br>
+        これまでに制作した、webアプリ・LP・ゲームなどの制作物の一覧です。<br>
         「使用言語・制作期間・苦労した事・こだわった事」など詳細に記載しております。<br>
         ソースコードについては、
       <a class="p-top-production__text__link" href="https://github.com/baby-0105" target="_blank">「GitHub」</a>
@@ -147,7 +147,6 @@ src/ejs/template/_head %>
   </div>
 
   <ul class="l-top-production__detail">
-    <% var production_title=['ウクレレプレイヤーのマッチングアプリ', 'JSで作るNumerOn', 'ポートフォリオサイト', 'webレター（sample）']; %>
     <% var detail_info_text=[
       ['HTML/CSS/Ruby', 'HTML/CSS/JavaScript', 'HTML/CSS/JavaScript', 'HTML/CSS/JavaScript'],
       ['Bootstrap/Rails/MySQL/Cloud9', 'なし', 'Sass/jQuery/webpack/npm', 'Sass/jQuery/webpack/npm'],
@@ -164,7 +163,7 @@ src/ejs/template/_head %>
     <% for (var i=0; i < production_title.length; i++) { %>
       <li class="p-top-production__detailList" id="productionDetail<%= i+1 %>">
         <span class="p-top-production__detailList__crossIcon" id="productionCrossIcon<%= i+1 %>"><i class="fas fa-times crossIcon"></i></span>
-        <h2 class="p-top-production__detailList__title"><%= production_title[i] %></h2>
+        <h2 class="p-top-production__detailList__title">ー <%= production_title[i] %> ー</h2>
         <div class="p-top-production__detailList__exp">
           <div class="p-top-production__detailList__expHeading">
             <img class="p-top-production__detailList__expImg" src="<%= img_path %><%= production[i] %>.png" alt="作品の画像">
@@ -225,15 +224,18 @@ src/ejs/template/_head %>
       <h1 class="p-top-contact__title" id="appear_contact">
         <span class="p-top-contact__titleWord" id="contactTitleWord">Contact</span>
       </h1>
-      <!-- <p class="p-top-contact__text">お問い合わせはこちら（もしくは、フッターのTwitterアイコンからダイレクトメッセージお願いします。）</p> -->
-      <p class="p-top-contact__text">※現在こちらの機能は使えません。フッターのTwitterアイコンからダイレクトメッセージお願いします。</p>
-      <div class="p-top-contact__block">
-        <input class="p-top-contact__form" type="text" placeholder="姓">
-        <input class="p-top-contact__form" type="text" placeholder="名">
-        <input class="p-top-contact__form" type="text" placeholder="メールアドレス">
-        <textarea class="p-top-contact__inquiry" name="comment" placeholder="お問い合わせ内容を記載ください。"></textarea>
-        <a class="p-top-contact__btn" href="#">送信</a>
-      </div>
+      <p class="p-top-contact__text">お問い合わせはこちらから！<br>（もしくは、ページ下部の'Twitterアイコン'からDMお願いします。）</p>
+      <form class="p-top-contact__block" id="contactForm" action="https://api.staticforms.xyz/submit" method="post">
+        <input class="p-top-contact__form" name="lastName" type="text" placeholder="姓">
+        <input class="p-top-contact__form" name="firstName" type="text" placeholder="名">
+        <input class="p-top-contact__form" name="email" type="text" placeholder="メールアドレス">
+        <textarea class="p-top-contact__inquiry" name="message" placeholder="お問い合わせ内容を記載ください。"></textarea>
+        <input type="hidden" name="accessKey" value="ccb0ccaf-3ab2-47f6-b46b-0916e6b582a7">
+        <input type="hidden" name="subject" value="※※「ポートフォリオサイト」より、メール※※">
+        <input type="hidden" name="replyTo" value="@">
+        <input type="hidden" name="redirectTo" value="https://portfolio.shoyababa.vercel.app/about">
+        <input class="p-top-contact__btn" type="submit" value="送信する">
+      </form>
     </div>
   </div>
 </main>

@@ -1,10 +1,10 @@
-<% var title = "ABOUT"; var description = "アバウトページのdescription"; %> <%
+<% var title = "ABOUT"; var description = "送信完了ページ"; %> <%
 include src/ejs/template/_head %>
 
-<!-- prettier-ignore -->
-<h1>
-  アバウトページへようこそ！！
-</h1>
-<a href="/">to top</a>
-
-<% include src/ejs/template/_footer %>
+<div class="l-about-message">
+  <h2 class="p-about-message__title">送信が完了しました</h2>
+  <p class="p-about-message__text">お問い合わせいただきありがとうこざいます。こちらからまた折ってのご連絡させていただきます。</p>
+  <p class="p-about-message__thinText">返信にお時間いただく場合がございますが、その際はご了承ください。<br>
+  ※恐れ入りますが、24時間以上返信がない場合は再度ご連絡いただきますようお願いいたします。</p>
+  <a class="p-about-message__link" href="/">ホームへ戻る</a>
+</div>

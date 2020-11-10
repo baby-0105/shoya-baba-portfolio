@@ -479,7 +479,6 @@
 .p-top-production__itemList {
   position: relative;
   width: 30%;
-  overflow: hidden;
 
   &:nth-child(4) {
     margin-top: 30px;
@@ -678,7 +677,7 @@
 }
 
 .p-top-production__detailList__urlText {
-  &:first-child {
+  &:nth-of-type(1) { // first-child効かない
     margin-bottom: 10px;
 
     @include mq(u-sp) {

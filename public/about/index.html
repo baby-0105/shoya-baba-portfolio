@@ -2,14 +2,14 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8" />
-<meta name="description" content="アバウトページのdescription" />
+<meta name="description" content="送信完了ページ" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" href="./assets/images/fav.png" />
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <!--facebook用-->
 <meta property="og:title" content="ABOUT" />
-<meta property="og:description" content="アバウトページのdescription" />
+<meta property="og:description" content="送信完了ページ" />
 <meta property="og:url" content="" />
 <meta property="og:image" content="" /><!--絶対パスで記述-->
 <meta property="og:type" content="website" />
@@ -20,210 +20,21 @@
 <!-- <meta name="twitter:site" content="" /> --><!--twitterがあれば記述-->
 <meta name="twitter:title" content="ABOUT" />
 <meta name="twitter:url" content="" />
-<meta name="twitter:description" content="アバウトページのdescription" />
+<meta name="twitter:description" content="送信完了ページ" />
 <meta name="twitter:image" content="" /><!--絶対パスで記述-->
 
 <title>ABOUT</title>
 
-<!-- <script type="text/javascript" src="../src/js/pages/Home.js"></script> -->
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-<link href="../assets/stylesheets/bundle7c2cf5daf1f9cc28793a.css" rel="stylesheet"></head>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
+<link href="../assets/stylesheets/bundlefe6d4f374ad40b827b61.css" rel="stylesheet"></head>
 <body>
 <div class="l-wrap">
 
-<!-- prettier-ignore -->
-<h1>
-  アバウトページへようこそ！！
-</h1>
-<a href="/">to top</a>
-
-
-
-<footer class="l-footer">
-  <small class="c-footer__copyright">&copy;Shoya Baba.All Rights Reserved 2020.</small>
-  <div class="l-footer__container">
-    <ul class="c-footer__contact">
-      
-      
-       <!-- "far fa-envelope": メールアイコン -->
-      
-        <li class="c-footer__contactList">
-          <a class="c-footer__contactLink" href="https://twitter.com/babi_0105" target="_blank">
-            <p class="c-footer__contact__hoverText">Twitter</p>
-            <i class="fab fa-twitter"></i>
-          </a>
-        </li>
-      
-        <li class="c-footer__contactList">
-          <a class="c-footer__contactLink" href="https://github.com/baby-0105" target="_blank">
-            <p class="c-footer__contact__hoverText">GitHub</p>
-            <i class="fab fa-github-alt"></i>
-          </a>
-        </li>
-      
-
-      <li class="c-footer__contactList">
-        <a class="c-footer__contactLink" href="https://qiita.com/baby-0105" target="_blank">
-          <p class="c-footer__contact__hoverIcon">Qiita</p>
-        </a>
-      </li>
-    </ul>
-  </div>
-</footer>
-
-</div><!-- l-wrap -->
-
-<script>
-  {
-    const $bodyAndHtml = $('body, html'),
-          $body = $('body');
-
-    let scrollPosi;
-        lowerTitle=['intro', 'skills', 'production', 'canDo', 'contact'],
-        upperTitle=['Intro', 'Skills', 'Production', 'CanDo', 'Contact'];
-
-    // ページの一番上までスクロールさせます。
-    $("#to_top").on('click', function() {
-      $bodyAndHtml.animate({scrollTop: 0}, 300, 'linear');
-    });
-
-    // SP用：ハンバーガーのトグルアクション
-    $(document).on('click', function(e) {
-      const $headerNav = $('#headerNav')
-
-      if($(e.target).is('#hamburger')) {
-        $headerNav.toggleClass('c-header__is-active');
-      } else if($(e.target).is('*')) {
-        $headerNav.removeClass('c-header__is-active');
-      }
-    });
-
-    // headerボタンクリック：指定の位置までスクロール（クロージャー使用）
-    for (let i=0; i < upperTitle.length; i++) {
-      $(`#header${upperTitle[i]}`).on('click', (function() {
-        let x = i;
-
-        return function() {
-          let headerHeight = $('#header').innerHeight(); //innerHeight()は、paddingも含めた高さ
-
-          $bodyAndHtml.animate({scrollTop: $(`#${lowerTitle[x]}`).offset().top - headerHeight});
-        }
-      })());
-    }
-
-    // スクロールイベント
-    $(window).scroll(function() {
-      let windowHeight = $(window).height(),
-          skilldDetailPosi = $('#skillsDetail').offset().top;
-
-      scrollPosi = $(window).scrollTop();
-
-      (function appearTitleText() {
-        for (let i=0; i < lowerTitle.length; i++) {
-          $(`#${lowerTitle[i]}TitleWord`).each(function() {
-            let titleTextPosi = $(this).offset().top;
-
-            if (scrollPosi > titleTextPosi - windowHeight + 100){
-              $(this).addClass('slideInToDown'); // 速度：addClass、removeClass > .css()
-            }
-          });
-        }
-      })();
-
-      (function apperAboutText() {
-        $('.p-top-intro__infoTextBlock').each(function() {
-          let aboutTextPosi = $(this).offset().top;
-
-          if (scrollPosi > aboutTextPosi - windowHeight + 150){
-            $(this).addClass('slideInToUp');
-          }
-        })
-      })();
-
-      (function appearLang() {
-        let langArea = ['front', 'back', 'tools'];
-        let frontDetailsPosi = $('#frontDetailList').offset().top,
-            backDetailsPosi = $('#backDetailList').offset().top,
-            toolsDetailsPosi = $('#toolsDetailList').offset().top;
-
-        if (scrollPosi > frontDetailsPosi - windowHeight + 300){
-          for (let i=0; i < 6; i++) {
-            $(`#frontItemUnit${i+1}`).addClass('slideInToUp');
-          }
-          for (let i=0; i < 7; i++) {
-            $(`#frontExtendGraph${i}`).each(function() {
-              extend = $(this).data('extend');
-              $(this).css({'width': extend * 20 + '%', 'opacity': '1'});
-            });
-          }
-        }
-
-        if (scrollPosi > backDetailsPosi - windowHeight + 300){
-          for (let i=0; i < 6; i++) {
-            $(`#backItemUnit${i+1}`).addClass('slideInToUp');
-          }
-          for (let i=0; i < 7; i++) {
-            $(`#backExtendGraph${i}`).each(function() {
-              extend = $(this).data('extend');
-              $(this).css({'width': extend * 20 + '%', 'opacity': '1'});
-            });
-          }
-        }
-
-        if (scrollPosi > toolsDetailsPosi - windowHeight + 300){
-          for (let i=0; i < 6; i++) {
-            $(`#toolsItemUnit${i+1}`).addClass('slideInToUp');
-          }
-          for (let i=0; i < 7; i++) {
-            $(`#toolsExtendGraph${i}`).each(function() {
-              extend = $(this).data('extend');
-              $(this).css({'width': extend * 20 + '%', 'opacity': '1'});
-            });
-          }
-        }
-
-        // for (let i=0; i < langArea.length; i++) {
-        //   let x = i;
-
-        //   if (scrollPosi > `${langArea[x]}`DetailsPosi - windowHeight + 300){
-        //     return function() {
-        //       for (let j=0; j < 6; j++) {
-        //         $(`#${langArea[x]}ItemUnit${j+1}`).addClass('slideInToUp');
-        //       }
-        //       for (let k=0; k < 7; k++) {
-        //         $(`#${langArea[x]}ExtendGraph${i}`).each(function() {
-        //           extend = $(this).data('extend');
-        //           $(this).css({'width': extend * 20 + '%', 'opacity': '1'});
-        //         });
-        //       }
-        //     }
-        //   }
-        // }
-
-        (function productionAddShadow() {
-          $('.p-top-production__itemList__img').each(function() {
-            let productsPosi = $(this).offset().top;
-
-            if (scrollPosi > productsPosi - windowHeight + 200){
-              $(this).addClass('productionAnim');
-              $(this).addClass('productionSlideInToUp');
-            }
-          });
-        })();
-      })();
-    });
-
-    // production画像クリック→詳細表示
-    for (let i=0; i < lowerTitle.length; i++) {
-      $(`#productionItemList${i+1}`).on('click', function() {
-        $(`#productionDetail${i+1}`).addClass('show');
-      });
-
-      $(`#productionCrossIcon${i+1}`).on('click', function() {
-        $(`#productionDetail${i+1}`).removeClass('show');
-      });
-    }
-  }
-</script>
-<script type="text/javascript" src="../assets/javascripts/bundle7c2cf5daf1f9cc28793a.js"></script></body>
-</html>
+<div class="l-about-message">
+  <h2 class="p-about-message__title">送信が完了しました</h2>
+  <p class="p-about-message__text">お問い合わせいただきありがとうこざいます。こちらからまた折ってのご連絡させていただきます。</p>
+  <p class="p-about-message__thinText">返信にお時間いただく場合がございますが、その際はご了承ください。<br>
+  ※恐れ入りますが、24時間以上返信がない場合は再度ご連絡いただきますようお願いいたします。</p>
+  <a class="p-about-message__link" href="/">ホームへ戻る</a>
+</div><script type="text/javascript" src="../assets/javascripts/bundlefe6d4f374ad40b827b61.js"></script>

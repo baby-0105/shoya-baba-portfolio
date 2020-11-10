@@ -25,9 +25,9 @@
 
 <title>shoya_baba_portfolio_TOP</title>
 
-<!-- <script type="text/javascript" src="../src/js/pages/Home.js"></script> -->
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-<link href="assets/stylesheets/bundle7c2cf5daf1f9cc28793a.css" rel="stylesheet"></head>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
+<link href="assets/stylesheets/bundlefe6d4f374ad40b827b61.css" rel="stylesheet"></head>
 <body>
 <div class="l-wrap">
 
@@ -369,7 +369,7 @@
                 <p class="p-top-skills__detailList__itemLang">Linuxコマンド</p>
               </dt>
               <dd class="p-top-skills__detailList__itemGraph">
-                <div class="p-top-skills__detailList__itemGraph__extend--tools" id="toolsExtendGraph6" data-extend="1"></div>
+                <div class="p-top-skills__detailList__itemGraph__extend--tools" id="toolsExtendGraph6" data-extend="2"></div>
               </dd>
             </dl>
           
@@ -394,7 +394,7 @@
         <span class="p-top-production__titleWord" id="productionTitleWord">Production</span>
       </h1>
       <p class="p-top-production__text">
-        これまでに制作した、模写・LPなどの制作物の一覧です。<br>
+        これまでに制作した、webアプリ・LP・ゲームなどの制作物の一覧です。<br>
         「使用言語・制作期間・苦労した事・こだわった事」など詳細に記載しております。<br>
         ソースコードについては、
       <a class="p-top-production__text__link" href="https://github.com/baby-0105" target="_blank">「GitHub」</a>
@@ -432,10 +432,9 @@
     
     
     
-    
       <li class="p-top-production__detailList" id="productionDetail1">
         <span class="p-top-production__detailList__crossIcon" id="productionCrossIcon1"><i class="fas fa-times crossIcon"></i></span>
-        <h2 class="p-top-production__detailList__title">ウクレレプレイヤーのマッチングアプリ</h2>
+        <h2 class="p-top-production__detailList__title">ー ウクレレプレイヤーのマッチングアプリ ー</h2>
         <div class="p-top-production__detailList__exp">
           <div class="p-top-production__detailList__expHeading">
             <img class="p-top-production__detailList__expImg" src="/assets/images/ukulele_match.png" alt="作品の画像">
@@ -466,7 +465,7 @@
     
       <li class="p-top-production__detailList" id="productionDetail2">
         <span class="p-top-production__detailList__crossIcon" id="productionCrossIcon2"><i class="fas fa-times crossIcon"></i></span>
-        <h2 class="p-top-production__detailList__title">JSで作るNumerOn</h2>
+        <h2 class="p-top-production__detailList__title">ー JSで作るNumerOn ー</h2>
         <div class="p-top-production__detailList__exp">
           <div class="p-top-production__detailList__expHeading">
             <img class="p-top-production__detailList__expImg" src="/assets/images/numeron.png" alt="作品の画像">
@@ -497,7 +496,7 @@
     
       <li class="p-top-production__detailList" id="productionDetail3">
         <span class="p-top-production__detailList__crossIcon" id="productionCrossIcon3"><i class="fas fa-times crossIcon"></i></span>
-        <h2 class="p-top-production__detailList__title">ポートフォリオサイト</h2>
+        <h2 class="p-top-production__detailList__title">ー ポートフォリオサイト ー</h2>
         <div class="p-top-production__detailList__exp">
           <div class="p-top-production__detailList__expHeading">
             <img class="p-top-production__detailList__expImg" src="/assets/images/portfolio.png" alt="作品の画像">
@@ -528,7 +527,7 @@
     
       <li class="p-top-production__detailList" id="productionDetail4">
         <span class="p-top-production__detailList__crossIcon" id="productionCrossIcon4"><i class="fas fa-times crossIcon"></i></span>
-        <h2 class="p-top-production__detailList__title">webレター（sample）</h2>
+        <h2 class="p-top-production__detailList__title">ー webレター（sample） ー</h2>
         <div class="p-top-production__detailList__exp">
           <div class="p-top-production__detailList__expHeading">
             <img class="p-top-production__detailList__expImg" src="/assets/images/sample-birthday.png" alt="作品の画像">
@@ -597,15 +596,18 @@
       <h1 class="p-top-contact__title" id="appear_contact">
         <span class="p-top-contact__titleWord" id="contactTitleWord">Contact</span>
       </h1>
-      <!-- <p class="p-top-contact__text">お問い合わせはこちら（もしくは、フッターのTwitterアイコンからダイレクトメッセージお願いします。）</p> -->
-      <p class="p-top-contact__text">※現在こちらの機能は使えません。フッターのTwitterアイコンからダイレクトメッセージお願いします。</p>
-      <div class="p-top-contact__block">
-        <input class="p-top-contact__form" type="text" placeholder="姓">
-        <input class="p-top-contact__form" type="text" placeholder="名">
-        <input class="p-top-contact__form" type="text" placeholder="メールアドレス">
-        <textarea class="p-top-contact__inquiry" name="comment" placeholder="お問い合わせ内容を記載ください。"></textarea>
-        <a class="p-top-contact__btn" href="#">送信</a>
-      </div>
+      <p class="p-top-contact__text">お問い合わせはこちらから！<br>（もしくは、ページ下部の'Twitterアイコン'からDMお願いします。）</p>
+      <form class="p-top-contact__block" id="contactForm" action="https://api.staticforms.xyz/submit" method="post">
+        <input class="p-top-contact__form" name="lastName" type="text" placeholder="姓">
+        <input class="p-top-contact__form" name="firstName" type="text" placeholder="名">
+        <input class="p-top-contact__form" name="email" type="text" placeholder="メールアドレス">
+        <textarea class="p-top-contact__inquiry" name="message" placeholder="お問い合わせ内容を記載ください。"></textarea>
+        <input type="hidden" name="accessKey" value="ccb0ccaf-3ab2-47f6-b46b-0916e6b582a7">
+        <input type="hidden" name="subject" value="※※「ポートフォリオサイト」より、メール※※">
+        <input type="hidden" name="replyTo" value="@">
+        <input type="hidden" name="redirectTo" value="https://portfolio.shoyababa.vercel.app/about">
+        <input class="p-top-contact__btn" type="submit" value="送信する">
+      </form>
     </div>
   </div>
 </main>
@@ -645,7 +647,6 @@
 </footer>
 
 </div><!-- l-wrap -->
-
 <script>
   {
     const $bodyAndHtml = $('body, html'),
@@ -790,13 +791,55 @@
     for (let i=0; i < lowerTitle.length; i++) {
       $(`#productionItemList${i+1}`).on('click', function() {
         $(`#productionDetail${i+1}`).addClass('show');
+
+        // if($(`#productionDetail${i+1}`).hasClass('show')) {
+        //   $body.on('click', function() {
+        //     $(`#productionDetail${i+1}`).removeClass('show');
+        //   })
+        // }
       });
 
       $(`#productionCrossIcon${i+1}`).on('click', function() {
         $(`#productionDetail${i+1}`).removeClass('show');
       });
     }
+
+    // 問い合わせフォーム：バリデーション
+    $("#contactForm").validate({
+      rules: {
+        lastName: {
+          required: true, // 入力必須チェック
+          rangelength: [1, 25],
+        },
+        firstName: {
+          required: true, // 入力必須チェック
+          rangelength: [1, 25],
+        },
+        email: {
+          required: true, // 入力必須チェック
+          email: true, // 形式チェック
+        },
+        message: {
+          required: true // 入力必須チェック
+        }
+      },
+      messages: {
+        lastName: {
+          required: "*苗字を入力してください",
+        },
+        firstName: {
+          required: "*名前を入力してください",
+        },
+        email: {
+          required: "*メールアドレスを入力してください",
+          email: "*正しいメールアドレス形式で入力してください",
+        },
+        message: {
+          required: "*メッセージを入力してください"
+        }
+      }
+    });
   }
 </script>
-<script type="text/javascript" src="assets/javascripts/bundle7c2cf5daf1f9cc28793a.js"></script></body>
+<script type="text/javascript" src="assets/javascripts/bundlefe6d4f374ad40b827b61.js"></script></body>
 </html>
