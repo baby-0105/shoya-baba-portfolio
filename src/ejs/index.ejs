@@ -31,7 +31,7 @@ src/ejs/template/_head %>
           <% var intro_period=['1997/01/05', '2019/3', '2019/4 ~ 2019/6', '2019/6~', '2019/9', '2020/4', '2020/4~', 'now', 'feature']; %>
           <% var intro_text=[
             '生まれました。', '近畿大学 農学部卒業', '機械部品製造業、従事', 'ゲストハウススタッフ、youtube投稿、Writing、ヒッチハイクなど色々模索',
-            'プログラミングを知って、webサイトを作る事の楽しさを知って、webエンジニアになる事を目指す', '東京でSES事業を行っているベンチャー企業に入社', '諸事情で一時、同社で大阪のコールセンター業務に従事',
+            'プログラミングで、Webサイトを作る事の楽しさを知り、Webエンジニアになる事を目指す', '東京でSES事業を行っているベンチャー企業に入社', '諸事情で一時、同社で大阪のコールセンター業務に従事',
             '学習開始から1年。現在自社で初めてのLP作成の稼働がスタート', '今後は、現在学習中のVue.jsを用いたアジャイル開発に取り組みたいです。'
           ]; %>
 
@@ -226,8 +226,7 @@ src/ejs/template/_head %>
       </h1>
       <p class="p-top-contact__text">お問い合わせはこちらから！<br>（もしくは、ページ下部の'Twitterアイコン'からDMお願いします。）</p>
       <form class="p-top-contact__block" id="contactForm" action="https://api.staticforms.xyz/submit" method="post">
-        <input class="p-top-contact__form" name="lastName" type="text" placeholder="姓">
-        <input class="p-top-contact__form" name="firstName" type="text" placeholder="名">
+        <input class="p-top-contact__form" name="name" type="text" placeholder="お名前">
         <input class="p-top-contact__form" name="email" type="text" placeholder="メールアドレス">
         <textarea class="p-top-contact__inquiry" name="message" placeholder="お問い合わせ内容を記載ください。"></textarea>
         <input type="hidden" name="accessKey" value="ccb0ccaf-3ab2-47f6-b46b-0916e6b582a7">

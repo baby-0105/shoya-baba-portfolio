@@ -164,13 +164,9 @@
     // 問い合わせフォーム：バリデーション
     $("#contactForm").validate({
       rules: {
-        lastName: {
+        name: {
           required: true, // 入力必須チェック
-          rangelength: [1, 25],
-        },
-        firstName: {
-          required: true, // 入力必須チェック
-          rangelength: [1, 25],
+          rangelength: [1, 50],
         },
         email: {
           required: true, // 入力必須チェック
@@ -181,11 +177,8 @@
         }
       },
       messages: {
-        lastName: {
-          required: "*苗字を入力してください",
-        },
-        firstName: {
-          required: "*名前を入力してください",
+        name: {
+          required: "*お名前を入力してください",
         },
         email: {
           required: "*メールアドレスを入力してください",

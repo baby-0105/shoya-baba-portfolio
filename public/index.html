@@ -27,7 +27,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
-<link href="assets/stylesheets/bundleebca1401204a14a029f4.css" rel="stylesheet"></head>
+<link href="assets/stylesheets/bundlea1921214b962f5256c20.css" rel="stylesheet"></head>
 <body>
 <div class="l-wrap">
 
@@ -144,7 +144,7 @@
             <div class="p-top-intro__infoText">
               <div class="p-top-intro__infoTextBlock">
                 <p class="p-top-intro__infoText__peroid">2019/9</p>
-                <p class="p-top-intro__infoText__main">プログラミングを知って、webサイトを作る事の楽しさを知って、webエンジニアになる事を目指す</p>
+                <p class="p-top-intro__infoText__main">プログラミングで、Webサイトを作る事の楽しさを知り、Webエンジニアになる事を目指す</p>
               </div>
             </div>
             <span class="p-top-intro__infoText__arrow" id="introArrow5">⇩</span>
@@ -598,8 +598,7 @@
       </h1>
       <p class="p-top-contact__text">お問い合わせはこちらから！<br>（もしくは、ページ下部の'Twitterアイコン'からDMお願いします。）</p>
       <form class="p-top-contact__block" id="contactForm" action="https://api.staticforms.xyz/submit" method="post">
-        <input class="p-top-contact__form" name="lastName" type="text" placeholder="姓">
-        <input class="p-top-contact__form" name="firstName" type="text" placeholder="名">
+        <input class="p-top-contact__form" name="name" type="text" placeholder="お名前">
         <input class="p-top-contact__form" name="email" type="text" placeholder="メールアドレス">
         <textarea class="p-top-contact__inquiry" name="message" placeholder="お問い合わせ内容を記載ください。"></textarea>
         <input type="hidden" name="accessKey" value="ccb0ccaf-3ab2-47f6-b46b-0916e6b582a7">
@@ -785,13 +784,9 @@
     // 問い合わせフォーム：バリデーション
     $("#contactForm").validate({
       rules: {
-        lastName: {
+        name: {
           required: true, // 入力必須チェック
-          rangelength: [1, 25],
-        },
-        firstName: {
-          required: true, // 入力必須チェック
-          rangelength: [1, 25],
+          rangelength: [1, 50],
         },
         email: {
           required: true, // 入力必須チェック
@@ -802,11 +797,8 @@
         }
       },
       messages: {
-        lastName: {
-          required: "*苗字を入力してください",
-        },
-        firstName: {
-          required: "*名前を入力してください",
+        name: {
+          required: "*お名前を入力してください",
         },
         email: {
           required: "*メールアドレスを入力してください",
@@ -819,5 +811,5 @@
     });
   }
 </script>
-<script type="text/javascript" src="assets/javascripts/bundleebca1401204a14a029f4.js"></script></body>
+<script type="text/javascript" src="assets/javascripts/bundlea1921214b962f5256c20.js"></script></body>
 </html>
