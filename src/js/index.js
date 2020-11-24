@@ -3,7 +3,7 @@
 import $ from 'jquery'
 import router from './modules/Router'
 import '../scss/app.scss'
-// import 'jquery.validate.js'
+// import 'jquery-validation/dist/localization/jquery.validate.js'
 // import 'localization/messages_ja.js'
 
 $(() => {
@@ -54,7 +54,7 @@ $(() => {
           let titleTextPosi = $(this).offset().top;
 
           if (scrollPosi > titleTextPosi - windowHeight + 100){
-            $(this).addClass('slideInToDown'); // 速度：addClass、removeClass > .css()
+            $(this).addClass('slideInToDown');
           }
         });
       }
@@ -72,40 +72,47 @@ $(() => {
 
     (function appearLang() {
       // let langArea = ['front', 'back', 'tools'];
-      let frontDetailsPosi = $('#frontDetailList').offset().top,
+      let $frontNum = $('.p-top-skills__detailList__itemGraph__extend--front'),
+          $backNum = $('.p-top-skills__detailList__itemGraph__extend--back'),
+          $toolsNum = $('.p-top-skills__detailList__itemGraph__extend--tools'),
+          frontDetailsPosi = $('#frontDetailList').offset().top,
           backDetailsPosi = $('#backDetailList').offset().top,
           toolsDetailsPosi = $('#toolsDetailList').offset().top;
 
+      // ①front
       if (scrollPosi > frontDetailsPosi - windowHeight + 300){
-        for (let i=0; i < 6; i++) {
+        for (let i=0; i < $frontNum.length; i++) {
           $(`#frontItemUnit${i+1}`).addClass('slideInToUp');
         }
-        for (let i=0; i < 7; i++) {
-          $(`#frontExtendGraph${i}`).each(function() {
+        for (let i=0; i < $frontNum.length; i++) {
+          $(`#frontExtendGraph${i+1}`).each(function() {
             let extend = $(this).data('extend');
+
             $(this).css({'width': extend * 20 + '%', 'opacity': '1'});
           });
         }
       }
 
+      // ②back
       if (scrollPosi > backDetailsPosi - windowHeight + 300){
-        for (let i=0; i < 6; i++) {
+        for (let i=0; i < $backNum.length; i++) {
           $(`#backItemUnit${i+1}`).addClass('slideInToUp');
         }
-        for (let i=0; i < 7; i++) {
-          $(`#backExtendGraph${i}`).each(function() {
+        for (let i=0; i < $backNum.length; i++) {
+          $(`#backExtendGraph${i+1}`).each(function() {
             let extend = $(this).data('extend');
             $(this).css({'width': extend * 20 + '%', 'opacity': '1'});
           });
         }
       }
 
+      // ③tools
       if (scrollPosi > toolsDetailsPosi - windowHeight + 300){
-        for (let i=0; i < 6; i++) {
+        for (let i=0; i < $toolsNum.length; i++) {
           $(`#toolsItemUnit${i+1}`).addClass('slideInToUp');
         }
-        for (let i=0; i < 7; i++) {
-          $(`#toolsExtendGraph${i}`).each(function() {
+        for (let i=0; i < $toolsNum.length; i++) {
+          $(`#toolsExtendGraph${i+1}`).each(function() {
             let extend = $(this).data('extend');
             $(this).css({'width': extend * 20 + '%', 'opacity': '1'});
           });
@@ -128,11 +135,16 @@ $(() => {
   // production画像クリック→詳細表示/非表示
   for (let i=0; i < lowerTitle.length; i++) {
     $(document).on('click', function(e) {
-      let $productionDetail = $(`#productionDetail${i+1}`);
+      let $productionDetail = $(`#productionDetail${i+1}`),
+          $body = $('body');
 
       if($(e.target).is(`#productionItemList${i+1}`)) {
-        $productionDetail.toggleClass('show');
-      } else if($(e.target).is('*')) {
+        $('.l-top-production__detail').fadeIn();
+        $body.addClass('nonScroll');
+        $productionDetail.addClass('show');
+      } else if($productionDetail.hasClass('show') && $(e.target).is('*')) {
+        $('.l-top-production__detail').fadeOut();
+        $body.removeClass('nonScroll');
         $productionDetail.removeClass('show');
       }
     });

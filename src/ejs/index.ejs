@@ -109,7 +109,7 @@ src/ejs/template/_head %>
         </li>
       </ul>
       <div class="p-top-skills__explain">
-        <h3 class="p-top-skills__explain__title">ースキルレベルー</h3>
+        <h3 class="p-top-skills__explain__title">- スキルレベル -</h3>
         <p class="p-top-skills__explain__text">
           1.使ってみた事がある<br>
           2.それを使用し、プロダクトを作った事がある<br>
@@ -144,55 +144,55 @@ src/ejs/template/_head %>
         <% } %>
       </ul>
     </div>
-  </div>
 
-  <ul class="l-top-production__detail">
-    <% var detail_info_text=[
-      ['HTML/CSS/Ruby', 'HTML/CSS/JavaScript', 'HTML/CSS/JavaScript', 'HTML/CSS/JavaScript'],
-      ['Bootstrap/Rails/MySQL/Cloud9', 'なし', 'Sass/jQuery/webpack/npm', 'Sass/jQuery/webpack/npm'],
-      ['1ヶ月（2020/3〜2020/4）', '2週間（2020/10）', '1ヶ月（2020/10）', '1ヶ月（2020/6〜2020/7）'],
-      ['ukulele-match-0105.herokuapp.com/', 'baby-0105.github.io/JS_numeron/html/home.html', 'portfolio.shoyababa.vercel.app/', 'sample-birthday.shoyababa.vercel.app'],
-      ['original_app-ukulele-match-', 'JS_numeron', 'shoya_baba_portfolio', 'sample-birthday']
-    ];%>
-    <% var detail_expText=[
-      'Ruby on Railsを使用したマッチングサービスです。新規登録/ログイン/フォロー/投稿/ダイレクトメッセージなどの機能を付けました。どちらか言うとバックエンドよりの技術を主に使用する事に注力したため、フロント部分はBootStrapを使用しています。作った目的は、ウクレレプレイヤー同士の交流を深めてもらうためです。私自身、ウクレレを弾いていましたが（今はしていません）独学での演奏は挫折しやすく、また、プレイヤー数も少ないため仲間を探すことは大変です。そこで、模擬サイトとして作成しました。',
-      '数字当てゲーム「NumerOn」を作成しました。純粋なJavaScriptとHTML/CSSのみで、ライブラリやフレームワークは使用していません。目的は、jQueryなどのライブラリに頼らない純粋なJavaScriptに慣れるためです。（JavaScriptを使うことが目的でしたのでUIはかなりチープなものになっています）。なぜ、このゲームを作成しようと思ったか？ですが、、、高校の時に毎日友達としていた思い出のゲームだからです（笑）。作ってみたかったものが実現しました。',
-      '私のポートフォリオサイトです。シンプルかつ、一目で分かるようなUIにする事を意識しました。Skillsの棒グラフの作成にはjQueryを使用し、UXにもこだわり工夫いたしました。Sass/jQueryの他、npm/webpackなどのツールも使用しています。npmを使用している事もあってnowを使って、Vercelへデプロイしました。今後は、現在勉強しているVue.jsも当サイトへ取り入れてモダンなコードへと改善を行っていきたいと思います。',
-      '個人的に作ったwebレターです。実際には、写真や手紙の内容も添えて作ったのですが、こちらはsampleになります。仕様自体は本物とほぼ同等のものです。シンプルで分かりやすいと言うよりも、CSSやjQueryなどでアニメーションを複数使用する事で凝った仕様にしています。'
-    ]; %>
-    <% for (var i=0; i < production_title.length; i++) { %>
-      <li class="p-top-production__detailList" id="productionDetail<%= i+1 %>">
-        <span class="p-top-production__detailList__crossIcon" id="productionCrossIcon<%= i+1 %>"><i class="fas fa-times crossIcon"></i></span>
-        <h2 class="p-top-production__detailList__title">ー <%= production_title[i] %> ー</h2>
-        <div class="p-top-production__detailList__exp">
-          <div class="p-top-production__detailList__expHeading">
-            <img class="p-top-production__detailList__expImg" src="<%= img_path %><%= production[i] %>.png" alt="作品の画像">
-            <dl class="p-top-production__detailList__info">
-              <dt class="p-top-production__detailList__infoTitle">●＜使用言語＞</dt>
-              <dd class="p-top-production__detailList__infoText"><%= detail_info_text[0][i] %></dd>
-              <dt class="p-top-production__detailList__infoTitle">●＜フレームワーク/ライブラリ/その他ツール＞</dt>
-              <dd class="p-top-production__detailList__infoText"><%= detail_info_text[1][i] %></dd>
-              <dt class="p-top-production__detailList__infoTitle">●＜作成期間＞</dt>
-              <dd class="p-top-production__detailList__infoText"><%= detail_info_text[2][i] %></dd>
-            </dl>
+    <ul class="l-top-production__detail">
+      <% var detail_info_text=[
+        ['HTML/CSS/Ruby', 'HTML/CSS/JavaScript', 'HTML/CSS/JavaScript', 'HTML/CSS/JavaScript'],
+        ['Bootstrap/Rails/MySQL/Cloud9', 'なし', 'Sass/jQuery/webpack/npm', 'Sass/jQuery/webpack/npm'],
+        ['1ヶ月（2020/3〜2020/4）', '2週間（2020/10）', '1ヶ月（2020/10）', '1ヶ月（2020/6〜2020/7）'],
+        ['ukulele-match-0105.herokuapp.com/', 'baby-0105.github.io/JS_numeron/html/home.html', 'portfolio.shoyababa.vercel.app/', 'sample-birthday.shoyababa.vercel.app'],
+        ['original_app-ukulele-match-', 'JS_numeron', 'shoya_baba_portfolio', 'sample-birthday']
+      ];%>
+      <% var detail_expText=[
+        'Ruby on Railsを使用したマッチングサービスです。新規登録/ログイン/フォロー/投稿/ダイレクトメッセージなどの機能を付けました。どちらか言うとバックエンドよりの技術を主に使用する事に注力したため、フロント部分はBootStrapを使用しています。作った目的は、ウクレレプレイヤー同士の交流を深めてもらうためです。私自身、ウクレレを弾いていましたが（今はしていません）独学での演奏は挫折しやすく、また、プレイヤー数も少ないため仲間を探すことは大変です。そこで、模擬サイトとして作成しました。',
+        '数字当てゲーム「NumerOn」を作成しました。純粋なJavaScriptとHTML/CSSのみで、ライブラリやフレームワークは使用していません。目的は、jQueryなどのライブラリに頼らない純粋なJavaScriptに慣れるためです。（JavaScriptを使うことが目的でしたのでUIはかなりチープなものになっています）。なぜ、このゲームを作成しようと思ったか？ですが、、、高校の時に毎日友達としていた思い出のゲームだからです（笑）。作ってみたかったものが実現しました。',
+        '私のポートフォリオサイトです。シンプルかつ、一目で分かるようなUIにする事を意識しました。Skillsの棒グラフの作成にはjQueryを使用し、UXにもこだわり工夫いたしました。Sass/jQueryの他、npm/webpackなどのツールも使用しています。npmを使用している事もあってnowを使って、Vercelへデプロイしました。今後は、現在勉強しているVue.jsも当サイトへ取り入れてモダンなコードへと改善を行っていきたいと思います。',
+        '個人的に作ったwebレターです。実際には、写真や手紙の内容も添えて作ったのですが、こちらはsampleになります。仕様自体は本物とほぼ同等のものです。シンプルで分かりやすいと言うよりも、CSSやjQueryなどでアニメーションを複数使用する事で凝った仕様にしています。'
+      ]; %>
+      <% for (var i=0; i < production_title.length; i++) { %>
+        <li class="p-top-production__detailList" id="productionDetail<%= i+1 %>">
+          <span class="p-top-production__detailList__crossIcon" id="productionCrossIcon<%= i+1 %>"><i class="fas fa-times crossIcon"></i></span>
+          <h2 class="p-top-production__detailList__title">ー <%= production_title[i] %> ー</h2>
+          <div class="p-top-production__detailList__exp">
+            <div class="p-top-production__detailList__expHeading">
+              <img class="p-top-production__detailList__expImg" src="<%= img_path %><%= production[i] %>.png" alt="作品の画像">
+              <dl class="p-top-production__detailList__info">
+                <dt class="p-top-production__detailList__infoTitle">●＜使用言語＞</dt>
+                <dd class="p-top-production__detailList__infoText"><%= detail_info_text[0][i] %></dd>
+                <dt class="p-top-production__detailList__infoTitle">●＜フレームワーク/ライブラリ/その他ツール＞</dt>
+                <dd class="p-top-production__detailList__infoText"><%= detail_info_text[1][i] %></dd>
+                <dt class="p-top-production__detailList__infoTitle">●＜作成期間＞</dt>
+                <dd class="p-top-production__detailList__infoText"><%= detail_info_text[2][i] %></dd>
+              </dl>
+            </div>
+            <div class="p-top-production__detailList__expSentence">
+              <p class="p-top-production__detailList__expText"><%= detail_expText[i] %></p>
+              <dl class="p-top-production__detailList__Url">
+                <dt class="p-top-production__detailList__urlTitle">●＜プロダクトURL＞</dt>
+                <dd class="p-top-production__detailList__urlText">
+                  <a class="p-top-production__detailList__urlLink" href="https://<%= detail_info_text[3][i] %>" target='_blank'>https://<%= detail_info_text[3][i] %></a>
+                </dd>
+                <dt class="p-top-production__detailList__urlTitle">●＜GitHub-ソースコードURL＞</dt>
+                <dd class="p-top-production__detailList__urlText">
+                  <a class="p-top-production__detailList__urlLink" href="https://github.com/baby-0105/<%= detail_info_text[4][i] %>" target='_blank'>https://github.com/baby-0105/<%= detail_info_text[4][i] %></a>
+                </dd>
+              </dl>
+            </div>
           </div>
-          <div class="p-top-production__detailList__expSentence">
-            <p class="p-top-production__detailList__expText"><%= detail_expText[i] %></p>
-            <dl class="p-top-production__detailList__Url">
-              <dt class="p-top-production__detailList__urlTitle">●＜プロダクトURL＞</dt>
-              <dd class="p-top-production__detailList__urlText">
-                <a class="p-top-production__detailList__urlLink" href="https://<%= detail_info_text[3][i] %>" target='_blank'>https://<%= detail_info_text[3][i] %></a>
-              </dd>
-              <dt class="p-top-production__detailList__urlTitle">●＜GitHub-ソースコードURL＞</dt>
-              <dd class="p-top-production__detailList__urlText">
-                <a class="p-top-production__detailList__urlLink" href="https://github.com/baby-0105/<%= detail_info_text[4][i] %>" target='_blank'>https://github.com/baby-0105/<%= detail_info_text[4][i] %></a>
-              </dd>
-            </dl>
-          </div>
-        </div>
-      </li>
-    <% } %>
-  </ul>
+        </li>
+      <% } %>
+    </ul>
+  </div>
 
   <div class="l-top-canDo"  id="canDo">
     <div class="l-top-canDo__container">

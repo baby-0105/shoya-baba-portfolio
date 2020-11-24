@@ -7,6 +7,7 @@
   background-image: url('#{$bgPath}hitch_hiking.jpg');
   background-size: cover;
   background-position: 100% 100%;
+  background-attachment: fixed; // 背景画像固定
   height: 100vh;
 }
 
@@ -25,8 +26,23 @@
 }
 
 /* .l-top-production */
+
+.l-top-production {
+  position: relative;
+}
+
 .l-top-production__container {
   @include container(50px, $widthMainContainer);
+}
+
+.l-top-production__detail {
+  display: none;
+  position: fixed; // 背景画像黒：スクロールについてくるように
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: $colorSuperLightBlack;
 }
 
 /* .l-top-canDo */
