@@ -7,8 +7,12 @@
   background-image: url('#{$bgPath}hitch_hiking.jpg');
   background-size: cover;
   background-position: 100% 100%;
-  background-attachment: fixed; // 背景画像固定
   height: 100vh;
+  background-attachment: fixed; // 背景画像固定
+
+  @include mq(u-sp) {
+    background-attachment: scroll; // スマホ時通常
+  }
 }
 
 /* .l-top-intro */
