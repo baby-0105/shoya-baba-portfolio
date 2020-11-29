@@ -9,6 +9,8 @@
 @mixin siteImageText($space) {
   font-size: $fontTitleLarge;
   letter-spacing: $space;
+  text-shadow: 4px 4px 4px $colorLightGreen;
+  padding: 0 10px; // 文字隠れ避けるため
   overflow: hidden;
 
   @include mq(u-pc) {
@@ -34,7 +36,8 @@
 @mixin section_title_word {
   opacity: 0;
   display: inline-block; // spanタグ(インライン要素)→移動できないため、ブロック要素に。
-  background: linear-gradient(transparent 60%, $colorLightGreen); // 線形グラデーション：上60%透明,その他緑
+  background: linear-gradient(rgba(140, 215, 144, 0) 60%, $colorLightGreen); // 線形グラデーション：上60%透明,その他緑
+  text-shadow: 10px 2px 5px $colorDarkBlack;
 }
 
 @mixin section_title {
@@ -461,7 +464,7 @@
 }
 
 .p-top-production__underline {
-  background: linear-gradient(rgba(0,0,0,0) 60%, #EA6264);
+  background: linear-gradient(rgba(234, 98, 100, 0) 60%, rgba(234, 98, 100, 1));
   position: relative;
   top: -50%;
 }
