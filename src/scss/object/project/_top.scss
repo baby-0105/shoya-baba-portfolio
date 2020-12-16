@@ -37,7 +37,7 @@
   opacity: 0;
   display: inline-block; // spanタグ(インライン要素)→移動できないため、ブロック要素に。
   background: linear-gradient(rgba(140, 215, 144, 0) 60%, $colorLightGreen); // 線形グラデーション：上60%透明,その他緑
-  text-shadow: 10px 2px 5px $colorDarkBlack;
+  text-shadow: 3px 3px 5px $colorDarkBlack;
 }
 
 @mixin section_title {
