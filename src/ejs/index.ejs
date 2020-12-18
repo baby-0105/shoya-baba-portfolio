@@ -134,8 +134,8 @@ src/ejs/template/_head %>
         から確認できる様になっております。
       </p>
       <ul class="p-top-production__item">
-        <% var production=['ukulele_match', 'numeron', 'portfolio', 'sample-birthday']; %>
-        <% var production_title=['ウクレレプレイヤーのマッチングアプリ', 'JSで作るNumerOn', 'ポートフォリオサイト', 'webレター（sample）']; %>
+        <% var production=['vue-address', 'numeron', 'portfolio', 'sample-birthday', 'ukulele_match']; %>
+        <% var production_title=['Vue.jsで作るアドレス帳', 'JSで作るNumerOn', 'ポートフォリオサイト', 'webレター（sample）', 'ウクレレプレイヤーのマッチングアプリ']; %>
         <% for (var i=0; i < production.length; i++) { %>
           <li class="p-top-production__itemList">
             <img class="p-top-production__itemList__img"  id="productionItemList<%= i+1 %>" src="<%= img_path %><%= production[i] %>.png" alt="作品の画像">
@@ -147,17 +147,18 @@ src/ejs/template/_head %>
 
     <ul class="l-top-production__detail">
       <% var detail_info_text=[
-        ['HTML/CSS/Ruby', 'HTML/CSS/JavaScript', 'HTML/CSS/JavaScript', 'HTML/CSS/JavaScript'],
-        ['Bootstrap/Rails/MySQL/Cloud9', 'なし', 'Sass/jQuery/webpack/npm', 'Sass/jQuery/webpack/npm'],
-        ['1ヶ月（2020/3〜2020/4）', '2週間（2020/10）', '1ヶ月（2020/10）', '1ヶ月（2020/6〜2020/7）'],
-        ['ukulele-match-0105.herokuapp.com/', 'baby-0105.github.io/JS_numeron/html/home.html', 'portfolio.shoyababa.vercel.app/', 'sample-birthday.shoyababa.vercel.app'],
-        ['original_app-ukulele-match-', 'JS_numeron', 'shoya_baba_portfolio', 'sample-birthday']
+        ['HTML/CSS/JavaScipt', 'HTML/CSS/JavaScript', 'HTML/CSS/JavaScript', 'HTML/CSS/JavaScript', 'HTML/CSS/Ruby'],
+        ['Vue.js/npm/firebase', 'なし', 'Sass/jQuery/webpack/npm', 'Sass/jQuery/webpack/npm', 'Bootstrap/Rails/MySQL/Cloud9'],
+        ['3日（2020/12）', '2週間（2020/10）', '1ヶ月（2020/10）', '1ヶ月（2020/6〜2020/7）', '1ヶ月（2020/3〜2020/4）'],
+        ['my-address-pj-ac458.web.app', 'baby-0105.github.io/JS_numeron/html/home.html', 'portfolio.shoyababa.vercel.app/', 'sample-birthday.shoyababa.vercel.app', 'ukulele-match-0105.herokuapp.com/'],
+        ['vue-address', 'JS_numeron', 'shoya_baba_portfolio', 'sample-birthday', 'original_app-ukulele-match-']
       ];%>
       <% var detail_expText=[
-        'Ruby on Railsを使用したマッチングサービスです。新規登録/ログイン/フォロー/投稿/ダイレクトメッセージなどの機能を付けました。どちらか言うとバックエンドよりの技術を主に使用する事に注力したため、フロント部分はBootStrapを使用しています。作った目的は、ウクレレプレイヤー同士の交流を深めてもらうためです。私自身、ウクレレを弾いていましたが（今はしていません）独学での演奏は挫折しやすく、また、プレイヤー数も少ないため仲間を探すことは大変です。そこで、模擬サイトとして作成しました。',
+        'Vue.js + Firebaseで作成しました。vue-routerや、vuexを使用した、ログイン/ログアウト機能や、アドレスの編集/削除の機能を実装いたしました。Vue.jsについては現在も学習中ですので随時こちらのプロダクトの更新を行います。',
         '数字当てゲーム「NumerOn」を作成しました。純粋なJavaScriptとHTML/CSSのみで、ライブラリやフレームワークは使用していません。目的は、jQueryなどのライブラリに頼らない純粋なJavaScriptに慣れるためです。（JavaScriptを使うことが目的でしたのでUIはかなりチープなものになっています）。なぜ、このゲームを作成しようと思ったか？ですが、、、高校の時に毎日友達としていた思い出のゲームだからです（笑）。作ってみたかったものが実現しました。',
         '私のポートフォリオサイトです。シンプルかつ、一目で分かるようなUIにする事を意識しました。Skillsの棒グラフの作成にはjQueryを使用し、UXにもこだわり工夫いたしました。Sass/jQueryの他、npm/webpackなどのツールも使用しています。npmを使用している事もあってnowを使って、Vercelへデプロイしました。今後は、現在勉強しているVue.jsも当サイトへ取り入れてモダンなコードへと改善を行っていきたいと思います。',
-        '個人的に作ったwebレターです。実際には、写真や手紙の内容も添えて作ったのですが、こちらはsampleになります。仕様自体は本物とほぼ同等のものです。シンプルで分かりやすいと言うよりも、CSSやjQueryなどでアニメーションを複数使用する事で凝った仕様にしています。'
+        '個人的に作ったwebレターです。実際には、写真や手紙の内容も添えて作ったのですが、こちらはsampleになります。仕様自体は本物とほぼ同等のものです。シンプルで分かりやすいと言うよりも、CSSやjQueryなどでアニメーションを複数使用する事で凝った仕様にしています。',
+        'Ruby on Railsを使用したマッチングサービスです。新規登録/ログイン/フォロー/投稿/ダイレクトメッセージなどの機能を付けました。どちらか言うとバックエンドよりの技術を主に使用する事に注力したため、フロント部分はBootStrapを使用しています。作った目的は、ウクレレプレイヤー同士の交流を深めてもらうためです。私自身、ウクレレを弾いていましたが（今はしていません）独学での演奏は挫折しやすく、また、プレイヤー数も少ないため仲間を探すことは大変です。そこで、模擬サイトとして作成しました。'
       ]; %>
       <% for (var i=0; i < production_title.length; i++) { %>
         <li class="p-top-production__detailList" id="productionDetail<%= i+1 %>">
