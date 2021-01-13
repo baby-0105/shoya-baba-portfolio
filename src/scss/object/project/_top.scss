@@ -47,7 +47,6 @@
   margin-bottom: 50px;
   padding: 10px 0;
   text-align: center;
-  position: relative;
   overflow: hidden;
 
   &:before {
@@ -85,12 +84,7 @@
 
 //　テキスト「下」へアニメーション
 @keyframes slideInToDown {
-  0% { transform: translateY(-100px); }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  100% { opacity: 1; }
 }
 
 .slideInToDown {
@@ -238,6 +232,11 @@
 
 .p-top-intro__infoText {
   overflow: hidden; // intro text出現用
+  margin-bottom: 100px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .p-top-intro__infoTextBlock {
@@ -258,20 +257,6 @@
 
 .p-top-intro__infoText__main {
   width: 60%;
-}
-
-.p-top-intro__infoText__arrow {
-  font-size: $fontLetterMiddle;
-  margin: 30px 0;
-  display: block;
-
-  @include mq(u-sp) {
-    font-size: $fontLetterSmall;
-  }
-
-  &:last-child {
-    display: none;
-  }
 }
 
 /*

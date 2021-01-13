@@ -30,7 +30,7 @@ src/ejs/template/_head %>
 
           <% var intro_period=['1997/01/05', '2019/3', '2019/4 ~ 2019/6', '2019/6~', '2020/4~', 'now', 'feature']; %>
           <% var intro_text=[
-            '生まれました。', '近畿大学 農学部卒業', '機械部品製造業、従事', 'ピアノ教室を運営する母のために教室ホームページを作成し、プログラミングの面白さを知る。そこから、Webエンジニアになる事を目指す',
+            '大阪府で生まれました。', '近畿大学 農学部卒業', '機械部品製造業、従事', 'ピアノ教室を運営する母のために教室ホームページを作成し、プログラミングの面白さを知る。<br>その後、Webエンジニアになる事を目指す',
             '東京でSES事業を行っているベンチャー企業に入社', '自社のLPを主に、JavaScript(jQuery)を用いたLP作成をしています。', '今後は、現在学習中のVue.jsを用いたアジャイル開発に取り組みたいです。'
           ]; %>
 
@@ -38,10 +38,9 @@ src/ejs/template/_head %>
             <div class="p-top-intro__infoText">
               <div class="p-top-intro__infoTextBlock">
                 <p class="p-top-intro__infoText__peroid"><%= intro_period[i] %></p>
-                <p class="p-top-intro__infoText__main"><%= intro_text[i] %></p>
+                <p class="p-top-intro__infoText__main"><%- intro_text[i] %></p>
               </div>
             </div>
-            <span class="p-top-intro__infoText__arrow" id="introArrow<%= [i+1] %>">⇩</span>
           <% } %>
         </div>
       </div>
@@ -57,6 +56,16 @@ src/ejs/template/_head %>
         習得中の言語も含め、現在扱うことの出来るスキルの一覧です。現在は、JavaScriptを使用したフロントエンドでの開発を主としています。
         今後は、Vue.jsの習得やバックエンドの技術を使用したWebアプリケーションの開発にも取り組んでいきたいと考えております。
       </p>
+      <div class="p-top-skills__explain">
+        <h3 class="p-top-skills__explain__title">- スキルレベル -</h3>
+        <p class="p-top-skills__explain__text">
+          1.使ってみた事がある<br>
+          2.それを使用し、プロダクトを作った事がある<br>
+          3.実務で使用した経験がある<br>
+          4.実務で1年程度使用、もしくは、人並みに使いこなせる<br>
+          5.何なりと、お任せください！
+        </p>
+      </div>
       <ul class="p-top-skills__detail" id="skillsDetail">
         <li class="p-top-skills__detailList">
           <h3 class="p-top-skills__detailList__title">Front end</h3>
@@ -107,16 +116,6 @@ src/ejs/template/_head %>
           <% } %>
         </li>
       </ul>
-      <div class="p-top-skills__explain">
-        <h3 class="p-top-skills__explain__title">- スキルレベル -</h3>
-        <p class="p-top-skills__explain__text">
-          1.使ってみた事がある<br>
-          2.それを使用し、プロダクトを作った事がある<br>
-          3.実務で使用した経験がある<br>
-          4.実務で1年程度使用、もしくは、人並みに使いこなせる<br>
-          5.何なりと、お任せください！
-        </p>
-      </div>
     </div>
   </div>
 
@@ -133,8 +132,8 @@ src/ejs/template/_head %>
         から確認できる様になっております。
       </p>
       <ul class="p-top-production__item">
-        <% var production=['vue-address', 'numeron', 'portfolio', 'sample-birthday', 'ukulele_match']; %>
-        <% var production_title=['Vue.jsで作るアドレス帳', 'JSで作るNumerOn', 'ポートフォリオサイト', 'webレター（sample）', 'ウクレレプレイヤーのマッチングアプリ']; %>
+        <% var production=['vue-address', 'numeron', 'portfolio', 'vue-communication-app', 'sample-birthday', 'ukulele_match']; %>
+        <% var production_title=['Vue.jsで作るアドレス帳', 'JSで作るNumerOn', 'ポートフォリオサイト', 'Vue.jsで作るチャットアプリ','webレター（sample）', 'ウクレレプレイヤーのマッチングアプリ']; %>
         <% for (var i=0; i < production.length; i++) { %>
           <li class="p-top-production__itemList">
             <img class="p-top-production__itemList__img"  id="productionItemList<%= i+1 %>" src="<%= img_path %><%= production[i] %>.png" alt="作品の画像">
@@ -146,18 +145,19 @@ src/ejs/template/_head %>
 
     <ul class="l-top-production__detail">
       <% var detail_info_text=[
-        ['HTML/CSS/JavaScipt', 'HTML/CSS/JavaScript', 'HTML/CSS/JavaScript', 'HTML/CSS/JavaScript', 'HTML/CSS/Ruby'],
-        ['Vue.js/npm/firebase', 'なし', 'Sass/jQuery/webpack/npm', 'Sass/jQuery/webpack/npm', 'Bootstrap/Rails/MySQL/Cloud9'],
-        ['3日（2020/12）', '2週間（2020/10）', '1ヶ月（2020/10）', '1ヶ月（2020/6〜2020/7）', '1ヶ月（2020/3〜2020/4）'],
-        ['my-address-pj-ac458.web.app', 'baby-0105.github.io/JS_numeron/html/home.html', 'portfolio.shoyababa.vercel.app/', 'sample-birthday.shoyababa.vercel.app', 'ukulele-match-0105.herokuapp.com/'],
-        ['vue-address', 'JS_numeron', 'shoya_baba_portfolio', 'sample-birthday', 'original_app-ukulele-match-']
+        ['HTML/CSS/JavaScipt', 'HTML/CSS/JavaScript', 'HTML/CSS/JavaScript', 'HTML/CSS/JavaScipt','HTML/CSS/JavaScript', 'HTML/CSS/Ruby'],
+        ['Vue.js/npm/firebase', 'なし', 'Sass/jQuery/webpack/npm', 'Vue.js/npm/firebase/tailwindCSS','Sass/jQuery/webpack/npm', 'Bootstrap/Rails/MySQL/Cloud9'],
+        ['3日（2020/12）', '2週間（2020/10）', '1ヶ月（2020/10）', '1週間（2021/1）','1ヶ月（2020/6〜2020/7）', '1ヶ月（2020/3〜2020/4）'],
+        ['my-address-pj-ac458.web.app', 'baby-0105.github.io/JS_numeron/html/home.html', 'portfolio.shoyababa.vercel.app/', 'vue-community-app.web.app','sample-birthday.shoyababa.vercel.app', 'ukulele-match-0105.herokuapp.com/'],
+        ['vue-address', 'JS_numeron', 'shoya_baba_portfolio', 'vue-communication-app','sample-birthday', 'original_app-ukulele-match-']
       ];%>
       <% var detail_expText=[
-        'Vue.js + Firebaseで作成しました。vue-routerや、vuexを使用した、ログイン/ログアウト機能や、アドレスの編集/削除の機能を実装いたしました。Vue.jsについては現在も学習中ですので随時こちらのプロダクトの更新を行います。',
-        '数字当てゲーム「NumerOn」を作成しました。純粋なJavaScriptとHTML/CSSのみで、ライブラリやフレームワークは使用していません。目的は、jQueryなどのライブラリに頼らない純粋なJavaScriptに慣れるためです。（JavaScriptを使うことが目的でしたのでUIはかなりチープなものになっています）。なぜ、このゲームを作成しようと思ったか？ですが、、、高校の時に毎日友達としていた思い出のゲームだからです（笑）。作ってみたかったものが実現しました。',
-        '私のポートフォリオサイトです。シンプルかつ、一目で分かるようなUIにする事を意識しました。Skillsの棒グラフの作成にはjQueryを使用し、UXにもこだわり工夫いたしました。Sass/jQueryの他、npm/webpackなどのツールも使用しています。npmを使用している事もあってnowを使って、Vercelへデプロイしました。今後は、現在勉強しているVue.jsも当サイトへ取り入れてモダンなコードへと改善を行っていきたいと思います。',
-        '個人的に作ったwebレターです。実際には、写真や手紙の内容も添えて作ったのですが、こちらはsampleになります。仕様自体は本物とほぼ同等のものです。シンプルで分かりやすいと言うよりも、CSSやjQueryなどでアニメーションを複数使用する事で凝った仕様にしています。',
-        'Ruby on Railsを使用したマッチングサービスです。新規登録/ログイン/フォロー/投稿/ダイレクトメッセージなどの機能を付けました。どちらか言うとバックエンドよりの技術を主に使用する事に注力したため、フロント部分はBootStrapを使用しています。作った目的は、ウクレレプレイヤー同士の交流を深めてもらうためです。私自身、ウクレレを弾いていましたが（今はしていません）独学での演奏は挫折しやすく、また、プレイヤー数も少ないため仲間を探すことは大変です。そこで、模擬サイトとして作成しました。'
+        "Vue.js + Firebaseで作成しました。vue-routerや、vuexを使用した、ログイン/ログアウト機能や、アドレスの編集/削除の機能を実装いたしました。Vue.jsについては現在も学習中ですので随時こちらのプロダクトの更新を行います。",
+        "数字当てゲーム「NumerOn」を作成しました。純粋なJavaScriptとHTML/CSSのみで、ライブラリやフレームワークは使用していません。目的は、jQueryなどのライブラリに頼らない純粋なJavaScriptに慣れるためです。（JavaScriptを使うことが目的でしたのでUIはかなりチープなものになっています）。なぜ、このゲームを作成しようと思ったか？ですが、、、高校の時に毎日友達としていた思い出のゲームだからです（笑）。作ってみたかったものが実現しました。",
+        "私のポートフォリオサイトです。シンプルかつ、一目で分かるようなUIにする事を意識しました。Skillsの棒グラフの作成にはjQueryを使用し、UXにもこだわり工夫いたしました。Sass/jQueryの他、npm/webpackなどのツールも使用しています。npmを使用している事もあってnowを使って、Vercelへデプロイしました。今後は、現在勉強しているVue.jsも当サイトへ取り入れてモダンなコードへと改善を行っていきたいと思います。",
+        "アドレス帳に次いで、Vue.jsで作る2つ目のアプリです。Slackライクなアプリケーションとして当サイト（https://reffect.co.jp/vue）を参考に作成しました。vue-routerを用いたページの切り替えや、firebaseのログイン認証、メッセージ管理機能などを実装しています。特に、ダイレクトメッセージ機能の相手ユーザーと紐付ける部分は理解することに苦労しました。Vue.jsの学習がメインのため、スタイルには、tailwindCSSを用いて簡潔にスタイリングしています。まだまだ、オリジナリティは欠けるため現在も当サイトの改善を行なっていきます。",
+        "個人的に作ったwebレターです。実際には、写真や手紙の内容も添えて作ったのですが、こちらはsampleになります。仕様自体は本物とほぼ同等のものです。シンプルで分かりやすいと言うよりも、CSSやjQueryなどでアニメーションを複数使用する事で凝った仕様にしています。",
+        "Ruby on Railsを使用したマッチングサービスです。新規登録/ログイン/フォロー/投稿/ダイレクトメッセージなどの機能を付けました。どちらか言うとバックエンドよりの技術を主に使用する事に注力したため、フロント部分はBootStrapを使用しています。作った目的は、ウクレレプレイヤー同士の交流を深めてもらうためです。私自身、ウクレレを弾いていましたが（今はしていません）独学での演奏は挫折しやすく、また、プレイヤー数も少ないため仲間を探すことは大変です。そこで、模擬サイトとして作成しました。"
       ]; %>
       <% for (var i=0; i < production_title.length; i++) { %>
         <li class="p-top-production__detailList" id="productionDetail<%= i+1 %>">
@@ -202,9 +202,9 @@ src/ejs/template/_head %>
       <p class="p-top-canDo__text">現在、お受けする事のできる案件・仕事内容についてご紹介させていただきます。</p>
       <ul class="p-top-canDo__works">
         <% var works=['1', '2', '3']; %>
-        <% var work_title=['Webページ・LP制作', 'レスポンシブ対応', 'WordPress案件']; %>
+        <% var work_title=['Web制作', 'レスポンシブ対応', 'WordPress案件']; %>
         <% var work_text=[
-          'LP作成・コーディングなどのWebサイトの制作をお受けします。',
+          'LP・コーポレートサイト・webアプリケーションなどのフロントエンド部分作成のお仕事をお受けします。JavaScriptを使用した動的なサイトの作成も可能です。',
           'スマホ・タブレット・パソコン、などマルチデバイスにも対応いたします。どのデバイスであっても見やすい表示へと切り替えます。',
           'WordPressのテーマを使用したWebサイト・Webページの作成を行います。'
         ]; %>

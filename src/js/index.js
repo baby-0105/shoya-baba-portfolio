@@ -133,7 +133,9 @@ $(() => {
   });
 
   // production画像クリック→詳細表示/非表示
-  for (let i=0; i < lowerTitle.length; i++) {
+  let $production_detailList = $('.p-top-production__detailList');
+
+  for (let i=0; i < $production_detailList.length; i++) {
     $(document).on('click', function(e) {
       let $productionDetail = $(`#productionDetail${i+1}`),
           $body = $('body');
