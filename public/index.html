@@ -28,7 +28,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
-<link href="assets/stylesheets/bundle45d317425b39afbf8132.css" rel="stylesheet"></head>
+<link href="assets/stylesheets/bundle2c3a909b2ccac49f76e9.css" rel="stylesheet"></head>
 <body>
 <div class="l-wrap">
 
@@ -51,6 +51,10 @@
     
       <a class="c-header__link--production" id="headerProduction">
         <li class="c-header__list">Production</li>
+      </a>
+    
+      <a class="c-header__link--others" id="headerOthers">
+        <li class="c-header__list">Others</li>
       </a>
     
       <a class="c-header__link--canDo" id="headerCanDo">
@@ -113,7 +117,7 @@
             <div class="p-top-intro__infoText">
               <div class="p-top-intro__infoTextBlock">
                 <p class="p-top-intro__infoText__peroid">1997/01/05</p>
-                <p class="p-top-intro__infoText__main">大阪府で生まれました。</p>
+                <p class="p-top-intro__infoText__main">大阪府で生まれました。現在24歳です</p>
               </div>
             </div>
           
@@ -134,7 +138,7 @@
             <div class="p-top-intro__infoText">
               <div class="p-top-intro__infoTextBlock">
                 <p class="p-top-intro__infoText__peroid">2019/6~</p>
-                <p class="p-top-intro__infoText__main">ピアノ教室を運営する母のために教室ホームページを作成し、プログラミングの面白さを知る。<br>その後、Webエンジニアになる事を目指す</p>
+                <p class="p-top-intro__infoText__main">ピアノ教室を運営する母のために教室ホームページを作成し、プログラミングの面白さを知る。<br>その後、Webエンジニアになる事を目指す。<br><br><span class="red">『好奇心からの行動力』</span>がある私は、この間に<span class="red">ヒッチハイクや、youtube投稿</span>に挑戦。（<span id="toOthers" class="p-top-intro__text__link">詳細は下記</span>に記載）</p>
               </div>
             </div>
           
@@ -155,7 +159,7 @@
             <div class="p-top-intro__infoText">
               <div class="p-top-intro__infoTextBlock">
                 <p class="p-top-intro__infoText__peroid">feature</p>
-                <p class="p-top-intro__infoText__main">今後は、現在学習中のVue.jsを用いたアジャイル開発に取り組みたいです。</p>
+                <p class="p-top-intro__infoText__main">今後は、現在学習中のVue.jsを用いたSPA開発に取り組みたいです。</p>
               </div>
             </div>
           
@@ -179,8 +183,8 @@
           1.使ってみた事がある<br>
           2.それを使用し、プロダクトを作った事がある<br>
           3.実務で使用した経験がある<br>
-          4.実務で1年程度使用、もしくは、人並みに使いこなせる<br>
-          5.何なりと、お任せください！
+          4.実務で1年程度使用。人並みに使いこなせる<br>
+          5.実務3年以上。ほとんど何でも実装できる
         </p>
       </div>
       <ul class="p-top-skills__detail" id="skillsDetail">
@@ -246,6 +250,16 @@
                 </dt>
                 <dd class="p-top-skills__detailList__itemGraph">
                   <div class="p-top-skills__detailList__itemGraph__extend--front" id="frontExtendGraph6" data-extend="2"></div>
+                </dd>
+              </dl>
+            
+              <dl class="p-top-skills__detailList__item" id="frontDetailList">
+                <dt class="p-top-skills__detailList__itemUnit" id="frontItemUnit7">
+                  <img class="p-top-skills__detailList__itemImg" src="/assets/images/skills/tailwindcss.png" alt="言語の画像">
+                  <p class="p-top-skills__detailList__itemLang">tailwindcss</p>
+                </dt>
+                <dd class="p-top-skills__detailList__itemGraph">
+                  <div class="p-top-skills__detailList__itemGraph__extend--front" id="frontExtendGraph7" data-extend="2"></div>
                 </dd>
               </dl>
             
@@ -383,32 +397,27 @@
         
         
           <li class="p-top-production__itemList">
-            <img class="p-top-production__itemList__img"  id="productionItemList1" src="/assets/images/vue-address.png" alt="作品の画像">
-            <p class="p-top-production__itemList__text">Vue.jsで作るアドレス帳</p>
-          </li>
-        
-          <li class="p-top-production__itemList">
-            <img class="p-top-production__itemList__img"  id="productionItemList2" src="/assets/images/numeron.png" alt="作品の画像">
-            <p class="p-top-production__itemList__text">JSで作るNumerOn</p>
-          </li>
-        
-          <li class="p-top-production__itemList">
-            <img class="p-top-production__itemList__img"  id="productionItemList3" src="/assets/images/portfolio.png" alt="作品の画像">
-            <p class="p-top-production__itemList__text">ポートフォリオサイト</p>
-          </li>
-        
-          <li class="p-top-production__itemList">
-            <img class="p-top-production__itemList__img"  id="productionItemList4" src="/assets/images/vue-communication-app.png" alt="作品の画像">
+            <img class="p-top-production__itemList__img"  id="productionItemList1" src="/assets/images/production/vue-communication-app.png" alt="作品の画像">
             <p class="p-top-production__itemList__text">Vue.jsで作るチャットアプリ</p>
           </li>
         
           <li class="p-top-production__itemList">
-            <img class="p-top-production__itemList__img"  id="productionItemList5" src="/assets/images/sample-birthday.png" alt="作品の画像">
-            <p class="p-top-production__itemList__text">webレター（sample）</p>
+            <img class="p-top-production__itemList__img"  id="productionItemList2" src="/assets/images/production/numeron.png" alt="作品の画像">
+            <p class="p-top-production__itemList__text">JSで作るNumerOn</p>
           </li>
         
           <li class="p-top-production__itemList">
-            <img class="p-top-production__itemList__img"  id="productionItemList6" src="/assets/images/ukulele_match.png" alt="作品の画像">
+            <img class="p-top-production__itemList__img"  id="productionItemList3" src="/assets/images/production/portfolio.png" alt="作品の画像">
+            <p class="p-top-production__itemList__text">ポートフォリオサイト</p>
+          </li>
+        
+          <li class="p-top-production__itemList">
+            <img class="p-top-production__itemList__img"  id="productionItemList4" src="/assets/images/production/vue-address.png" alt="作品の画像">
+            <p class="p-top-production__itemList__text">Vue.jsで作るアドレス帳</p>
+          </li>
+        
+          <li class="p-top-production__itemList">
+            <img class="p-top-production__itemList__img"  id="productionItemList5" src="/assets/images/production/ukulele_match.png" alt="作品の画像">
             <p class="p-top-production__itemList__text">ウクレレプレイヤーのマッチングアプリ</p>
           </li>
         
@@ -421,29 +430,29 @@
       
         <li class="p-top-production__detailList" id="productionDetail1">
           <span class="p-top-production__detailList__crossIcon" id="productionCrossIcon1"><i class="fas fa-times crossIcon"></i></span>
-          <h2 class="p-top-production__detailList__title">ー Vue.jsで作るアドレス帳 ー</h2>
+          <h2 class="p-top-production__detailList__title">ー Vue.jsで作るチャットアプリ ー</h2>
           <div class="p-top-production__detailList__exp">
             <div class="p-top-production__detailList__expHeading">
-              <img class="p-top-production__detailList__expImg" src="/assets/images/vue-address.png" alt="作品の画像">
+              <img class="p-top-production__detailList__expImg" src="/assets/images/production/vue-communication-app.png" alt="作品の画像">
               <dl class="p-top-production__detailList__info">
                 <dt class="p-top-production__detailList__infoTitle">●＜使用言語＞</dt>
                 <dd class="p-top-production__detailList__infoText">HTML/CSS/JavaScipt</dd>
                 <dt class="p-top-production__detailList__infoTitle">●＜フレームワーク/ライブラリ/その他ツール＞</dt>
-                <dd class="p-top-production__detailList__infoText">Vue.js/npm/firebase</dd>
+                <dd class="p-top-production__detailList__infoText">Vue.js/npm/firebase/tailwindCSS</dd>
                 <dt class="p-top-production__detailList__infoTitle">●＜作成期間＞</dt>
-                <dd class="p-top-production__detailList__infoText">3日（2020/12）</dd>
+                <dd class="p-top-production__detailList__infoText">1ヶ月（2021/1）</dd>
               </dl>
             </div>
             <div class="p-top-production__detailList__expSentence">
-              <p class="p-top-production__detailList__expText">Vue.js + Firebaseで作成しました。vue-routerや、vuexを使用した、ログイン/ログアウト機能や、アドレスの編集/削除の機能を実装いたしました。Vue.jsについては現在も学習中ですので随時こちらのプロダクトの更新を行います。</p>
+              <p class="p-top-production__detailList__expText">アドレス帳に次いで、Vue.jsで作る2つ目のアプリです。Slackライクなアプリケーションとして当サイト（https://reffect.co.jp/vue）を参考に作成しました。vue-routerを用いたページの切り替えや、firebaseのログイン認証、メッセージ管理機能などを実装しています。特に、ダイレクトメッセージ機能の相手ユーザーと紐付ける部分は理解することに苦労しました。Vue.jsの学習がメインのため、スタイルには、コンポーネントを使ったVue.jsということもあり、流行りのtailwindCSSを用いて簡潔にスタイリングしています。今後はCSSファイル軽量化のためにPurgeCSSも導入します。まだまだ、オリジナリティは欠けるため現在も当サイトの改善を行なっていきます。</p>
               <dl class="p-top-production__detailList__Url">
                 <dt class="p-top-production__detailList__urlTitle">●＜プロダクトURL＞</dt>
                 <dd class="p-top-production__detailList__urlText">
-                  <a class="p-top-production__detailList__urlLink" href="https://my-address-pj-ac458.web.app" target='_blank'>https://my-address-pj-ac458.web.app</a>
+                  <a class="p-top-production__detailList__urlLink" href="https://vue-community-app.web.app" target='_blank'>https://vue-community-app.web.app</a>
                 </dd>
                 <dt class="p-top-production__detailList__urlTitle">●＜GitHub-ソースコードURL＞</dt>
                 <dd class="p-top-production__detailList__urlText">
-                  <a class="p-top-production__detailList__urlLink" href="https://github.com/baby-0105/vue-address" target='_blank'>https://github.com/baby-0105/vue-address</a>
+                  <a class="p-top-production__detailList__urlLink" href="https://github.com/baby-0105/vue-communication-app" target='_blank'>https://github.com/baby-0105/vue-communication-app</a>
                 </dd>
               </dl>
             </div>
@@ -455,7 +464,7 @@
           <h2 class="p-top-production__detailList__title">ー JSで作るNumerOn ー</h2>
           <div class="p-top-production__detailList__exp">
             <div class="p-top-production__detailList__expHeading">
-              <img class="p-top-production__detailList__expImg" src="/assets/images/numeron.png" alt="作品の画像">
+              <img class="p-top-production__detailList__expImg" src="/assets/images/production/numeron.png" alt="作品の画像">
               <dl class="p-top-production__detailList__info">
                 <dt class="p-top-production__detailList__infoTitle">●＜使用言語＞</dt>
                 <dd class="p-top-production__detailList__infoText">HTML/CSS/JavaScript</dd>
@@ -486,7 +495,7 @@
           <h2 class="p-top-production__detailList__title">ー ポートフォリオサイト ー</h2>
           <div class="p-top-production__detailList__exp">
             <div class="p-top-production__detailList__expHeading">
-              <img class="p-top-production__detailList__expImg" src="/assets/images/portfolio.png" alt="作品の画像">
+              <img class="p-top-production__detailList__expImg" src="/assets/images/production/portfolio.png" alt="作品の画像">
               <dl class="p-top-production__detailList__info">
                 <dt class="p-top-production__detailList__infoTitle">●＜使用言語＞</dt>
                 <dd class="p-top-production__detailList__infoText">HTML/CSS/JavaScript</dd>
@@ -514,29 +523,29 @@
       
         <li class="p-top-production__detailList" id="productionDetail4">
           <span class="p-top-production__detailList__crossIcon" id="productionCrossIcon4"><i class="fas fa-times crossIcon"></i></span>
-          <h2 class="p-top-production__detailList__title">ー Vue.jsで作るチャットアプリ ー</h2>
+          <h2 class="p-top-production__detailList__title">ー Vue.jsで作るアドレス帳 ー</h2>
           <div class="p-top-production__detailList__exp">
             <div class="p-top-production__detailList__expHeading">
-              <img class="p-top-production__detailList__expImg" src="/assets/images/vue-communication-app.png" alt="作品の画像">
+              <img class="p-top-production__detailList__expImg" src="/assets/images/production/vue-address.png" alt="作品の画像">
               <dl class="p-top-production__detailList__info">
                 <dt class="p-top-production__detailList__infoTitle">●＜使用言語＞</dt>
                 <dd class="p-top-production__detailList__infoText">HTML/CSS/JavaScipt</dd>
                 <dt class="p-top-production__detailList__infoTitle">●＜フレームワーク/ライブラリ/その他ツール＞</dt>
-                <dd class="p-top-production__detailList__infoText">Vue.js/npm/firebase/tailwindCSS</dd>
+                <dd class="p-top-production__detailList__infoText">Vue.js/npm/firebase</dd>
                 <dt class="p-top-production__detailList__infoTitle">●＜作成期間＞</dt>
-                <dd class="p-top-production__detailList__infoText">1週間（2021/1）</dd>
+                <dd class="p-top-production__detailList__infoText">3日（2020/12）</dd>
               </dl>
             </div>
             <div class="p-top-production__detailList__expSentence">
-              <p class="p-top-production__detailList__expText">アドレス帳に次いで、Vue.jsで作る2つ目のアプリです。Slackライクなアプリケーションとして当サイト（https://reffect.co.jp/vue）を参考に作成しました。vue-routerを用いたページの切り替えや、firebaseのログイン認証、メッセージ管理機能などを実装しています。特に、ダイレクトメッセージ機能の相手ユーザーと紐付ける部分は理解することに苦労しました。Vue.jsの学習がメインのため、スタイルには、tailwindCSSを用いて簡潔にスタイリングしています。まだまだ、オリジナリティは欠けるため現在も当サイトの改善を行なっていきます。</p>
+              <p class="p-top-production__detailList__expText">Vue.js + Firebaseで作成しました。vue-routerや、vuexを使用した、ログイン/ログアウト機能や、アドレスの編集/削除の機能を実装いたしました。Vue.jsについては現在も学習中ですので随時こちらのプロダクトの更新を行います。</p>
               <dl class="p-top-production__detailList__Url">
                 <dt class="p-top-production__detailList__urlTitle">●＜プロダクトURL＞</dt>
                 <dd class="p-top-production__detailList__urlText">
-                  <a class="p-top-production__detailList__urlLink" href="https://vue-community-app.web.app" target='_blank'>https://vue-community-app.web.app</a>
+                  <a class="p-top-production__detailList__urlLink" href="https://my-address-pj-ac458.web.app" target='_blank'>https://my-address-pj-ac458.web.app</a>
                 </dd>
                 <dt class="p-top-production__detailList__urlTitle">●＜GitHub-ソースコードURL＞</dt>
                 <dd class="p-top-production__detailList__urlText">
-                  <a class="p-top-production__detailList__urlLink" href="https://github.com/baby-0105/vue-communication-app" target='_blank'>https://github.com/baby-0105/vue-communication-app</a>
+                  <a class="p-top-production__detailList__urlLink" href="https://github.com/baby-0105/vue-address" target='_blank'>https://github.com/baby-0105/vue-address</a>
                 </dd>
               </dl>
             </div>
@@ -545,41 +554,10 @@
       
         <li class="p-top-production__detailList" id="productionDetail5">
           <span class="p-top-production__detailList__crossIcon" id="productionCrossIcon5"><i class="fas fa-times crossIcon"></i></span>
-          <h2 class="p-top-production__detailList__title">ー webレター（sample） ー</h2>
-          <div class="p-top-production__detailList__exp">
-            <div class="p-top-production__detailList__expHeading">
-              <img class="p-top-production__detailList__expImg" src="/assets/images/sample-birthday.png" alt="作品の画像">
-              <dl class="p-top-production__detailList__info">
-                <dt class="p-top-production__detailList__infoTitle">●＜使用言語＞</dt>
-                <dd class="p-top-production__detailList__infoText">HTML/CSS/JavaScript</dd>
-                <dt class="p-top-production__detailList__infoTitle">●＜フレームワーク/ライブラリ/その他ツール＞</dt>
-                <dd class="p-top-production__detailList__infoText">Sass/jQuery/webpack/npm</dd>
-                <dt class="p-top-production__detailList__infoTitle">●＜作成期間＞</dt>
-                <dd class="p-top-production__detailList__infoText">1ヶ月（2020/6〜2020/7）</dd>
-              </dl>
-            </div>
-            <div class="p-top-production__detailList__expSentence">
-              <p class="p-top-production__detailList__expText">個人的に作ったwebレターです。実際には、写真や手紙の内容も添えて作ったのですが、こちらはsampleになります。仕様自体は本物とほぼ同等のものです。シンプルで分かりやすいと言うよりも、CSSやjQueryなどでアニメーションを複数使用する事で凝った仕様にしています。</p>
-              <dl class="p-top-production__detailList__Url">
-                <dt class="p-top-production__detailList__urlTitle">●＜プロダクトURL＞</dt>
-                <dd class="p-top-production__detailList__urlText">
-                  <a class="p-top-production__detailList__urlLink" href="https://sample-birthday.shoyababa.vercel.app" target='_blank'>https://sample-birthday.shoyababa.vercel.app</a>
-                </dd>
-                <dt class="p-top-production__detailList__urlTitle">●＜GitHub-ソースコードURL＞</dt>
-                <dd class="p-top-production__detailList__urlText">
-                  <a class="p-top-production__detailList__urlLink" href="https://github.com/baby-0105/sample-birthday" target='_blank'>https://github.com/baby-0105/sample-birthday</a>
-                </dd>
-              </dl>
-            </div>
-          </div>
-        </li>
-      
-        <li class="p-top-production__detailList" id="productionDetail6">
-          <span class="p-top-production__detailList__crossIcon" id="productionCrossIcon6"><i class="fas fa-times crossIcon"></i></span>
           <h2 class="p-top-production__detailList__title">ー ウクレレプレイヤーのマッチングアプリ ー</h2>
           <div class="p-top-production__detailList__exp">
             <div class="p-top-production__detailList__expHeading">
-              <img class="p-top-production__detailList__expImg" src="/assets/images/ukulele_match.png" alt="作品の画像">
+              <img class="p-top-production__detailList__expImg" src="/assets/images/production/ukulele_match.png" alt="作品の画像">
               <dl class="p-top-production__detailList__info">
                 <dt class="p-top-production__detailList__infoTitle">●＜使用言語＞</dt>
                 <dd class="p-top-production__detailList__infoText">HTML/CSS/Ruby</dd>
@@ -608,6 +586,67 @@
     </ul>
   </div>
 
+  <div class="l-top-others" id="others">
+    <div class="l-top-others__container">
+      <h1 class="p-top-others__title" id="appear_others">
+        <span class="p-top-others__titleWord" id="othersTitleWord">Others</span>
+      </h1>
+      <p class="p-top-others__text">
+        これまで私が挑戦してきた事、どんな人柄か？など説明していきます。
+      </p>
+      <ul class="l-top-others__detail">
+        <li class="p-top-others__detailList">
+          <h2 class="p-top-others__detailList__title">ヒッチハイク</h2>
+          <div class="p-top-others__detailList__contents">
+            <div class="p-top-others__detailList__image">
+              <img class="p-top-others__detailList__expImg" src="/assets/images/others/hitchhiking-me.png" alt="ヒッチハイクの様子">
+              <p class="p-top-others__detailList__expImg__explain">九州1周ヒッチハイクの旅（10日間）</p>
+              <img class="p-top-others__detailList__expImg--people" src="/assets/images/others/hitchhiking-people.png" alt="ヒッチハイクの様子">
+              <p class="p-top-others__detailList__expImg__explain">0~100際までの方と写真をとっていただいた時の様子（一部の写真）</p>
+            </div>
+            <dl class="p-top-others__detailList__explain">
+              
+              
+              
+                <dt class="p-top-others__detailList__explain__title">何をした？</dt>
+                <dd class="p-top-others__detailList__explain__desc">大学時代からヒッチハイクを4度に渡って行いました（九州、和歌山、軽井沢、群馬県。全て大阪からのスタート）。それと共に、0~100歳の方々全員と写真を撮ってもらうという企画も並行して行いました。具体的には、知らない人へ声をかけて同意を頂きます。そして、年齢の書かれたパネルを持って頂き写真を一緒に撮る企画です</dd>
+              
+                <dt class="p-top-others__detailList__explain__title">なぜ挑戦しようと思った？</dt>
+                <dd class="p-top-others__detailList__explain__desc">年代の異なる方とコミュニケーションを取ることに慣れるために始めました。苦手な事にも挑戦することで、自分に自信をつける事が出来ると考えました。</dd>
+              
+                <dt class="p-top-others__detailList__explain__title">この経験で得たことは？</dt>
+                <dd class="p-top-others__detailList__explain__desc">・周りの協力あっての自分がいることを実感<br>・同世代以外の方と話すことに対する苦手意識の克服<br>・自信が無かった自分に、自信がついた<br><br>この企画では私は声をかけても不審がられて、無視されることが度々ありました。重要なのは『いかに不信感を取っ払い交渉するか？』でした。私は、改善を繰り返し<br>・笑顔<br>・自己開示<br>を徹底しました。その結果、「64年齢分、計250名」の方と写真を撮っていただくことが出来ました。<br>私が働く際には、<span class="red">新規事業や経験したことのない事には積極的に参加</span>します。<span class="red">世代関係なく意見交換し、切磋琢磨</span>します。そして、事業を大きくしていくことで貢献していきます。</dd>
+              
+            </dl>
+          </div>
+        </li>
+        <li class="p-top-others__detailList">
+          <h2 class="p-top-others__detailList__title">YouTube投稿</h2>
+          <div class="p-top-others__detailList__contents">
+            <div class="p-top-others__detailList__image">
+              <iframe src="https://www.youtube.com/embed/4tjFyjuTxgo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <p class="p-top-others__detailList__expImg__explain">ウクレレの解説を行なったり、ウクレレをさまざまな場所で弾いてみたりするチャンネルです。</p>
+            </div>
+            <dl class="p-top-others__detailList__explain">
+              
+              
+              
+                <dt class="p-top-others__detailList__explain__title">何をした？</dt>
+                <dd class="p-top-others__detailList__explain__desc">ウクレレの解説を行なったり、ウクレレをさまざまな場所で弾いてみたりする動画をyoutubeへ投稿していました。2019/6～2020/3（10か月）の期間に<span class="red">約80本</span>（別チャンネルも含め）の動画を投稿した経験があります。</dd>
+              
+                <dt class="p-top-others__detailList__explain__title">なぜ挑戦しようと思った？</dt>
+                <dd class="p-top-others__detailList__explain__desc">・自分の意見をいう事に慣れるため<br>・アウトプットの練習をするため<br>・プレゼン能力を高めるため<br><br>全て自分が苦手な事で、これから必要になってくる能力でした。それを鍛えるべく、youtube投稿が最適解だと考え、当時、プログラミングの学習と並行して発信する事を開始しました。</dd>
+              
+                <dt class="p-top-others__detailList__explain__title">この経験で得たことは？</dt>
+                <dd class="p-top-others__detailList__explain__desc">・視聴者目線で興味のある内容を考察する力<br>・恥を捨て、失敗を恐れずに挑戦する<br>・自分の言葉で説明する事<br><br>同じ内容の動画をあげている方も多々います。その中で自分のオリジナリティを加え、分かり易く説明する事には苦労いたしました。チャンネルの軸や、個性を分析した上で投稿する事を心掛けていました。<br>ウクレレのユーザーとして、自分自身や多くの人が悩んでいる部分に着目した内容構成に変更したところ、再生回数を100→3000回まで伸ばすことが出来ました。<br>また、外で1人でウクレレを弾く事も多々あります。初心者ですし、かなり恥ずかしかったです（笑）しかし、弾いているうちに慣れてくるものです。この経験から、<span class="red">失敗を恐れずに挑戦する</span>ことができます。</dd>
+              
+            </dl>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
   <div class="l-top-canDo"  id="canDo">
     <div class="l-top-canDo__container">
       <h1 class="p-top-canDo__title" id="appear_canDo">
@@ -620,19 +659,25 @@
         
         
           <li class="p-top-canDo__work">
-            <img class="p-top-canDo__workIcon" src="/assets/images/cando_img1.png" alt="案件イメージアイコン">
+            <img class="p-top-canDo__workIcon" src="/assets/images/cando/cando_img1.png" alt="案件イメージアイコン">
+            <h3 class="p-top-canDo__workTitle">web開発</h3>
+            <p class="p-top-canDo__workText">SPA、Webアプリケーションの開発を主に行います。フロントエンドはJavaScript（Vue.js）、バックエンドはRuby,Ruby on Railsを使用した経験がございます。</p>
+          </li>
+        
+          <li class="p-top-canDo__work">
+            <img class="p-top-canDo__workIcon" src="/assets/images/cando/cando_img2.png" alt="案件イメージアイコン">
             <h3 class="p-top-canDo__workTitle">Web制作</h3>
             <p class="p-top-canDo__workText">LP・コーポレートサイト・webアプリケーションなどのフロントエンド部分作成のお仕事をお受けします。JavaScriptを使用した動的なサイトの作成も可能です。</p>
           </li>
         
           <li class="p-top-canDo__work">
-            <img class="p-top-canDo__workIcon" src="/assets/images/cando_img2.png" alt="案件イメージアイコン">
+            <img class="p-top-canDo__workIcon" src="/assets/images/cando/cando_img3.png" alt="案件イメージアイコン">
             <h3 class="p-top-canDo__workTitle">レスポンシブ対応</h3>
             <p class="p-top-canDo__workText">スマホ・タブレット・パソコン、などマルチデバイスにも対応いたします。どのデバイスであっても見やすい表示へと切り替えます。</p>
           </li>
         
           <li class="p-top-canDo__work">
-            <img class="p-top-canDo__workIcon" src="/assets/images/cando_img3.png" alt="案件イメージアイコン">
+            <img class="p-top-canDo__workIcon" src="/assets/images/cando/cando_img4.png" alt="案件イメージアイコン">
             <h3 class="p-top-canDo__workTitle">WordPress案件</h3>
             <p class="p-top-canDo__workText">WordPressのテーマを使用したWebサイト・Webページの作成を行います。</p>
           </li>
@@ -727,5 +772,5 @@
   });
 </script>
 
-<script type="text/javascript" src="assets/javascripts/bundle45d317425b39afbf8132.js"></script></body>
+<script type="text/javascript" src="assets/javascripts/bundle2c3a909b2ccac49f76e9.js"></script></body>
 </html>

@@ -10,8 +10,8 @@ $(() => {
   const $bodyAndHtml = $('body, html');
 
   let scrollPosi,
-      lowerTitle=['intro', 'skills', 'production', 'canDo', 'contact'],
-      upperTitle=['Intro', 'Skills', 'Production', 'CanDo', 'Contact'];
+      lowerTitle=['intro', 'skills', 'production', 'others', 'canDo', 'contact'],
+      upperTitle=['Intro', 'Skills', 'Production', 'Others', 'CanDo', 'Contact'];
 
   // ページの一番上までスクロールさせます。
   $("#to_top").on('click', function() {
@@ -41,6 +41,14 @@ $(() => {
       }
     })());
   }
+
+  $('#toOthers').on('click', (function() {
+    return function() {
+      let headerHeight = $('#header').innerHeight(); //innerHeight()は、paddingも含めた高さ
+
+      $bodyAndHtml.animate({scrollTop: $('#others').offset().top - headerHeight});
+    }
+  })());
 
   // スクロールイベント
   $(window).scroll(function() {

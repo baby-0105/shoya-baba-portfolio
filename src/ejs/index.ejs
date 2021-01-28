@@ -28,10 +28,11 @@ src/ejs/template/_head %>
         <div class="p-top-intro__infoDetail">
           <h3 class="p-top-intro__infoName">馬場　翔矢（Shoya Baba）</h3>
 
-          <% var intro_period=['1997/01/05', '2019/3', '2019/4 ~ 2019/6', '2019/6~', '2020/4~', 'now', 'feature']; %>
+          <% var intro_period=['1997/01/05' ,'2019/3', '2019/4 ~ 2019/6', '2019/6~', '2020/4~', 'now', 'feature']; %>
           <% var intro_text=[
-            '大阪府で生まれました。', '近畿大学 農学部卒業', '機械部品製造業、従事', 'ピアノ教室を運営する母のために教室ホームページを作成し、プログラミングの面白さを知る。<br>その後、Webエンジニアになる事を目指す',
-            '東京でSES事業を行っているベンチャー企業に入社', '自社のLPを主に、JavaScript(jQuery)を用いたLP作成をしています。', '今後は、現在学習中のVue.jsを用いたアジャイル開発に取り組みたいです。'
+            '大阪府で生まれました。現在24歳です', '近畿大学 農学部卒業', '機械部品製造業、従事',
+            'ピアノ教室を運営する母のために教室ホームページを作成し、プログラミングの面白さを知る。<br>その後、Webエンジニアになる事を目指す。<br><br><span class="red">『好奇心からの行動力』</span>がある私は、この間に<span class="red">ヒッチハイクや、youtube投稿</span>に挑戦。（<span id="toOthers" class="p-top-intro__text__link">詳細は下記</span>に記載）',
+            '東京でSES事業を行っているベンチャー企業に入社', '自社のLPを主に、JavaScript(jQuery)を用いたLP作成をしています。', '今後は、現在学習中のVue.jsを用いたSPA開発に取り組みたいです。'
           ]; %>
 
           <% for (var i=0; i < intro_text.length; i++) { %>
@@ -62,15 +63,15 @@ src/ejs/template/_head %>
           1.使ってみた事がある<br>
           2.それを使用し、プロダクトを作った事がある<br>
           3.実務で使用した経験がある<br>
-          4.実務で1年程度使用、もしくは、人並みに使いこなせる<br>
-          5.何なりと、お任せください！
+          4.実務で1年程度使用。人並みに使いこなせる<br>
+          5.実務3年以上。ほとんど何でも実装できる
         </p>
       </div>
       <ul class="p-top-skills__detail" id="skillsDetail">
         <li class="p-top-skills__detailList">
           <h3 class="p-top-skills__detailList__title">Front end</h3>
-            <% var frontSkills=['HTML・CSS', 'JavaScript', 'jQuery', 'Sass', 'Bootstrap', 'Vue.js']; %>
-            <% var frontExtendNum=['3', '3', '3', '3', '2', '2']; %>
+            <% var frontSkills=['HTML・CSS', 'JavaScript', 'jQuery', 'Sass', 'Bootstrap', 'Vue.js', 'tailwindcss']; %>
+            <% var frontExtendNum=['3', '3', '3', '3', '2', '2', '2']; %>
             <% for (var i=0; i < frontSkills.length; i++) { %>
               <dl class="p-top-skills__detailList__item" id="frontDetailList">
                 <dt class="p-top-skills__detailList__itemUnit" id="frontItemUnit<%= i+1 %>">
@@ -132,11 +133,11 @@ src/ejs/template/_head %>
         から確認できる様になっております。
       </p>
       <ul class="p-top-production__item">
-        <% var production=['vue-address', 'numeron', 'portfolio', 'vue-communication-app', 'sample-birthday', 'ukulele_match']; %>
-        <% var production_title=['Vue.jsで作るアドレス帳', 'JSで作るNumerOn', 'ポートフォリオサイト', 'Vue.jsで作るチャットアプリ','webレター（sample）', 'ウクレレプレイヤーのマッチングアプリ']; %>
+        <% var production=["vue-communication-app", "numeron", "portfolio", "vue-address", "ukulele_match"]; %>
+        <% var production_title=["Vue.jsで作るチャットアプリ", "JSで作るNumerOn", "ポートフォリオサイト", "Vue.jsで作るアドレス帳", "ウクレレプレイヤーのマッチングアプリ"]; %>
         <% for (var i=0; i < production.length; i++) { %>
           <li class="p-top-production__itemList">
-            <img class="p-top-production__itemList__img"  id="productionItemList<%= i+1 %>" src="<%= img_path %><%= production[i] %>.png" alt="作品の画像">
+            <img class="p-top-production__itemList__img"  id="productionItemList<%= i+1 %>" src="<%= img_path %>production/<%= production[i] %>.png" alt="作品の画像">
             <p class="p-top-production__itemList__text"><%= production_title[i] %></p>
           </li>
         <% } %>
@@ -145,18 +146,18 @@ src/ejs/template/_head %>
 
     <ul class="l-top-production__detail">
       <% var detail_info_text=[
-        ['HTML/CSS/JavaScipt', 'HTML/CSS/JavaScript', 'HTML/CSS/JavaScript', 'HTML/CSS/JavaScipt','HTML/CSS/JavaScript', 'HTML/CSS/Ruby'],
-        ['Vue.js/npm/firebase', 'なし', 'Sass/jQuery/webpack/npm', 'Vue.js/npm/firebase/tailwindCSS','Sass/jQuery/webpack/npm', 'Bootstrap/Rails/MySQL/Cloud9'],
-        ['3日（2020/12）', '2週間（2020/10）', '1ヶ月（2020/10）', '1週間（2021/1）','1ヶ月（2020/6〜2020/7）', '1ヶ月（2020/3〜2020/4）'],
-        ['my-address-pj-ac458.web.app', 'baby-0105.github.io/JS_numeron/html/home.html', 'portfolio.shoyababa.vercel.app/', 'vue-community-app.web.app','sample-birthday.shoyababa.vercel.app', 'ukulele-match-0105.herokuapp.com/'],
-        ['vue-address', 'JS_numeron', 'shoya_baba_portfolio', 'vue-communication-app','sample-birthday', 'original_app-ukulele-match-']
+        ["HTML/CSS/JavaScipt", "HTML/CSS/JavaScript", "HTML/CSS/JavaScript", "HTML/CSS/JavaScipt", "HTML/CSS/Ruby"],
+        ["Vue.js/npm/firebase/tailwindCSS", "なし", "Sass/jQuery/webpack/npm", "Vue.js/npm/firebase", "Bootstrap/Rails/MySQL/Cloud9"],
+        ["1ヶ月（2021/1）", "2週間（2020/10）", "1ヶ月（2020/10）", "3日（2020/12）", "1ヶ月（2020/3〜2020/4）"],
+        ["vue-community-app.web.app", "baby-0105.github.io/JS_numeron/html/home.html", "portfolio.shoyababa.vercel.app/", "my-address-pj-ac458.web.app", "ukulele-match-0105.herokuapp.com/"],
+        ["vue-communication-app", "JS_numeron", "shoya_baba_portfolio", "vue-address", "original_app-ukulele-match-"]
       ];%>
       <% var detail_expText=[
-        "Vue.js + Firebaseで作成しました。vue-routerや、vuexを使用した、ログイン/ログアウト機能や、アドレスの編集/削除の機能を実装いたしました。Vue.jsについては現在も学習中ですので随時こちらのプロダクトの更新を行います。",
+        "アドレス帳に次いで、Vue.jsで作る2つ目のアプリです。Slackライクなアプリケーションとして当サイト（https://reffect.co.jp/vue）を参考に作成しました。vue-routerを用いたページの切り替えや、firebaseのログイン認証、メッセージ管理機能などを実装しています。特に、ダイレクトメッセージ機能の相手ユーザーと紐付ける部分は理解することに苦労しました。Vue.jsの学習がメインのため、スタイルには、コンポーネントを使ったVue.jsということもあり、流行りのtailwindCSSを用いて簡潔にスタイリングしています。今後はCSSファイル軽量化のためにPurgeCSSも導入します。まだまだ、オリジナリティは欠けるため現在も当サイトの改善を行なっていきます。",
         "数字当てゲーム「NumerOn」を作成しました。純粋なJavaScriptとHTML/CSSのみで、ライブラリやフレームワークは使用していません。目的は、jQueryなどのライブラリに頼らない純粋なJavaScriptに慣れるためです。（JavaScriptを使うことが目的でしたのでUIはかなりチープなものになっています）。なぜ、このゲームを作成しようと思ったか？ですが、、、高校の時に毎日友達としていた思い出のゲームだからです（笑）。作ってみたかったものが実現しました。",
         "私のポートフォリオサイトです。シンプルかつ、一目で分かるようなUIにする事を意識しました。Skillsの棒グラフの作成にはjQueryを使用し、UXにもこだわり工夫いたしました。Sass/jQueryの他、npm/webpackなどのツールも使用しています。npmを使用している事もあってnowを使って、Vercelへデプロイしました。今後は、現在勉強しているVue.jsも当サイトへ取り入れてモダンなコードへと改善を行っていきたいと思います。",
-        "アドレス帳に次いで、Vue.jsで作る2つ目のアプリです。Slackライクなアプリケーションとして当サイト（https://reffect.co.jp/vue）を参考に作成しました。vue-routerを用いたページの切り替えや、firebaseのログイン認証、メッセージ管理機能などを実装しています。特に、ダイレクトメッセージ機能の相手ユーザーと紐付ける部分は理解することに苦労しました。Vue.jsの学習がメインのため、スタイルには、tailwindCSSを用いて簡潔にスタイリングしています。まだまだ、オリジナリティは欠けるため現在も当サイトの改善を行なっていきます。",
-        "個人的に作ったwebレターです。実際には、写真や手紙の内容も添えて作ったのですが、こちらはsampleになります。仕様自体は本物とほぼ同等のものです。シンプルで分かりやすいと言うよりも、CSSやjQueryなどでアニメーションを複数使用する事で凝った仕様にしています。",
+        "Vue.js + Firebaseで作成しました。vue-routerや、vuexを使用した、ログイン/ログアウト機能や、アドレスの編集/削除の機能を実装いたしました。Vue.jsについては現在も学習中ですので随時こちらのプロダクトの更新を行います。",
+        // "個人的に作ったwebレターです。実際には、写真や手紙の内容も添えて作ったのですが、こちらはsampleになります。仕様自体は本物とほぼ同等のものです。シンプルで分かりやすいと言うよりも、CSSやjQueryなどでアニメーションを複数使用する事で凝った仕様にしています。",
         "Ruby on Railsを使用したマッチングサービスです。新規登録/ログイン/フォロー/投稿/ダイレクトメッセージなどの機能を付けました。どちらか言うとバックエンドよりの技術を主に使用する事に注力したため、フロント部分はBootStrapを使用しています。作った目的は、ウクレレプレイヤー同士の交流を深めてもらうためです。私自身、ウクレレを弾いていましたが（今はしていません）独学での演奏は挫折しやすく、また、プレイヤー数も少ないため仲間を探すことは大変です。そこで、模擬サイトとして作成しました。"
       ]; %>
       <% for (var i=0; i < production_title.length; i++) { %>
@@ -165,7 +166,7 @@ src/ejs/template/_head %>
           <h2 class="p-top-production__detailList__title">ー <%= production_title[i] %> ー</h2>
           <div class="p-top-production__detailList__exp">
             <div class="p-top-production__detailList__expHeading">
-              <img class="p-top-production__detailList__expImg" src="<%= img_path %><%= production[i] %>.png" alt="作品の画像">
+              <img class="p-top-production__detailList__expImg" src="<%= img_path %>production/<%= production[i] %>.png" alt="作品の画像">
               <dl class="p-top-production__detailList__info">
                 <dt class="p-top-production__detailList__infoTitle">●＜使用言語＞</dt>
                 <dd class="p-top-production__detailList__infoText"><%= detail_info_text[0][i] %></dd>
@@ -194,6 +195,63 @@ src/ejs/template/_head %>
     </ul>
   </div>
 
+  <div class="l-top-others" id="others">
+    <div class="l-top-others__container">
+      <h1 class="p-top-others__title" id="appear_others">
+        <span class="p-top-others__titleWord" id="othersTitleWord">Others</span>
+      </h1>
+      <p class="p-top-others__text">
+        これまで私が挑戦してきた事、どんな人柄か？など説明していきます。
+      </p>
+      <ul class="l-top-others__detail">
+        <li class="p-top-others__detailList">
+          <h2 class="p-top-others__detailList__title">ヒッチハイク</h2>
+          <div class="p-top-others__detailList__contents">
+            <div class="p-top-others__detailList__image">
+              <img class="p-top-others__detailList__expImg" src="<%= img_path %>others/hitchhiking-me.png" alt="ヒッチハイクの様子">
+              <p class="p-top-others__detailList__expImg__explain">九州1周ヒッチハイクの旅（10日間）</p>
+              <img class="p-top-others__detailList__expImg--people" src="<%= img_path %>others/hitchhiking-people.png" alt="ヒッチハイクの様子">
+              <p class="p-top-others__detailList__expImg__explain">0~100際までの方と写真をとっていただいた時の様子（一部の写真）</p>
+            </div>
+            <dl class="p-top-others__detailList__explain">
+              <% var hitch_title=['何をした？', 'なぜ挑戦しようと思った？', 'この経験で得たことは？']; %>
+              <% var hitch_desc=[
+                '大学時代からヒッチハイクを4度に渡って行いました（九州、和歌山、軽井沢、群馬県。全て大阪からのスタート）。それと共に、0~100歳の方々全員と写真を撮ってもらうという企画も並行して行いました。具体的には、知らない人へ声をかけて同意を頂きます。そして、年齢の書かれたパネルを持って頂き写真を一緒に撮る企画です',
+                '年代の異なる方とコミュニケーションを取ることに慣れるために始めました。苦手な事にも挑戦することで、自分に自信をつける事が出来ると考えました。',
+                '・周りの協力あっての自分がいることを実感<br>・同世代以外の方と話すことに対する苦手意識の克服<br>・自信が無かった自分に、自信がついた<br><br>この企画では私は声をかけても不審がられて、無視されることが度々ありました。重要なのは『いかに不信感を取っ払い交渉するか？』でした。私は、改善を繰り返し<br>・笑顔<br>・自己開示<br>を徹底しました。その結果、「64年齢分、計250名」の方と写真を撮っていただくことが出来ました。<br>私が働く際には、<span class="red">新規事業や経験したことのない事には積極的に参加</span>します。<span class="red">世代関係なく意見交換し、切磋琢磨</span>します。そして、事業を大きくしていくことで貢献していきます。'
+              ];%>
+              <% for (var i=0; i < hitch_title.length; i++) { %>
+                <dt class="p-top-others__detailList__explain__title"><%= hitch_title[i] %></dt>
+                <dd class="p-top-others__detailList__explain__desc"><%- hitch_desc[i] %></dd>
+              <% } %>
+            </dl>
+          </div>
+        </li>
+        <li class="p-top-others__detailList">
+          <h2 class="p-top-others__detailList__title">YouTube投稿</h2>
+          <div class="p-top-others__detailList__contents">
+            <div class="p-top-others__detailList__image">
+              <iframe src="https://www.youtube.com/embed/4tjFyjuTxgo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <p class="p-top-others__detailList__expImg__explain">ウクレレの解説を行なったり、ウクレレをさまざまな場所で弾いてみたりするチャンネルです。</p>
+            </div>
+            <dl class="p-top-others__detailList__explain">
+              <% var hitch_title=['何をした？', 'なぜ挑戦しようと思った？', 'この経験で得たことは？']; %>
+              <% var hitch_desc=[
+                'ウクレレの解説を行なったり、ウクレレをさまざまな場所で弾いてみたりする動画をyoutubeへ投稿していました。2019/6～2020/3（10か月）の期間に<span class="red">約80本</span>（別チャンネルも含め）の動画を投稿した経験があります。',
+                '・自分の意見をいう事に慣れるため<br>・アウトプットの練習をするため<br>・プレゼン能力を高めるため<br><br>全て自分が苦手な事で、これから必要になってくる能力でした。それを鍛えるべく、youtube投稿が最適解だと考え、当時、プログラミングの学習と並行して発信する事を開始しました。',
+                '・視聴者目線で興味のある内容を考察する力<br>・恥を捨て、失敗を恐れずに挑戦する<br>・自分の言葉で説明する事<br><br>同じ内容の動画をあげている方も多々います。その中で自分のオリジナリティを加え、分かり易く説明する事には苦労いたしました。チャンネルの軸や、個性を分析した上で投稿する事を心掛けていました。<br>ウクレレのユーザーとして、自分自身や多くの人が悩んでいる部分に着目した内容構成に変更したところ、再生回数を100→3000回まで伸ばすことが出来ました。<br>また、外で1人でウクレレを弾く事も多々あります。初心者ですし、かなり恥ずかしかったです（笑）しかし、弾いているうちに慣れてくるものです。この経験から、<span class="red">失敗を恐れずに挑戦する</span>ことができます。'
+              ];%>
+              <% for (var i=0; i < hitch_title.length; i++) { %>
+                <dt class="p-top-others__detailList__explain__title"><%= hitch_title[i] %></dt>
+                <dd class="p-top-others__detailList__explain__desc"><%- hitch_desc[i] %></dd>
+              <% } %>
+            </dl>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
   <div class="l-top-canDo"  id="canDo">
     <div class="l-top-canDo__container">
       <h1 class="p-top-canDo__title" id="appear_canDo">
@@ -201,16 +259,17 @@ src/ejs/template/_head %>
       </h1>
       <p class="p-top-canDo__text">現在、お受けする事のできる案件・仕事内容についてご紹介させていただきます。</p>
       <ul class="p-top-canDo__works">
-        <% var works=['1', '2', '3']; %>
-        <% var work_title=['Web制作', 'レスポンシブ対応', 'WordPress案件']; %>
+        <% var works=['1', '2', '3', '4']; %>
+        <% var work_title=['web開発', 'Web制作', 'レスポンシブ対応', 'WordPress案件']; %>
         <% var work_text=[
+          'SPA、Webアプリケーションの開発を主に行います。フロントエンドはJavaScript（Vue.js）、バックエンドはRuby,Ruby on Railsを使用した経験がございます。',
           'LP・コーポレートサイト・webアプリケーションなどのフロントエンド部分作成のお仕事をお受けします。JavaScriptを使用した動的なサイトの作成も可能です。',
           'スマホ・タブレット・パソコン、などマルチデバイスにも対応いたします。どのデバイスであっても見やすい表示へと切り替えます。',
           'WordPressのテーマを使用したWebサイト・Webページの作成を行います。'
         ]; %>
         <% for (var i=0; i < works.length; i++) { %>
           <li class="p-top-canDo__work">
-            <img class="p-top-canDo__workIcon" src="<%= img_path %>cando_img<%= works[i] %>.png" alt="案件イメージアイコン">
+            <img class="p-top-canDo__workIcon" src="<%= img_path %>cando/cando_img<%= works[i] %>.png" alt="案件イメージアイコン">
             <h3 class="p-top-canDo__workTitle"><%= work_title[i] %></h3>
             <p class="p-top-canDo__workText"><%= work_text[i] %></p>
           </li>
