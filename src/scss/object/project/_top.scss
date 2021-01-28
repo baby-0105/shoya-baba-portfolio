@@ -748,18 +748,41 @@
 
 .p-top-others__detailList__contents {
   display: flex;
+
+  @include mq(u-pc) {
+    flex-direction: column;
+  }
 }
 
 .p-top-others__detailList__image {
   width: 30%;
+
+  @include mq(u-pc) {
+    width: 100%;
+    margin-bottom: 80px;
+  }
+}
+
+.p-top-others__detailList__movie {
+  width: 100%;
+  min-height: 200px;
+
+  @include mq(u-pc) {
+    height: 300px;
+  }
 }
 
 .p-top-others__detailList__expImg__explain {
-  // text-align: center;
   font-size: $fontLetterSmall;
 
   &:first-of-type {
     margin-bottom: 20px;
+  }
+
+  @include mq(u-pc) {
+    &:first-of-type {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -770,6 +793,11 @@
 .p-top-others__detailList__explain {
   width: 70%;
   margin-left: 50px;
+
+  @include mq(u-pc) {
+    width: 100%;
+    margin-left: 0;
+  }
 }
 
 .p-top-others__detailList__explain__title {
