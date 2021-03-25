@@ -28,11 +28,11 @@ src/ejs/template/_head %>
         <div class="p-top-intro__infoDetail">
           <h3 class="p-top-intro__infoName">馬場　翔矢（Shoya Baba）</h3>
 
-          <% var intro_period=['1997/01/05' ,'2019/3', '2019/4 ~ 2019/6', '2019/6~', '2020/4~', 'now', 'feature']; %>
+          <% var intro_period=['1997/01/05' ,'2019/3', '2019/4 ~ 2019/6', '2019/6~', '2020/4', '2020/10~2021/3', 'now']; %>
           <% var intro_text=[
             '大阪府で生まれました。現在24歳です', '近畿大学 農学部卒業', '機械部品製造業、従事',
-            'ピアノ教室を運営する母のために教室ホームページを作成し、プログラミングの面白さを知る。<br>その後、Webエンジニアになる事を目指す。<br><br><span class="red">『好奇心からの行動力』</span>がある私は、この間に<span class="red">ヒッチハイクや、youtube投稿</span>に挑戦。（<span id="toOthers" class="p-top-intro__text__link">詳細は下記</span>に記載）',
-            '東京でSES事業を行っているベンチャー企業に入社', '自社のLPを主に、JavaScript(jQuery)を用いたLP作成をしています。', '今後は、現在学習中のVue.jsを用いたSPA開発に取り組みたいです。'
+            'ピアノ教室を運営する母のために教室ホームページを作成し、プログラミングの面白さを知る。<br>その後、<span class="red">Webエンジニア</span>になる事を目指す。<!--<br><br><span class="red">『好奇心からの行動力』</span>がある私は、この間に<span class="red">ヒッチハイクや、youtube投稿</span>に挑戦。（<span id="toOthers" class="p-top-intro__text__link">詳細は下記</span>に記載）-->',
+            '東京でSES事業を行っているベンチャー企業に入社（その後、コールセンター業務）', '自社のLPを主に、JavaScript（jQuery）を用いたLP制作業務', '現在は、<span class="red">Laravel/Vue</span>での開発をメインに行なっております。'
           ]; %>
 
           <% for (var i=0; i < intro_text.length; i++) { %>
@@ -70,8 +70,8 @@ src/ejs/template/_head %>
       <ul class="p-top-skills__detail" id="skillsDetail">
         <li class="p-top-skills__detailList">
           <h3 class="p-top-skills__detailList__title">Front end</h3>
-            <% var frontSkills=['HTML・CSS', 'JavaScript', 'jQuery', 'Sass', 'Bootstrap', 'Vue.js', 'tailwindcss']; %>
-            <% var frontExtendNum=['3', '3', '3', '3', '2', '2', '2']; %>
+            <% var frontSkills=['HTML・CSS', 'JavaScript', 'jQuery', 'Sass', 'Vue.js', 'tailwindcss']; %>
+            <% var frontExtendNum=['3', '3', '3', '3', '3', '2']; %>
             <% for (var i=0; i < frontSkills.length; i++) { %>
               <dl class="p-top-skills__detailList__item" id="frontDetailList">
                 <dt class="p-top-skills__detailList__itemUnit" id="frontItemUnit<%= i+1 %>">
@@ -86,8 +86,8 @@ src/ejs/template/_head %>
         </li>
         <li class="p-top-skills__detailList">
           <h3 class="p-top-skills__detailList__title">Back end</h3>
-          <% var backSkills=['Ruby', 'Ruby on Rails', 'MySQL', 'PostgreSQL']; %>
-          <% var backExtendNum=['2', '2', '2', '2']; %>
+          <% var backSkills=['PHP', 'Laravel', 'MySQL']; %>
+          <% var backExtendNum=['3', '3', '3']; %>
           <% for (var i=0; i < backSkills.length; i++) { %>
             <dl class="p-top-skills__detailList__item" id="backDetailList">
               <dt class="p-top-skills__detailList__itemUnit" id="backItemUnit<%= i+1 %>">
@@ -102,8 +102,8 @@ src/ejs/template/_head %>
         </li>
         <li class="p-top-skills__detailList">
           <h3 class="p-top-skills__detailList__title">tools</h3>
-          <% var tools=['webpack', 'npm・yarn', 'Git・GitHub', 'AWS（Cloud9）', 'Heroku', 'Linux']; %>
-          <% var toolsExtendNum=['3', '3', '3', '2', '2', '2']; %>
+          <% var tools=['webpack', 'npm・yarn', 'Git・GitHub', 'AWS（EC2・VPC・RDS）', 'docker']; %>
+          <% var toolsExtendNum=['3', '3', '3', '2', '2']; %>
           <% for (var i=0; i < tools.length; i++) { %>
             <dl class="p-top-skills__detailList__item" id="toolsDetailList">
               <dt class="p-top-skills__detailList__itemUnit" id="toolsItemUnit<%= i+1 %>">
@@ -195,7 +195,7 @@ src/ejs/template/_head %>
     </ul>
   </div>
 
-  <div class="l-top-others" id="others">
+  <!-- <div class="l-top-others" id="others">
     <div class="l-top-others__container">
       <h1 class="p-top-others__title" id="appear_others">
         <span class="p-top-others__titleWord" id="othersTitleWord">Others</span>
@@ -272,7 +272,7 @@ src/ejs/template/_head %>
         </li>
       </ul>
     </div>
-  </div>
+  </div> -->
 
   <div class="l-top-canDo"  id="canDo">
     <div class="l-top-canDo__container">
@@ -284,7 +284,7 @@ src/ejs/template/_head %>
         <% var works=['1', '2', '3', '4']; %>
         <% var work_title=['web開発', 'Web制作', 'レスポンシブ対応', 'WordPress案件']; %>
         <% var work_text=[
-          'SPA、Webアプリケーションの開発を主に行います。フロントエンドはJavaScript（Vue.js）、バックエンドはRuby,Ruby on Railsを使用した経験がございます。',
+          'SPA、Webアプリケーションの開発を主に行います。フロントエンドはJavaScript（Vue.js）、バックエンドはLaravelを使用した経験がございます。',
           'LP・コーポレートサイト・webアプリケーションなどのフロントエンド部分作成のお仕事をお受けします。JavaScriptを使用した動的なサイトの作成も可能です。',
           'スマホ・タブレット・パソコン、などマルチデバイスにも対応いたします。どのデバイスであっても見やすい表示へと切り替えます。',
           'WordPressのテーマを使用したWebサイト・Webページの作成を行います。'
