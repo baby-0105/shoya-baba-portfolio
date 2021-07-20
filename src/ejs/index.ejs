@@ -31,8 +31,8 @@ src/ejs/template/_head %>
           <% var intro_period=['1997/01/05' ,'2019/3', '2019/4 ~ 2019/6', '2019/6~', '2020/4', '2020/10~2021/3', 'now']; %>
           <% var intro_text=[
             '大阪府で生まれました。現在24歳です', '近畿大学 農学部卒業', '機械部品製造業、従事',
-            'ピアノ教室を運営する母のために教室ホームページを作成し、プログラミングの面白さを知る。<br>その後、<span class="red">Webエンジニア</span>になる事を目指す。<!--<br><br><span class="red">『好奇心からの行動力』</span>がある私は、この間に<span class="red">ヒッチハイクや、youtube投稿</span>に挑戦。（<span id="toOthers" class="p-top-intro__text__link">詳細は下記</span>に記載）-->',
-            '東京でSES事業を行っているベンチャー企業に入社（その後、コールセンター業務）', '自社のLPを主に、JavaScript（jQuery）を用いたLP制作業務', '現在は、<span class="red">Laravel/Vue</span>での開発をメインに行なっております。'
+            'ピアノ教室を運営する母のために教室ホームページを作成。Webに興味を持つ。<br>その後、<span class="red">Webエンジニア</span>になる事を目指す。<!--<br><br><span class="red">『好奇心からの行動力』</span>がある私は、この間に<span class="red">ヒッチハイクや、youtube投稿</span>に挑戦。（<span id="toOthers" class="p-top-intro__text__link">詳細は下記</span>に記載）-->',
+            '東京でSES事業を行っているベンチャー企業に入社（その後、コールセンター業務）', '自社のLPを主に、JavaScript（jQuery）を用いたLP・コーポレートサイト制作業務に従事', '現在は、<span class="red">Laravel</span>での開発をメインに行なっております。'
           ]; %>
 
           <% for (var i=0; i < intro_text.length; i++) { %>
@@ -54,16 +54,16 @@ src/ejs/template/_head %>
         <span class="p-top-skills__titleWord" id="skillsTitleWord">Skills</span>
       </h1>
       <p class="p-top-skills__text">
-        習得中の言語も含め、現在扱うことの出来るスキルの一覧です。現在は、Laravel / Vue.jsをメインに開発をしています。
+        習得中の言語も含め、現在扱うことの出来るスキルの一覧です。現在は、Laravelをメインに開発をしています。
       </p>
       <div class="p-top-skills__explain">
         <h3 class="p-top-skills__explain__title">- スキルレベル -</h3>
         <p class="p-top-skills__explain__text">
           1.使ってみた事がある<br>
           2.それを使用し、プロダクトを作った事がある<br>
-          3.実務で使用した経験がある<br>
-          4.実務で1年程度使用。人並みに使いこなせる<br>
-          5.実務3年以上。ほとんど何でも実装できる
+          3.実務で使用した経験がある（1年未満）<br>
+          4.実務で「1年程度」使用経験がある<br>
+          5.実務で「3年以上」使用経験がある
         </p>
       </div>
       <ul class="p-top-skills__detail" id="skillsDetail">
@@ -101,8 +101,8 @@ src/ejs/template/_head %>
         </li>
         <li class="p-top-skills__detailList">
           <h3 class="p-top-skills__detailList__title">tools</h3>
-          <% var tools=['webpack', 'npm・yarn', 'Git・GitHub', 'AWS（EC2・VPC・RDS）', 'docker']; %>
-          <% var toolsExtendNum=['3', '3', '3', '2', '2']; %>
+          <% var tools=['webpack', 'npm・yarn', 'Git・GitHub', 'docker', 'AWS（EC2・VPC・RDS）']; %>
+          <% var toolsExtendNum=['3', '3', '3', '3', '2']; %>
           <% for (var i=0; i < tools.length; i++) { %>
             <dl class="p-top-skills__detailList__item" id="toolsDetailList">
               <dt class="p-top-skills__detailList__itemUnit" id="toolsItemUnit<%= i+1 %>">
@@ -152,10 +152,10 @@ src/ejs/template/_head %>
         ["vue-communication-app", "JS_numeron", "original_app-ukulele-match-", "shoya_baba_portfolio", "vue-address"]
       ];%>
       <% var detail_expText=[
-        "アドレス帳に次いで、Vue.jsで作る2つ目のアプリです。Slackライクなアプリケーションとして当サイト（https://reffect.co.jp/vue）を参考に作成しました。vue-routerを用いたページの切り替えや、firebaseのログイン認証、メッセージ管理機能などを実装しています。特に、ダイレクトメッセージ機能の相手ユーザーと紐付ける部分は理解することに苦労しました。Vue.jsの学習がメインのため、スタイルには、コンポーネントを使ったVue.jsということもあり、流行りのtailwindCSSを用いて簡潔にスタイリングしています。今後はCSSファイル軽量化のためにPurgeCSSも導入します。まだまだ、オリジナリティは欠けるため現在も当サイトの改善を行なっていきます。",
+        "vue-routerを用いたページの切り替えや、firebaseのログイン認証、メッセージ管理機能などを実装しています。特に、ダイレクトメッセージ機能の相手ユーザーと紐付ける部分は理解することに苦労しました。Vue.jsの学習がメインのため、スタイルには、コンポーネントを使ったVue.jsということもあり、tailwindCSSを用いて簡潔にスタイリングしています。今後はCSSファイル軽量化のためにPurgeCSSも導入します。まだまだ、オリジナリティは欠けるため現在も当サイトの改善を行なっていきます。",
         "数字当てゲーム「NumerOn」を作成しました。純粋なJavaScriptとHTML/CSSのみで、ライブラリやフレームワークは使用していません。目的は、jQueryなどのライブラリに頼らない純粋なJavaScriptに慣れるためです。（JavaScriptを使うことが目的でしたのでUIはかなりチープなものになっています）。なぜ、このゲームを作成しようと思ったか？ですが、、、高校の時に毎日友達としていた思い出のゲームだからです（笑）。作ってみたかったものが実現しました。",
-        "Ruby on Railsを使用したマッチングサービスです。これを作った理由としては、私自身やtwitterでの意見からウクレレの演奏に孤独を感じ、仲間を集める事のできるサービスがあればいいと思ったからです。ただでさえプレイヤー数の少ないウクレレですと挫折率も高いと考えたからです。今でこそSNSで簡単に仲間を集めることができると思います。しかし、よりウクレレプレイヤーに特化した「ウクレレ経験年数や、居住地域」などの情報を可視化する事でマッチしやすいと考えました。その他機能としましては、新規登録/ログイン/フォロー/投稿/ダイレクトメッセージなどの機能を付けました。どちらか言うとバックエンドよりの技術を主に使用する事に注力したため、フロント部分はBootStrapを使用しています。",
-        "私のポートフォリオサイトです。シンプルかつ、一目で分かるようなUIにする事を意識しました。Skillsの棒グラフの作成にはjQueryを使用し、UXにもこだわり工夫いたしました。Sass/jQueryの他、npm/webpackなどのツールも使用しています。npmを使用している事もあってnowを使って、Vercelへデプロイしました。今後は、現在勉強しているVue.jsも当サイトへ取り入れてモダンなコードへと改善を行っていきたいと思います。",
+        "Ruby on Railsを使用したマッチングサービスです。これを作った理由としては、私自身やtwitterでの意見からウクレレの演奏に寂しさを感じ、仲間を集める事のできるサービスがあればいいと思ったからです。ただでさえプレイヤー数の少ないウクレレですと挫折率も高いと考えたからです。よりウクレレプレイヤーに特化した「ウクレレ経験年数や、居住地域」などの情報を可視化する事でマッチしやすいと考えました。その他機能としましては、新規登録/ログイン/フォロー/投稿/ダイレクトメッセージなどの機能を付けました。どちらか言うとバックエンドよりの技術を主に使用する事に注力したため、フロント部分はBootStrapを使用しています。",
+        "私のポートフォリオサイトです。シンプルかつ、一目で分かるようなUIにする事を意識しました。Skillsの棒グラフの作成にはjQueryを使用し、UXにもこだわり工夫いたしました。Sass/jQueryの他、npm/webpackなどのツールも使用しています。",
         "Vue.js + Firebaseで作成しました。vue-routerや、vuexを使用した、ログイン/ログアウト機能や、アドレスの編集/削除の機能を実装いたしました。Vue.jsについては現在も学習中ですので随時こちらのプロダクトの更新を行います。",
         // "個人的に作ったwebレターです。実際には、写真や手紙の内容も添えて作ったのですが、こちらはsampleになります。仕様自体は本物とほぼ同等のものです。シンプルで分かりやすいと言うよりも、CSSやjQueryなどでアニメーションを複数使用する事で凝った仕様にしています。",
       ]; %>
@@ -283,7 +283,7 @@ src/ejs/template/_head %>
         <% var works=['1', '2', '3', '4']; %>
         <% var work_title=['web開発', 'Web制作', 'レスポンシブ対応', 'WordPress案件']; %>
         <% var work_text=[
-          'SPA、Webアプリケーションの開発を主に行います。フロントエンドはJavaScript（Vue.js）、バックエンドはLaravelを使用した経験がございます。',
+          'Webアプリケーションの開発を主に行います。フロントエンドはJavaScript、バックエンドはPHP（Laravel）での開発経験がございます。',
           'LP・コーポレートサイト・webアプリケーションなどのフロントエンド部分作成のお仕事をお受けします。JavaScriptを使用した動的なサイトの作成も可能です。',
           'スマホ・タブレット・パソコン、などマルチデバイスにも対応いたします。どのデバイスであっても見やすい表示へと切り替えます。',
           'WordPressのテーマを使用したWebサイト・Webページの作成を行います。'
@@ -299,24 +299,26 @@ src/ejs/template/_head %>
     </div>
   </div>
 
-  <div class="l-top-contact"  id="contact">
-    <div class="l-top-contact__container">
-      <h1 class="p-top-contact__title" id="appear_contact">
-        <span class="p-top-contact__titleWord" id="contactTitleWord">Contact</span>
-      </h1>
-      <p class="p-top-contact__text">お問い合わせはこちらから！<br>（もしくは、ページ下部の'Twitterアイコン'からDMお願いします。）</p>
-      <form class="p-top-contact__block" id="contactForm" action="https://api.staticforms.xyz/submit" method="post">
-        <input class="p-top-contact__form" name="name" type="text" placeholder="お名前">
-        <input class="p-top-contact__form" name="email" type="text" placeholder="メールアドレス">
-        <textarea class="p-top-contact__inquiry" name="message" placeholder="お問い合わせ内容を記載ください。"></textarea>
-        <input type="hidden" name="accessKey" value="ccb0ccaf-3ab2-47f6-b46b-0916e6b582a7">
-        <input type="hidden" name="subject" value="※※「ポートフォリオサイト」より、メール※※">
-        <input type="hidden" name="replyTo" value="@">
-        <input type="hidden" name="redirectTo" value="https://portfolio.shoyababa.vercel.app/about">
-        <input class="p-top-contact__btn" type="submit" value="送信する">
-      </form>
+  <!--
+    <div class="l-top-contact"  id="contact">
+      <div class="l-top-contact__container">
+        <h1 class="p-top-contact__title" id="appear_contact">
+          <span class="p-top-contact__titleWord" id="contactTitleWord">Contact</span>
+        </h1>
+        <p class="p-top-contact__text">お問い合わせはこちらから！<br>（もしくは、ページ下部の'Twitterアイコン'からDMお願いします。）</p>
+        <form class="p-top-contact__block" id="contactForm" action="https://api.staticforms.xyz/submit" method="post">
+          <input class="p-top-contact__form" name="name" type="text" placeholder="お名前">
+          <input class="p-top-contact__form" name="email" type="text" placeholder="メールアドレス">
+          <textarea class="p-top-contact__inquiry" name="message" placeholder="お問い合わせ内容を記載ください。"></textarea>
+          <input type="hidden" name="accessKey" value="ccb0ccaf-3ab2-47f6-b46b-0916e6b582a7">
+          <input type="hidden" name="subject" value="※※「ポートフォリオサイト」より、メール※※">
+          <input type="hidden" name="replyTo" value="@">
+          <input type="hidden" name="redirectTo" value="https://portfolio.shoyababa.vercel.app/about">
+          <input class="p-top-contact__btn" type="submit" value="送信する">
+        </form>
+      </div>
     </div>
-  </div>
+  -->
 </main>
 
 <% include src/ejs/template/_footer %>
