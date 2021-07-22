@@ -28,7 +28,7 @@ src/ejs/template/_head %>
         <div class="p-top-intro__infoDetail">
           <h3 class="p-top-intro__infoName">馬場　翔矢（Shoya Baba）</h3>
 
-          <% var intro_period=['1997/01/05' ,'2019/3', '2019/4 ~ 2019/6', '2019/6~', '2020/4', '2020/10~2022/1', '2021/2~2021/7']; %>
+          <% var intro_period=['1997/01/05' ,'2019/3', '2019/4 ~ 2019/6', '2019/6~', '2020/4', '2020/10~2021/1', '2021/2~現在']; %>
           <% var intro_text=[
             '大阪府で生まれました。現在24歳です', '近畿大学 農学部卒業', '機械部品製造業、従事',
             'ピアノ教室を運営する母のために教室ホームページを作成。Webに興味を持つ。<br>その後、<span class="red">Webエンジニア</span>になる事を目指す。<!--<br><br><span class="red">『好奇心からの行動力』</span>がある私は、この間に<span class="red">ヒッチハイクや、youtube投稿</span>に挑戦。（<span id="toOthers" class="p-top-intro__text__link">詳細は下記</span>に記載）-->',
@@ -120,7 +120,7 @@ src/ejs/template/_head %>
         <li class="p-top-skills__detailList">
           <h3 class="p-top-skills__detailList__title">Front end</h3>
             <% var frontSkills=['HTML・CSS', 'JavaScript', 'jQuery', 'Sass', 'Vue.js', 'tailwindcss']; %>
-            <% var frontExtendNum=['3', '3', '3', '3', '3', '2']; %>
+            <% var frontExtendNum=['3', '3', '3', '3', '2', '2']; %>
             <% for (var i=0; i < frontSkills.length; i++) { %>
               <dl class="p-top-skills__detailList__item" id="frontDetailList">
                 <dt class="p-top-skills__detailList__itemUnit" id="frontItemUnit<%= i+1 %>">
