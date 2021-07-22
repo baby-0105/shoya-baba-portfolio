@@ -10,8 +10,8 @@ $(() => {
   const $bodyAndHtml = $('body, html');
 
   let scrollPosi,
-      lowerTitle=['intro', 'skills', 'production', 'others', 'canDo', 'contact'],
-      upperTitle=['Intro', 'Skills', 'Production', 'Others', 'CanDo', 'Contact'];
+      lowerTitle=['intro', 'career', 'skills', 'production', 'others', 'canDo', 'contact'],
+      upperTitle=['Intro', 'Career', 'Skills', 'Production', 'Others', 'CanDo', 'Contact'];
 
   // ページの一番上までスクロールさせます。
   $("#to_top").on('click', function() {

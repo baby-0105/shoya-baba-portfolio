@@ -246,7 +246,7 @@
 
 .p-top-intro__infoText {
   overflow: hidden; // intro text出現用
-  margin-bottom: 100px;
+  margin-bottom: 20px;
 
   &:last-child {
     margin-bottom: 0;
@@ -275,6 +275,60 @@
 
 .p-top-intro__infoText__main {
   width: 60%;
+}
+
+/*
+  .p-top-career
+---------------------------------------------------- */
+
+.p-top-career__title {
+  @include section_title;
+}
+
+.p-top-career__titleWord {
+  @include section_title_word;
+}
+
+.p-top-career__info {
+  font-size: $fontLetterSmall;
+  display: flex;
+  flex-direction: column;
+}
+
+.p-top-career__text {
+  @include section_text;
+}
+
+.p-top-career__infoDesc {
+  margin-bottom: 50px;
+}
+.p-top-career__infoDescText {
+  margin-left: 20px;
+}
+
+.p-top-career__infoAchieveTitle {
+  font-size: $fontLetterMiddle;
+}
+
+.p-top-career__infoAchieveTable {
+  @include mq(u-pc) {
+    display: block;
+    overflow-x: scroll;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+.p-top-career__infoAchieveTable__head {
+  font-weight: bold;
+  text-align: center;
+}
+.p-top-career__infoAchieveTable__body {
+  &:nth-child(2n) {
+    background-color: $colorLightGreen;
+  }
+}
+.p-top-career__infoAchieveTable__bodyText {
+  padding: 10px;
 }
 
 /*
