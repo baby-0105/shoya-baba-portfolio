@@ -31,8 +31,8 @@ src/ejs/template/_head %>
           <% var intro_period=['1997/01/05' ,'2019/3', '2019/4 ~ 2019/6', '2019/6~', '2020/4', '2020/10~2021/1', '2021/2~現在']; %>
           <% var intro_text=[
             '大阪府で生まれました。現在24歳です', '近畿大学 農学部卒業', '機械部品製造業、従事',
-            'ピアノ教室を運営する母のために教室ホームページを作成。Webに興味を持つ。<br>その後、<span class="red">Webエンジニア</span>になる事を目指す。<!--<br><br><span class="red">『好奇心からの行動力』</span>がある私は、この間に<span class="red">ヒッチハイクや、youtube投稿</span>に挑戦。（<span id="toOthers" class="p-top-intro__text__link">詳細は下記</span>に記載）-->',
-            '東京でSES事業を行っているベンチャー企業に入社', '自社のLPを主に、LP・コーポレートサイト制作業務に従事', '現在は、<span class="red">Laravel</span>での開発をメインに行なっております。'
+            'ピアノ教室を運営する母のために教室ホームページを作成。Webに興味を持つ。<br>その後、<span class="red">Webエンジニア</span>を目指す。<!--<br><br><span class="red">『好奇心からの行動力』</span>がある私は、この間に<span class="red">ヒッチハイクや、youtube投稿</span>に挑戦。（<span id="toOthers" class="p-top-intro__text__link">詳細は下記</span>に記載）-->',
+            'SES事業を行っているベンチャー企業に入社', 'LP・コーポレートサイト制作業務に従事', '現在は、<span class="red">Laravel</span>でのWebアプリケーション開発をメインに行なっております。'
           ]; %>
 
           <% for (var i=0; i < intro_text.length; i++) { %>
@@ -56,9 +56,9 @@ src/ejs/template/_head %>
       <p class="p-top-career__text">私のエンジニアとしての、これまでの「経歴・実績」についての記載です。</p>
       <div class="p-top-career__info">
         <dl class="p-top-career__infoDesc">
-          <dt>●＜職業＞</dt><dd class="p-top-career__infoDescText">Webエンジニア</dd>
+          <dt>●＜職業＞</dt><dd class="p-top-career__infoDescText">Webエンジニア・Webプログラマー</dd>
           <dt>●＜経験年数＞</dt><dd class="p-top-career__infoDescText">2020/10 ~ 現在：（10ヶ月）</dd>
-          <dt>●＜経験詳細＞</dt><dd class="p-top-career__infoDescText">Web制作（4ヶ月）、Web開発（6ヶ月）</dd>
+          <dt>●＜経歴詳細＞</dt><dd class="p-top-career__infoDescText">Web制作（4ヶ月）、Web開発（6ヶ月）</dd>
         </dl>
         <div class="p-top-career__infoAchieve">
           <h3 class="p-top-career__infoAchieveTitle">●＜実績一覧＞</h3>
@@ -104,7 +104,7 @@ src/ejs/template/_head %>
         <span class="p-top-skills__titleWord" id="skillsTitleWord">Skills</span>
       </h1>
       <p class="p-top-skills__text">
-        習得中の言語も含め、現在扱うことの出来るスキルの一覧です。現在は、Laravelをメインに開発をしています。
+        習得中の言語も含め、現在扱う事の出来るスキルの一覧です。現在は、Laravelをメインに開発をしています。
       </p>
       <div class="p-top-skills__explain">
         <h3 class="p-top-skills__explain__title">- スキルレベル -</h3>
@@ -206,7 +206,7 @@ src/ejs/template/_head %>
         "数字当てゲーム「NumerOn」を作成しました。純粋なJavaScriptとHTML/CSSのみで、ライブラリやフレームワークは使用していません。目的は、jQueryなどのライブラリに頼らない純粋なJavaScriptに慣れるためです。（JavaScriptを使うことが目的でしたのでUIはかなりチープなものになっています）。なぜ、このゲームを作成しようと思ったか？ですが、、、高校の時に毎日友達としていた思い出のゲームだからです（笑）。作ってみたかったものが実現しました。",
         "Ruby on Railsを使用したマッチングサービスです。これを作った理由としては、私自身やtwitterでの意見からウクレレの演奏に寂しさを感じ、仲間を集める事のできるサービスがあればいいと思ったからです。ただでさえプレイヤー数の少ないウクレレですと挫折率も高いと考えたからです。よりウクレレプレイヤーに特化した「ウクレレ経験年数や、居住地域」などの情報を可視化する事でマッチしやすいと考えました。その他機能としましては、新規登録/ログイン/フォロー/投稿/ダイレクトメッセージなどの機能を付けました。どちらか言うとバックエンドよりの技術を主に使用する事に注力したため、フロント部分はBootStrapを使用しています。",
         "私のポートフォリオサイトです。シンプルかつ、一目で分かるようなUIにする事を意識しました。Skillsの棒グラフの作成にはjQueryを使用し、UXにもこだわり工夫いたしました。Sass/jQueryの他、npm/webpackなどのツールも使用しています。",
-        "Vue.js + Firebaseで作成しました。vue-routerや、vuexを使用した、ログイン/ログアウト機能や、アドレスの編集/削除の機能を実装いたしました。Vue.jsについては現在も学習中ですので随時こちらのプロダクトの更新を行います。",
+        "Vue.js + Firebaseで作成しました。vue-routerや、Vuexを使用した、ログイン/ログアウト機能や、アドレスの編集/削除の機能を実装いたしました。Vue.jsについては現在も学習中ですので随時こちらのプロダクトの更新を行います。",
         // "個人的に作ったwebレターです。実際には、写真や手紙の内容も添えて作ったのですが、こちらはsampleになります。仕様自体は本物とほぼ同等のものです。シンプルで分かりやすいと言うよりも、CSSやjQueryなどでアニメーションを複数使用する事で凝った仕様にしています。",
       ]; %>
       <% for (var i=0; i < production_title.length; i++) { %>
